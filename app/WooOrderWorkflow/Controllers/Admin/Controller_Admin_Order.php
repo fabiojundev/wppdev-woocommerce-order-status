@@ -33,7 +33,10 @@ class Controller_Admin_Order extends Controller {
     	foreach ( $statuses as $status ) {
 			if( $status->enabled_in_bulk_actions ) {
 				$action = 'mark_' . $status->get_slug();
-				$actions[ $action ] = sprintf( '%s %s', __( 'Change status to', WO_TEXT_DOMAIN ), $status->name );	
+				$actions[ $action ] = esc_html( sprintf( 
+					'%s %s', __( 'Change status to', WO_TEXT_DOMAIN ), 
+					$status->name 
+				) );
 			}
     	}
 
@@ -55,9 +58,9 @@ class Controller_Admin_Order extends Controller {
 				$color = $status->color;
 				$background = $status->background;
 			?>
-				mark.status-<?php echo $slug;?> {
-					color:<?php echo $color;?>;
-					background-color:<?php echo $background;?>;
+				mark.status-<?php echo esc_attr( $slug );?> {
+					color:<?php echo esc_attr( $color );?>;
+					background-color:<?php echo esc_attr( $background );?>;
 				}
 			<?php endforeach; ?>
 			</style>

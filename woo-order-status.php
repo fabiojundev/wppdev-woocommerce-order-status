@@ -157,11 +157,11 @@ class WooOrderWorkflowPlugin {
 	 */
 	public function add_settings_link( $links ) {
 
-		$links[] = sprintf( 
+		$links[] = esc_html( sprintf( 
 			'<a href="%s">%s</a>', 
 			Controller_Plugin::get_admin_settings_url(),
 			__( 'Settings', WO_TEXT_DOMAIN ),
-		);
+		) );
 		return $links;
 	}
 

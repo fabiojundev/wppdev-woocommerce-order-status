@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 	<p>
-	<?php printf( '%s #%s %s %s',
+	<?php esc_html( printf( '%s #%s %s %s',
 		__( 'Just to let you know - your order', WO_TEXT_DOMAIN ), 
 		$order->get_order_number(),
 		__( 'status has changed to', WO_TEXT_DOMAIN ), 
 		trim( $order->get_status() )
-		); 
+		) ); 
 	?>
 	</p>
 	<p>
