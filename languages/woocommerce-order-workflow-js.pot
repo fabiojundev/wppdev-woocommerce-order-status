@@ -1,0 +1,346 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: src/order-status-admin/components/color-picker.js:79
+msgid "Click to pick color"
+msgstr ""
+
+#: src/order-status-admin/components/media-upload.js:24
+msgid "Select or Upload Media"
+msgstr ""
+
+#: src/order-status-admin/components/media-upload.js:25
+#: src/order-status-admin/components/status-display/status-list.js:184
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:20
+msgid "Select"
+msgstr ""
+
+#: src/order-status-admin/components/media-upload.js:30
+msgid "Open Uploader"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-graph.js:27
+msgid "Order Statuses Overview"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-graph.js:68
+msgid "Overview"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:113
+msgid "Edit Order Status"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:156
+#: src/order-status-admin/components/status-edit/status-save.js:84
+msgid "Back"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:168
+msgid "Order Status Workflow"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:174
+msgid "Add New"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:185
+msgid "Reset Core Statuses"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:186
+msgid "Import Manufactory Preset"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:187
+msgid "Import Food Delivery Preset"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:195
+msgid "Apply"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:279
+msgid "Edit"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:293
+#: src/order-status-admin/components/status-display/status-products.js:69
+msgid "Show more details"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:338
+msgid "Trigger Email"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:39
+msgid "Icon | Type"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:40
+msgid "Status Name"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:41
+msgid "Slug"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:42
+#: src/order-status-admin/components/status-edit/status-settings.js:149
+msgid "Description"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:43
+msgid "Next"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:44
+msgid "Type"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:45
+msgid "Trigger"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:46
+msgid "Orders | Products"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-list.js:47
+msgid "Products"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-products.js:159
+msgid "View Order Status Products - "
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-products.js:173
+msgid "View Products"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-products.js:27
+msgid "Product"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-products.js:28
+msgid "Quantity"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-products.js:29
+msgid "In Stock"
+msgstr ""
+
+#: src/order-status-admin/components/status-display/status-products.js:30
+msgid "Orders"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-delete.js:100
+msgid "Reassign to Status"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-delete.js:112
+msgid "Cancel"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-delete.js:121
+msgid "Reassign and Delete"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-delete.js:60
+msgid "Delete this custom order status?"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-delete.js:90
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:160
+msgid "Delete"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-delete.js:96
+msgid "There are "
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-delete.js:97
+msgid " orders with status "
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-email.js:117
+msgid "Send Notification Email"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-email.js:122
+msgid "Enabled"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-email.js:131
+msgid "Email Recipients (use \", \" to separe)"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-email.js:141
+msgid "Subject"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-email.js:151
+msgid "Message"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-email.js:159
+msgid "Add E-mail Attachments"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-email.js:161
+msgid "Add attachments"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-email.js:166
+msgid "Include Order details"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-email.js:175
+msgid "Conditions to Send"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-email.js:77
+msgid "is not a valid email"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-save.js:89
+msgid "Save"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-settings.js:123
+msgid "Status Settings"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-settings.js:128
+msgid "Name"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-settings.js:138
+msgid "Slug (without prefix wc-)"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-settings.js:169
+msgid "Color"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-settings.js:179
+msgid "Icon"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-settings.js:197
+msgid "Enable in Orders Bulk Actions"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-settings.js:204
+msgid "Enable in Reports"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-settings.js:209
+msgid "Next Statuses to show in Order Actions"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-settings.js:214
+msgid "Next Statuses in Actions"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:116
+msgid "Client"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:117
+msgid "Admin"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:118
+msgid "Admin and Client"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:122
+msgid "Resend Invoice To"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:127
+msgid "To Status"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:155
+msgid "Automation"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:167
+msgid "Execute Action"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:24
+msgid "Change Status"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:28
+msgid "Resend Invoice"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-trigger-settings.js:93
+msgid "To Order Status"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/status-triggers.js:57
+msgid "Add Automation"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/trigger-conditions.js:111
+msgid "If Changed From Status"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/trigger-conditions.js:27
+msgid "Enable Condition"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/trigger-conditions.js:28
+msgid "Select below"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/trigger-conditions.js:29
+msgid "If overdue time estimative - "
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/trigger-conditions.js:31
+msgid " days"
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/trigger-conditions.js:44
+msgid " OR "
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/trigger-conditions.js:52
+msgid " AND "
+msgstr ""
+
+#: src/order-status-admin/components/status-edit/trigger-conditions.js:93
+msgid "Conditions"
+msgstr ""
+
+#: src/order-status-admin/data/order-status/actions.js:119
+msgid "Delete Order Status Failed"
+msgstr ""
+
+#: src/order-status-admin/data/order-status/actions.js:167
+msgid "Load Order Status Products Failed"
+msgstr ""
+
+#: src/order-status-admin/data/order-status/actions.js:171
+msgid "Already loaded"
+msgstr ""
+
+#: src/order-status-admin/data/order-status/actions.js:211
+msgid "Import Order Statuses Failed"
+msgstr ""
+
+#: src/order-status-admin/data/order-status/actions.js:38
+msgid "Create Order Status Failed"
+msgstr ""
+
+#: src/order-status-admin/data/order-status/actions.js:77
+msgid "Update Order Status Failed"
+msgstr ""

@@ -1,0 +1,7 @@
+{
+    "name": "wpplugindev/framework",
+    "description": "A short description of what your package does",
+	"require" : {
+		"monolog/monolog" : "^2.0"
+	}
+}

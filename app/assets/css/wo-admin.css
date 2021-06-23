@@ -1,0 +1,1241 @@
+/**
+ * General styles used in settings screens.
+ */
+/* Affects all elements beneath .wo-wrap container */
+.wo-wrap * {
+	box-sizing: border-box;
+}
+
+/* Define general layout states */
+.wo-wrap {
+	margin: 10px 20px 0 2px;
+	/* horizontal separator */
+	/* vertical separator */
+}
+
+.wo-wrap input, .wo-wrap select, .wo-wrap textarea {
+	font-size: 1em;
+}
+
+.wo-wrap hr {
+	margin: 0;
+	border: 0;
+	border-top: 1px solid #E5E5E5;
+}
+
+.wo-wrap .clear {
+	margin: 1em 0;
+	padding: 0.5em 0;
+}
+
+.wo-wrap .wo-hidden {
+	display: none;
+	visibility: hidden;
+}
+
+.wo-wrap .wo-separator {
+	border-bottom: 1px solid #E5E5E5;
+	margin: 15px 0;
+}
+
+.wo-wrap .wo-divider {
+	position: absolute;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	border-right: 1px solid #E5E5E5;
+}
+
+.wo-wrap .wo-group {
+	clear: both;
+}
+
+.wo-wrap .wo-group:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.wo-wrap .handlediv {
+	cursor: pointer;
+}
+
+.fa {
+	font-family: Fontawesome !important;
+}
+
+.wo-hr {
+	width: 100%;
+	height: 1.5em;
+	font-size: 1.5em; 
+	border-bottom: 1px solid #eee;
+	margin: 20px 0 !important;
+}
+
+/**
+ * Typographic styles
+ */
+
+.wo-wrap h3 {
+	margin: 0 0 4px 0;
+}
+
+.wo-wrap .wo-important {
+	font-weight: bold;
+	color: #222;
+	font-size: 1.1em;
+}
+
+.wo-wrap .wo-bold {
+	font-weight: bold;
+}
+
+.wo-wrap .wo-italic {
+	font-style: italic;
+}
+
+.wo-wrap .wo-low {
+	opacity: 0.6;
+}
+
+.wo-wrap .wo-description {
+	color: #888;
+	font-size: 0.9em;
+}
+
+.wo-wrap .wo-description.wo-indented-description {
+	padding-left: 20px;
+}
+
+.wo-wrap .wo-description .wo-bold, .wo-wrap .wo-description .wo-italic {
+	color: #4F616E;
+}
+
+.wo-wrap .wo-settings-description {
+	margin-bottom: 15px;
+	display: block;
+}
+
+.wo-wrap .wo-group-head {
+	clear: both;
+	padding-top: 15px;
+}
+
+.wo-wrap .wo-subtitle {
+	text-align: center;
+	margin: 0 0 5px 0;
+	font-size: 17px;
+}
+
+/**
+ * Styles for tables.
+ */
+/* Form table */
+.wo-wrap .form-table {
+	border: 0;
+}
+
+.wo-wrap .form-table td, .wo-wrap .form-table th {
+	vertical-align: top;
+}
+
+.wo-wrap .form-table td {
+	padding: 0;
+	border: 0;
+}
+
+/* WordPress-style List tables */
+.wo-wrap .widefat {
+	margin: 10px 0;
+}
+
+.wo-wrap .widefat tbody th.check-column {
+	padding: 15px 0 14px;
+}
+
+.wo-wrap .widefat tfoot {
+	display: none;
+}
+
+.wo-wrap .widefat td {
+	padding: 15px 6px 2px;
+	vertical-align: top;
+	font-size: 12px;
+}
+
+.wo-wrap .widefat .wo-child-row .column-name {
+	padding-left: 15px;
+}
+
+.wo-wrap .widefat .wo-child-row .column-name:before {
+	content: '\2014';
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.wo-wrap .widefat.memberships td {
+	border-top: 1px solid #CCC;
+}
+
+.wo-wrap .widefat.memberships tr:first-child td {
+	border-top: 0;
+}
+
+.wo-wrap .widefat.memberships .wo-child-row td {
+	border-top: 1px solid #EEE;
+}
+
+.wo-wrap .tablenav input, .wo-wrap .tablenav select, .wo-wrap .tablenav .wo-field-input,
+	.wo-wrap p.search-box input, .wo-wrap p.search-box select, .wo-wrap p.search-box .wo-field-input
+	{
+	margin-top: 0 !important;
+	/* important: Some WordPress fields have a margin that needs to be cleared here */
+	margin-bottom: 0 !important;
+}
+
+.wo-wrap .tablenav.bottom {
+	display: none;
+}
+
+/* Simple List Tables */
+.wo-wrap .wo-list-table {
+	width: 100%;
+	margin: 10px 0;
+	font-size: 13px;
+}
+
+.wo-wrap .wo-list-table .col-text {
+	text-align: left;
+}
+
+.wo-wrap .wo-list-table .col-date {
+	text-align: center;
+	max-width: 100px;
+}
+
+.wo-wrap .wo-list-table.limit-width {
+	max-width: 600px;
+}
+
+/**
+ * List styles
+ */
+/***
+ * Tag list *
+ ***/
+.wo-wrap .wo-content-tag-list {
+	margin: 10px 0;
+	list-style: none;
+}
+
+.wo-wrap .wo-content-tag-list .wo-content-tag {
+	float: left;
+	margin: 0 2px 2px 0;
+}
+
+.wo-wrap .wo-content-tag-list .wo-content-tag a, .wo-wrap .wo-content-tag-list .wo-content-tag span
+	{
+	display: block;
+	padding: 2px 4px;
+	border-radius: 3px;
+	background: #BDC3C7;
+	color: #FFF;
+	font-size: 13px;
+	font-weight: 200;
+	text-decoration: none;
+}
+
+.wo-wrap .wo-content-tag-list .wo-content-tag a:hover, .wo-wrap .wo-content-tag-list .wo-content-tag a:active,
+	.wo-wrap .wo-content-tag-list .wo-content-tag a:focus {
+	background: #8E9295;
+}
+
+/**
+ * Navigational tabs.
+ */
+.wo-wrap .wo-tab-container {
+	float: left;
+	width: 225px;
+}
+
+.wo-wrap .wo-tabs-titlerow {
+	margin-left: 15px;
+	font-weight: bold;
+}
+
+.wo-wrap .wo-tabs {
+	float: left;
+	width: 225px;
+	margin: 0;
+	padding: 0;
+}
+
+.wo-wrap .wo-tab {
+	position: relative;
+	z-index: 10;
+	border: 1px solid transparent;
+	border-radius: 4px 0 0 4px;
+	border-width: 1px 0 1px 1px;
+	font-size: .9em;
+	font-weight: 500;
+}
+
+.wo-wrap .wo-tab.active {
+	background: #fff;
+	border-color: #e5e5e5;
+	box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.04);
+}
+
+.wo-wrap .wo-tab.active:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: -1px;
+	width: 1px;
+	bottom: 0;
+	background: #fff;
+	font-size: 0;
+	line-height: 0;
+}
+
+.wo-wrap .wo-tab.active .wo-tab-link {
+	color: #222;
+}
+
+.wo-wrap .wo-tab-link {
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+}
+
+/**
+ * Box-styles (e.g. accordeon box)
+ */
+/***
+ * General settings box *
+ ***/
+.wo-wrap .wo-settings {
+	position: relative;
+	overflow: hidden;
+	padding: 10px 20px 20px;
+	min-height: 280px;
+	background: #fff;
+	border: 1px solid #E5E5E5;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.wo-wrap .wo-wrapper-center {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.wo-wrap .wo-wrapper-center.wide {
+	max-width: 1200px;
+}
+
+.wo-wrap .wo-part-4, .wo-wrap .wo-part-3, .wo-wrap .wo-part-2, .wo-wrap .wo-quarter,
+	.wo-wrap .wo-third, .wo-wrap .wo-half {
+	position: relative;
+	float: left;
+	width: 50%;
+	margin: 0;
+	padding: 0;
+}
+
+.wo-wrap .wo-part-4.space, .wo-wrap .wo-part-3.space, .wo-wrap .wo-part-2.space,
+	.wo-wrap .wo-quarter.space, .wo-wrap .wo-third.space, .wo-wrap .wo-half.space
+	{
+	padding-right: 30px;
+}
+
+.wo-wrap .wo-part-4.right, .wo-wrap .wo-part-3.right, .wo-wrap .wo-part-2.right,
+	.wo-wrap .wo-quarter.right, .wo-wrap .wo-third.right, .wo-wrap .wo-half.right
+	{
+	float: right;
+}
+
+.wo-wrap .wo-part-3, .wo-wrap .wo-third {
+	width: 33.33333%;
+}
+
+.wo-wrap .wo-part-4, .wo-wrap .wo-quarter {
+	width: 25%;
+}
+
+.wo-wrap .wo-fixed-height .inside, .wo-wrap .wo-settings-box.wo-fixed-height .inside
+	{
+	overflow: auto;
+	height: 150px;
+	padding: 0;
+	margin: 20px 20px 0 0;
+}
+
+.wo-wrap .wo-min-height .inside, .wo-wrap .wo-settings-box.wo-min-height .inside
+	{
+	min-height: 200px;
+	padding: 0;
+	margin: 20px 20px 0 0;
+}
+
+/* Settings overview with lighter background */
+.wo-wrap .wo-wrap-top {
+	margin: -15px -15px 0 -20px;
+	padding: 15px 15px 15px 20px;
+	background-color: #FAFAFA;
+	border-bottom: 1px solid #E5E5E5;
+}
+
+/* Accordeon box */
+.wo-wrap .wo-settings-box-wrapper {
+	background: #FBFBFB;
+	border: 1px solid #E5E5E5;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	min-width: 255px;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.wo-wrap .wo-settings-box {
+	padding: 10px;
+}
+
+.wo-wrap .wo-settings-box .wo-header {
+	padding: 10px;
+	margin: -10px;
+	border-bottom: 1px solid #E5E5E5;
+	background: #F9F9F9;
+}
+
+.wo-wrap .wo-settings-box .wo-settings-description {
+	margin-bottom: 0;
+}
+
+.wo-wrap .wo-settings-box .inside {
+	padding-top: 20px;
+}
+
+.wo-wrap .wo-settings-box .handlediv {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.wo-wrap .wo-settings-box .handlediv:before {
+	content: '\f142';
+	position: relative;
+	display: inline-block;
+	right: 12px;
+	top: 0;
+	padding: 8px 10px;
+	font: 400 20px/1 dashicons;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: none !important;
+}
+
+.wo-wrap .wo-settings-box.closed .handlediv:before {
+	content: '\f140';
+}
+
+.wo-wrap .wo-settings-box.nohead .wo-header {
+	display: none;
+}
+
+.wo-wrap .wo-settings-box.nohead .inside {
+	padding: 0;
+}
+
+/**
+ * Navigational elements.
+ */
+.wo-wrap .wo-bread-crumb {
+	text-align: center;
+}
+
+.wo-wrap .wo-bread-crumb a {
+	text-decoration: none;
+}
+
+.wo-wrap .wo-bread-crumb .wo-bread-crumb-sep {
+	margin: 0 .5em;
+	color: #AAA;
+}
+
+.wo-wrap .wo-bread-crumb .wo-bread-crumb-next {
+	color: #AAA;
+}
+
+/**
+ * Settings header and footer.
+ */
+/* Header styles */
+.wo-wrap .wo-settings-title {
+	padding: 9px 15px;
+	margin: 0;
+	font-size: 1.6em;
+	line-height: 29px;
+	text-align: center;
+}
+
+.wo-wrap .wo-settings-desc {
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* Footer styles */
+.wo-wrap .wo-settings-footer {
+	position: relative;
+	margin: 10px 0;
+}
+
+/**
+ * Styles for forms and input elements
+ */
+/***
+ * GENERAL STYLES *
+ ***/
+.wo-wrap .wo-field-description {
+	display: inline-block;
+	margin: 10px 4px 10px 0;
+	color: #666;
+	font-size: 0.9em;
+	font-weight: normal;
+}
+
+.wo-wrap .wo-field-input {
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+.wo-wrap .button, .wo-wrap .button-primary {
+	margin: 6px;
+}
+
+.wo-wrap .wo-field-container {
+	margin: 10px 0;
+}
+
+.wo-wrap .wo-field-label {
+	display: block;
+	font-weight: 500;
+}
+
+.wo-wrap .wo-field-input-label {
+	margin: 5px 0;
+}
+
+.wo-wrap .wo-field-wp-editor {
+	height: 5em;
+	width: 100%;
+}
+
+.wo-wrap .wo-text {
+	display: inline-block;
+}
+
+.wo-wrap .wo-float, .wo-wrap .wo-int {
+	width: 6em;
+	text-align: right;
+}
+
+.wo-wrap .wo-input-small {
+	width: 4em;
+}
+
+.wo-wrap .wo-input-small-1 {
+	width: 10em;
+}
+
+.wo-wrap .wo-input-medium {
+	width: 258px;
+	max-width: 100%;
+}
+.wo-wrap .wo-input-max-half {
+	max-width: 50% !important;
+}
+
+.wo-wrap .wo-input-large {
+	width: 360px;
+	max-width: 100%;
+}
+
+
+.wo-wrap .wo-textarea-medium {
+	height: 10em;
+}
+
+.wo-wrap .wo-textarea-large {
+	height: 20em;
+	width: 30em;
+}
+
+.wo-wrap .wo-input-full {
+	width: 100%;
+}
+
+.wo-wrap input[type="text"] {
+	min-height: 28px;
+	line-height: 26px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.wo-wrap .wo-select-multiple {
+	height: 100px !important;
+	width: 225px;
+}
+
+.wo-wrap .disabled input, .wo-wrap input.disabled, .wo-wrap input[disabled]
+	{
+	cursor: default;
+}
+
+.wo-wrap .wo-no-data {
+	font-style: italic;
+	padding: 3px 0;
+	line-height: 24px;
+	opacity: .6;
+}
+
+.wo-wrap .wo-no-data:before, .wo-wrap .wo-no-data:after {
+	content: ' - ';
+}
+
+.wo-wrap input.wo-center, .wo-wrap select.wo-center, .wo-wrap textarea.wo-center
+	{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wo-wrap textarea.wo-huge {
+	width: 300px;
+	height: 500px;
+}
+
+/***
+ * DATEPICKER *
+ ***/
+#wpadminbar, .wo-wrap {
+	/*
+  .ui-datepicker {
+  	margin-top: 10px;
+  }
+  */
+	
+}
+
+#wpadminbar .wo-datepicker-wrapper, .wo-wrap .wo-datepicker-wrapper {
+	display: inline-block;
+	position: relative;
+}
+
+#wpadminbar .wo-datepicker-wrapper .wo-icon, .wo-wrap .wo-datepicker-wrapper .wo-icon
+	{
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 28px;
+	width: 21px;
+	line-height: 28px;
+	text-align: left;
+	opacity: .5;
+	cursor: pointer;
+	color: #444;
+}
+
+.ui-datepicker.wo-datepicker {
+	padding: 0;
+	border: none;
+	/* Get rid of bevel corners */
+	/* New icons */
+}
+
+.ui-datepicker.wo-datepicker .ui-datepicker-header, .ui-datepicker.wo-datepicker.ui-corner-all
+	{
+	border-radius: 0;
+}
+
+.ui-datepicker.wo-datepicker .ui-datepicker-prev span, .ui-datepicker.wo-datepicker .ui-datepicker-next span,
+	.ui-datepicker.wo-datepicker .ui-state-hover .ui-icon, .ui-datepicker.wo-datepicker .ui-state-focus .ui-icon,
+	.ui-datepicker.wo-datepicker .ui-widget-header .ui-icon, .ui-datepicker.wo-datepicker .ui-icon
+	{
+	background-image: url(../img/ui-icons-white.png);
+}
+
+.ui-datepicker.wo-datepicker .ui-datepicker-header {
+	padding: 0;
+	border: none;
+	background: #4F83AA;
+	color: #FFFFFF;
+	font-size: 0.9em;
+	font-weight: normal;
+}
+
+.ui-datepicker.wo-datepicker .ui-datepicker-calendar tbody td a,
+	.ui-datepicker.wo-datepicker td span, .ui-datepicker.wo-datepicker td a
+	{
+	padding: 8px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.ui-datepicker.wo-datepicker .ui-datepicker-calendar {
+	padding: 3px;
+	background: #375D7A;
+}
+
+.ui-datepicker.wo-datepicker .ui-datepicker-calendar thead th {
+	padding: 3px 5px;
+	font-size: 0.9em;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+.ui-datepicker.wo-datepicker .ui-datepicker-calendar tbody .ui-state-default,
+	.ui-datepicker.wo-datepicker .ui-datepicker-calendar tbody .ui-widget-content .ui-state-default,
+	.ui-datepicker.wo-datepicker .ui-datepicker-calendar tbody .ui-widget-header .ui-state-default
+	{
+	border: 0;
+	background: #223D52;
+	color: #FFFFFF;
+}
+
+.ui-datepicker.wo-datepicker .ui-datepicker-calendar tbody .ui-state-active,
+	.ui-datepicker.wo-datepicker .ui-datepicker-calendar tbody .ui-widget-content .ui-state-active,
+	.ui-datepicker.wo-datepicker .ui-datepicker-calendar tbody .ui-widget-header .ui-state-active,
+	.ui-datepicker.wo-datepicker .ui-datepicker-calendar tbody .ui-state-hover,
+	.ui-datepicker.wo-datepicker .ui-datepicker-calendar tbody .ui-widget-content .ui-state-hover,
+	.ui-datepicker.wo-datepicker .ui-datepicker-calendar tbody .ui-widget-header .ui-state-hover
+	{
+	background: #4F83AA;
+}
+
+/***
+ * RADIO BUTTONS *
+ ***/
+.wo-wrap .wo-radio {
+	margin: 2px 4px 0 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.wo-wrap .wo-radio-wrapper {
+	margin: 0 auto;
+	position: relative;
+	display: inline-block;
+}
+
+.wo-wrap .wo-radio-wrapper .wo-radio-caption {
+	padding-left: 24px;
+	font-weight: 500;
+}
+
+.wo-wrap .wo-radio-wrapper label {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+/***
+ * CHECKBOX *
+ ***/
+.wo-wrap .wo-checkbox {
+	margin: 2px 4px 0 0;
+	left: 0;
+	top: 0;
+}
+
+.wo-wrap .wo-checkbox-wrapper {
+	margin: 10px auto;
+	position: relative;
+	display: flex;
+}
+
+.wo-wrap .wo-checkbox-wrapper .wo-checkbox-caption {
+	font-weight: 500;
+}
+
+/***
+ * SELECT2 *
+ ***/
+.wo-select2.select2-container {
+	margin-right: .5em;
+}
+
+.wo-select2.select2-container a {
+	transition-duration: 0 !important;
+	/* Inside select2 there should be no default link transitions */
+}
+
+.wo-select2.select2-container .select2-choice, .wo-select2.select2-container .select2-choices
+	{
+	height: 28px;
+	line-height: 27px;
+	font-size: 14px;
+	border-radius: 3px;
+	border-color: #CCC;
+}
+
+.wo-select2.select2-container .select2-choice .select2-arrow,
+	.wo-select2.select2-container .select2-choices .select2-arrow {
+	border: 0;
+	background: transparent;
+}
+
+.wo-select2.select2-dropdown-open .select2-choice, .wo-select2.select2-dropdown-open .select2-choices
+	{
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.wo-select2.select2-container-active .select2-choice, .wo-select2.select2-container-active .select2-choices
+	{
+	border-color: #5897fb;
+}
+
+.wo-select2 .select2-search {
+	margin-bottom: 4px;
+	font-size: 14px;
+}
+
+.wo-select2 .select2-results {
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+}
+
+.wo-select2 .select2-results .select2-result {
+	margin: 0;
+}
+
+.wo-select2 .select2-results .select2-highlighted {
+	background: #F4F4F4;
+	color: #000;
+}
+
+.wo-select2 .select2-results .select2-match {
+	text-decoration: none;
+	background: #77C9FF;
+	color: #FFF;
+	border-radius: 3px;
+	font-weight: 100;
+}
+
+.wo-select2 .select2-results .select2-match:empty {
+	display: none;
+}
+
+.wo-select2 .select2-results .select2-disabled {
+	background: #DDD;
+	font-weight: 200;
+	opacity: .5;
+}
+
+.wo-select2 .select2-results .select2-disabled .select2-result-label {
+	cursor: default;
+}
+
+.select2-drop {
+	overflow: hidden;
+	border-radius: 0 0 3px 3px;
+}
+
+/* When a thickbox window is open make sure the select2-dropdown is visible */
+.modal-open .select2-drop-mask {
+	z-index: 999998;
+}
+
+.modal-open .select2-drop {
+	z-index: 999999;
+}
+
+/***
+ * RADIO SLIDER *
+ ***/
+.wo-wrap .wo-radio-slider-wrapper {
+	clear: both;
+}
+
+.wo-wrap .wo-radio-slider:focus {
+	background: none;
+	outline: none;
+}
+
+.wo-wrap .wo-radio-slider {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 18px;
+	margin: 3px 0;
+	border-radius: 10px;
+	background: #b0b0b0;
+	opacity: .8;
+}
+
+.wo-wrap .wo-radio-slider:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+.wo-wrap .wo-radio-slider .wo-toggle {
+	position: absolute;
+	display: inline-block;
+	left: 0;
+	width: 12px;
+	height: 12px;
+	margin: 3px;
+	background: #F4F4F4;
+	border-radius: 50%;
+	transition: all .2s ease-in-out;
+}
+
+.wo-wrap .wo-radio-slider .wo-toggle:hover {
+	-webkit-transform: scale(1.1);
+	-wo-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.wo-wrap .wo-radio-slider.on .wo-toggle {
+	left: 21px;
+}
+
+.wo-wrap .wo-radio-slider.on {
+	background: #6bbb1a;
+}
+
+.wo-wrap .wo-radio-slider.wo-processing {
+	cursor: wait;
+}
+
+.wo-wrap h3 .wo-radio-slider-wrapper {
+	display: inline-block;
+	position: relative;
+	top: 8px;
+	margin: -8px 0 0 40px;
+}
+
+/***
+ * TAG SELECT *
+ ***/
+.wo-wrap .wo-tag-selector-wrapper .wo-tag-data {
+	display: block;
+}
+
+.wo-wrap .wo-tag-selector-wrapper .wo-tag-data .select2-choices {
+	background: transparent;
+	border: 0;
+}
+
+.wo-wrap .wo-tag-selector-wrapper .wo-tag-data .select2-search-choice {
+	margin-left: 0;
+	margin-right: 3px;
+}
+
+.wo-wrap .wo-tag-selector-wrapper .wo-tag-data .select2-search-field {
+	display: none;
+}
+
+.wo-wrap .wo-tag-label {
+	margin: 10px 0 5px;
+}
+
+.wo-wrap .wo-tag-label .wo-img {
+	float: left;
+}
+
+/***
+ * BUTTONS *
+ ***/
+.wo-wrap .button-primary {
+	min-width: 120px;
+}
+
+.wo-wrap button#next:after {
+	content: ' \00bb';
+}
+
+/***
+ * WP EDITOR *
+ ***/
+.wo-wrap #wp-content-editor-tools {
+	background-color: transparent;
+}
+
+.wo-wrap .wp-switch-editor {
+	box-sizing: content-box;
+}
+
+.wo-wrap .wp-editor-tools {
+	padding-top: 20px;
+}
+
+/**
+ * Confirmation messages
+ */
+/* Ajax confirmation message */
+.wo-wrap .wo-save-text-wrapper {
+	display: none;
+	position: relative;
+	font-size: .9em;
+	font-weight: 500;
+}
+
+.wo-wrap .wo-save-text-wrapper .wo-error-text, .wo-wrap .wo-save-text-wrapper .loading-animation
+	{
+	display: none;
+}
+
+.wo-wrap .wo-save-text-wrapper .wo-saving-text, .wo-wrap .wo-save-text-wrapper .wo-saved-text
+	{
+	display: none;
+	width: 155px;
+}
+
+.wo-wrap .wo-save-text-wrapper .err-code {
+	display: block;
+}
+
+.wo-wrap .wo-save-text-wrapper.wo-processing, .wo-wrap .wo-save-text-wrapper.okay,
+	.wo-wrap .wo-save-text-wrapper.error {
+	display: inline-block;
+}
+
+.wo-wrap .wo-save-text-wrapper.wo-processing .wo-saving-text, .wo-wrap .wo-save-text-wrapper.wo-processing .loading-animation
+	{
+	display: inline-block;
+}
+
+.wo-wrap .wo-save-text-wrapper.okay .wo-saved-text {
+	display: inline-block;
+}
+
+.wo-wrap .wo-save-text-wrapper.error .wo-error-text {
+	display: inline-block;
+}
+
+.wo-wrap .wo-saved-text {
+	color: #6DB724;
+}
+
+.wo-wrap .wo-error-text {
+	color: #D73D24;
+}
+
+.wo-wrap .loading-animation {
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin-right: 4px;
+	overflow: hidden;
+	background: transparent url("../img/spinner.gif") top left no-repeat;
+}
+
+.wo-wrap .inside .wo-save-text-wrapper {
+	height: 28px;
+	line-height: 28px;
+	margin: 6px 6px 0 0;
+}
+
+.wo-wrap .inside .wo-save-text-wrapper .loading-animation {
+	margin-top: 4px;
+}
+
+/**
+ * Popup dialogs
+ */
+/* Dialog */
+.wo-dlg-wrap {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9995;
+	/* Needs to be lower than 9998 to make select2-boxes work! */
+	overflow: auto;
+}
+
+.wo-dlg-wrap .wo-dlg-back {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	background: #000;
+	opacity: .6;
+}
+
+.wo-dlg-wrap .wo-dlg {
+	position: absolute;
+	left: 50%;
+	top: 25%;
+	box-sizing: border-box;
+	margin-left: -350px;
+	width: 700px;
+	min-height: 100px;
+	z-index: 2;
+	background: #FFF;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.wo-dlg-wrap .wo-dlg-title {
+	height: 50px;
+	display: block;
+	padding: 0 70px 0 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	z-index: 5;
+	background: #F8F8F8;
+	border-bottom: 1px solid #E5E5E5;
+	white-space: nowrap;
+	line-height: 50px;
+	font-size: 23px;
+	font-weight: 100;
+}
+
+.wo-dlg-wrap .wo-dlg-title .wo-dlg-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	z-index: 10;
+	text-align: center;
+	text-decoration: none;
+	line-height: 50px;
+	color: #666;
+	border-left: 1px solid #E5E5E5;
+	cursor: pointer;
+}
+
+.wo-dlg-wrap .wo-dlg-title .wo-dlg-close:hover, .wo-dlg-wrap .wo-dlg-title .wo-dlg-close:focus,
+	.wo-dlg-wrap .wo-dlg-title .wo-dlg-close:active {
+	background: #FCFCFC;
+	color: #333;
+}
+
+.wo-dlg-wrap .wo-dlg-title .wo-dlg-close .dashicons {
+	line-height: 50px;
+}
+
+.wo-dlg-wrap .wo-dlg-content {
+	position: absolute;
+	top: 51px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+	padding: 20px 20px 20px 20px;
+	z-index: 1;
+}
+
+.wo-wrap .wo-settings .settings-description {
+	margin: 1em 0;
+}
+
+.wo-wrap .wo-label {
+	display: block;
+	padding-bottom: 5px;
+}
+
+.wo-margin-right {
+	margin-right: 10px;
+}
+
+.wo-wrap.wo-postbox.wo-default-margin {
+	margin-right: 15px;
+	margin-left: 15px;
+	margin-top: 5px;
+}
+
+/** Settings Box **/
+.wo-text-label, .wo-ok, .wo-nok {
+	color: #222;
+	font-size: 1em;
+	font-style: normal;
+	font-weight: 600;
+	margin-top: 10px;
+}
+
+.wo-ok {
+	color: #7ad03a;
+}
+
+.wo-nok {
+	color: red;
+}
+
+.wo-wrap .wo-settings .wo-settings-box h3.wo-field-input-label {
+	border: none;
+	padding: 0;
+	font-size: 1.1em;
+	cursor: default;
+	margin-top: 15px;
+}
+
+/** jquery validation */
+.wo-validation-error {
+	color: #e46c6e !important;
+}
+
+label.wo-validation-error {
+	background: #ffefef;
+	border: 1px solid #ffd2d2;
+	color: #666;
+	font-size: 0.9em;
+	margin: 5px;
+	padding: 2px;
+	position: absolute;
+	width: auto;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+label.wo-validation-error:before {
+	content: '';
+	background: url(../img/ca_sprite.png) no-repeat scroll 5px 5px #ffefef;
+	background: url(../img/ca_sprite.svg), no-repeat scroll 5px 5px #ffefef;
+	background-position: -640px -138px;
+	display: inline-block;
+	height: 20px;
+	position: relative;
+	top: 1px;
+	width: 20px;
+}
+
+/** ICONS **/
+.wo-yes::before {
+	content: "\f147";
+}
+
+.wo-no:before {
+	content: "\f158";
+}
+
+/* SPINNER */
+@keyframes wo-spinner {
+	to {transform: rotate(360deg);}
+}
+
+.wo-spinner:before {
+	content: '';
+	box-sizing: content-box;
+	position: relative;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	vertical-align: middle;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	border-top-color: #fff;
+	animation: wo-spinner .8s linear infinite;
+}

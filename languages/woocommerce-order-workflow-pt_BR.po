@@ -1,0 +1,313 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Woocommerce Order Workflow\n"
+"POT-Creation-Date: 2021-06-22 16:25-0300\n"
+"PO-Revision-Date: 2021-06-22 16:28-0300\n"
+"Last-Translator: \n"
+"Language-Team: https://wpplugins.dev\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: app\n"
+"X-Poedit-SearchPath-1: woocommerce-order-workflow.php\n"
+"X-Poedit-SearchPath-2: templates\n"
+
+#: app/WooOrderWorkflow/Controllers/Admin/Controller_Admin_Order.php:36
+msgid "Change status to"
+msgstr "Alterar status para"
+
+#: app/WooOrderWorkflow/Controllers/Controller_Cron.php:76
+msgid "Every Day"
+msgstr "Todos os dias"
+
+#: app/WooOrderWorkflow/Controllers/Controller_Cron.php:80
+msgid "Every 12 Hours"
+msgstr "A cada 12 Horas"
+
+#: app/WooOrderWorkflow/Controllers/Controller_Cron.php:84
+msgid "Every 6 Hours"
+msgstr "A cada 6 Horas"
+
+#: app/WooOrderWorkflow/Controllers/Controller_Cron.php:88
+msgid "Every 60 Mins"
+msgstr "A cada 60 mins"
+
+#: app/WooOrderWorkflow/Controllers/Controller_Cron.php:92
+msgid "Every 30 Mins"
+msgstr "A cada 30 mins"
+
+#: app/WooOrderWorkflow/Controllers/Controller_Cron.php:96
+msgid "Every 15 Mins"
+msgstr "A cada 15 mins"
+
+#: app/WooOrderWorkflow/Controllers/Controller_Cron.php:100
+msgid "Every 10 Mins"
+msgstr "A cada 10 mins"
+
+#: app/WooOrderWorkflow/Controllers/Controller_Cron.php:104
+msgid "Every 5 Mins"
+msgstr "A cada 5 mins"
+
+#: app/WooOrderWorkflow/Controllers/Controller_Cron.php:108
+msgid "Every Minute"
+msgstr "A cada minuto"
+
+#: app/WooOrderWorkflow/Controllers/Controller_Plugin.php:110
+#: app/WooOrderWorkflow/Controllers/Controller_Plugin.php:111
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:30
+msgid "Order Workflow"
+msgstr "Workflow"
+
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:133
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:184
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:256
+msgid "Order Status not found"
+msgstr "Status de Pedido não encontrado"
+
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:153
+msgid "Order Status Created."
+msgstr "Status do Pedido Criado."
+
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:157
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:280
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:306
+msgid "Required fields are empty."
+msgstr "Campos obrigatórios estão vazios."
+
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:179
+msgid "Order Status Updated."
+msgstr "Status do Pedido Atualizado."
+
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:247
+msgid "Reassign status failed"
+msgstr "Erro ao Renomear"
+
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:253
+msgid "Order Status Deleted"
+msgstr "Status do Pedido Excluído"
+
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:276
+msgid "Order Statuses Imported."
+msgstr "Template Importado."
+
+#: app/WooOrderWorkflow/Controllers/Rest/Controller_Rest_Status.php:302
+msgid "Products loaded."
+msgstr "Produtos carregados."
+
+#: app/WooOrderWorkflow/Models/Model_EmailSettings.php:30
+msgid "Your Order status has changed"
+msgstr "O Status do seu pedido mudou"
+
+#: app/WooOrderWorkflow/Models/Model_Status.php:89
+msgid "Core"
+msgstr "Original"
+
+#: app/WooOrderWorkflow/Models/Model_Status.php:90
+msgid "Custom"
+msgstr "Personaliz"
+
+#: app/WooOrderWorkflow/Models/Model_TriggerSettings.php:35
+msgid "Select"
+msgstr "Selecione"
+
+#: app/WooOrderWorkflow/Models/Model_TriggerSettings.php:39
+msgid "Change Status"
+msgstr "Alterar Status"
+
+#: app/WooOrderWorkflow/Models/Model_TriggerSettings.php:43
+msgid "Resend Invoice"
+msgstr "Reenviar Fatura"
+
+#: app/WooOrderWorkflow/Models/Model_TriggerSettings.php:76
+msgid "Order Status automatically changed - Woocommerce Order Workflow"
+msgstr "Status do Pedido alterado automaticamente - Woocommerce Order Workflow"
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:32
+msgid "This email is sent when configured in Order Workflow settings."
+msgstr ""
+"Este email é enviado após ativar nas configurações do Workflow do Pedido."
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:33
+msgid "Your order status has changed"
+msgstr "O status do seu pedido mudou"
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:34
+msgid "[{site_title}] Order #{order_number} status changed"
+msgstr "[{site_title}] Status do Pedido #{order_number} mudou"
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:35
+msgid "Hi there. Your recent order on {site_title} status has changed."
+msgstr "Olá, o status do seu pedido mudou em {site_title}."
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:48
+msgid "Enable/Disable"
+msgstr "Ativar/Desativar"
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:50
+msgid "Enable this email notification"
+msgstr "Ativar esta notificação de email"
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:54
+msgid "Subject"
+msgstr "Assunto"
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:56
+#, php-format
+msgid ""
+"This controls the email subject line. Leave blank to use the default "
+"subject: <code>%s</code>."
+msgstr ""
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:62
+msgid "Email Heading"
+msgstr "Cabeçalho do Email"
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:64
+#, php-format
+msgid ""
+"This controls the main heading contained within the email. Leave blank to "
+"use the default heading: <code>%s</code>."
+msgstr ""
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:70
+msgid "Email Content"
+msgstr "Conteúdo do Email"
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:72
+#, php-format
+msgid ""
+"This controls the initial content of the email. Leave blank to use the "
+"default content: <code>%s</code>."
+msgstr ""
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:78
+msgid "Email type"
+msgstr "Tipo de Email"
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:80
+msgid "Choose which format of email to send."
+msgstr "Selecione o tipo de formato de email para enviar."
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:99
+msgid "Plain text"
+msgstr "Texto"
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:102
+msgid "HTML"
+msgstr "HTML"
+
+#: app/WooOrderWorkflow/Models/Model_WC_Email.php:103
+msgid "Multipart"
+msgstr "Multipart"
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_CoreDef.php:16
+msgid "Order received, no payment initiated. Awaiting payment (unpaid)."
+msgstr "Pedido recebido. Aguardando o pagamento (ainda não iniciado)."
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_CoreDef.php:27
+#: app/WooOrderWorkflow/Models/Status/Model_Status_FoodDeliveryDef.php:18
+#: app/WooOrderWorkflow/Models/Status/Model_Status_ManufactoryDef.php:18
+msgid ""
+"Payment received (paid) and stock has been reduced; order is awaiting "
+"fulfillment."
+msgstr ""
+"Pagamento recebido (pago) e o estoque foi reduzido; o pedido está aguardando "
+"processamento."
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_CoreDef.php:38
+msgid "Awaiting payment – stock is reduced, but you need to confirm payment."
+msgstr ""
+"Aguardando pagamento - o estoque foi reduzido, mas é necessário aguardar a "
+"confirmação do pagamento."
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_CoreDef.php:49
+msgid "Order fulfilled and complete – requires no further action."
+msgstr "O pedido foi concluído - não é necessário nenhuma ação."
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_CoreDef.php:60
+msgid ""
+"Canceled by an admin or the customer – stock is increased, no further action "
+"required."
+msgstr ""
+"Cancelado pelo admin ou pelo cliente - o estoque foi incrementad, nenhuma "
+"ação é necessária."
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_CoreDef.php:71
+msgid "Refunded by an admin – no further action required."
+msgstr "Devolvido pelo admin - nenhuma ação é necessária."
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_CoreDef.php:82
+msgid ""
+"Payment failed or was declined (unpaid) or requires authentication (SCA). "
+"Note that this status may not show immediately and instead show as Pending "
+"until verified."
+msgstr ""
+"Pagamento falhou ou foi rejeitada (não pago) ou requer autenticação (SCA). "
+"Note que este status pode não aparecer imediatamente, enquanto é exibido "
+"como Pendente até a verificação."
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_Event.php:63
+msgid "Order Status Change from"
+msgstr "Status do Pedido alterado de"
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_Event.php:91
+msgid "Order Status Change"
+msgstr "Status do Pedido Alterado"
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_FoodDeliveryDef.php:27
+msgid "Delivering"
+msgstr "Saiu para Entrega"
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_FoodDeliveryDef.php:29
+#: app/WooOrderWorkflow/Models/Status/Model_Status_ManufactoryDef.php:40
+msgid "Shipped to address."
+msgstr "Enviado para o endereço."
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_ManufactoryDef.php:27
+msgid "Manufactoring"
+msgstr "Produzindo"
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_ManufactoryDef.php:29
+msgid "Manufactoring the product."
+msgstr "Produzindo o produto."
+
+#: app/WooOrderWorkflow/Models/Status/Model_Status_ManufactoryDef.php:38
+msgid "Shipped"
+msgstr "Enviado"
+
+#: templates/emails/plain/wo-status-changed-email.php:28
+#: templates/emails/wo-status-changed-email.php:20
+msgid "Just to let you know - your order"
+msgstr "Apenas para avisar - o status do seu pedido"
+
+#: templates/emails/plain/wo-status-changed-email.php:30
+#: templates/emails/wo-status-changed-email.php:22
+msgid "status has changed to"
+msgstr "foi alterado para"
+
+#: woocommerce-order-workflow.php:163
+msgid "Settings"
+msgstr "Configurações"
+
+#~ msgid "Order Status"
+#~ msgstr "Status do Pedido"
+
+#~ msgid "Status changed to"
+#~ msgstr "Status alterado para"
+
+#, php-format
+#~ msgid "Order status changed from %1$s to %2$s."
+#~ msgstr "Status de pedido alterado de %1$s para %2$s."
+
+#, fuzzy
+#~| msgid "Order Workflow"
+#~ msgid "Woocommerce Order Workflow"
+#~ msgstr "Workflow do Pedido"
+
+#~ msgid "Name"
+#~ msgstr "Nome"
