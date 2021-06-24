@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e6493670a5c4fed196c4fec1b46d347630021542',
+    'reference' => '4e965377d43a94b7af0877930a3cc7e1064b536c',
     'name' => 'wpplugindev/woocommerce-order-workflow',
   ),
   'versions' => 
@@ -77,7 +77,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e6493670a5c4fed196c4fec1b46d347630021542',
+      'reference' => '4e965377d43a94b7af0877930a3cc7e1064b536c',
     ),
   ),
 );

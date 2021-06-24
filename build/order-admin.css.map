@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/order-admin/index.scss"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;;AAEA;AACA;AACA,C","file":"order-admin.css","sourcesContent":["/* Woocommerce Orders table icons */\n.wo-status-icon {\n  text-indent: unset !important;\n}\n\n.wo-status-icon div {\n  padding: 4px 6px !important;\n}"],"sourceRoot":""}

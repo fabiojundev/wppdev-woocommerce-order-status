@@ -25,7 +25,7 @@ class ComposerStaticInitb7e0733e96bc25081be45b02042d70a9
     public static $prefixDirsPsr4 = array (
         'WPPluginsDev\\WooOrderWorkflow\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app/WooOrderWorkflow',
+            0 => __DIR__ . '/../..' . '/app',
         ),
         'WPPluginsDev\\' => 
         array (

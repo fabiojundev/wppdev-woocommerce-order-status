@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WPPluginsDev\\WooOrderWorkflow\\' => array($baseDir . '/app/WooOrderWorkflow'),
+    'WPPluginsDev\\WooOrderWorkflow\\' => array($baseDir . '/app'),
     'WPPluginsDev\\' => array($vendorDir . '/wpplugindev/framework'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),

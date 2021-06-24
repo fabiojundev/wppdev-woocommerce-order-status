@@ -1,1 +1,181 @@
-.woocommerce-save-button{display:none !important}.wo-wrap label{display:inline-block;margin:10px 0}.wo-flex{position:relative;display:flex;flex-wrap:wrap;margin:5px 0}.wo-flex *{margin-right:5px}.wo-row{position:relative;display:flex;flex-wrap:wrap;align-items:baseline;margin:5px 0}.wo-col{margin:0px 10px 5px 0;min-width:100px}.wo-col-2{width:48%;min-width:250px}.wo-col-3{margin:10px;max-width:27%;min-width:250px}.wo-col-3 div{left:0}.wo-right{justify-content:flex-end}.wo-row button{margin:0 5px}.wo-back{margin:0 10px}.wo-color-picker-wrap .component-color-indicator{width:62px;height:52px;margin:0;border-radius:5px}.wo-trigger-settings{border:1px solid #eee;margin:10px 0;padding:10px}.wo-trigger-header{display:flex;justify-content:space-between;margin:10px;align-items:center;font-weight:bold}.wo-media-uploader-wrap{border:1px solid;padding:10px;margin:20px 0}.wo-preview-wrap{position:relative;max-width:150px;max-height:150px;margin:20px 0}.wo-preview-wrap img{max-width:150px;max-height:150px;border:1px solid #eee}.wo-preview-wrap svg{position:absolute;z-index:99;top:-10px;right:-10px;color:red;font-size:1.5em;cursor:pointer}.wo-order-status-table{margin:5px 0}.wo-order-status-table .wo-type,.wo-order-status-table .wo-slug{display:inline-block;padding:5px 8px;margin:1px 2px;color:#ccc;background:#674399;border-radius:5px}.wo-order-status-table .wo-custom{background:#255a8c}.wo-table-action-ico{margin:0 8px;cursor:pointer;font-size:1.3em}.wo-double-col{display:flex;flex-wrap:wrap;align-items:center}.wo-double-col *{width:50%}.wo-delete{color:#b32d2e !important;text-decoration:none !important;margin-left:2px !important}.wo-feedback-msg{position:relative;z-index:9999}.wo-order-status-graph text{font-family:arial;font-size:10px}.wo-modal{min-width:80%;min-height:80%}.wo-order-link{margin:0 1px}.wo-spinner-large{position:absolute;font-size:6em;color:#255a8c;top:40%;left:40%}
+/* 
+* Woocommcerce order statuses list admin
+*/
+.woocommerce-save-button {
+  display: none !important;
+}
+
+.wo-wrap label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.wo-flex {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 0;
+}
+
+.wo-flex * {
+  margin-right: 5px;
+}
+
+.wo-row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: 5px 0;
+}
+
+.wo-col {
+  margin: 0px 10px 5px 0;
+  min-width: 100px;
+}
+
+.wo-col-2 {
+  width: 48%;
+  min-width: 250px;
+}
+
+.wo-col-3 {
+  margin: 10px;
+  max-width: 27%;
+  min-width: 250px;
+}
+
+.wo-col-3 div {
+  left: 0;
+}
+
+.wo-right {
+  justify-content: flex-end;
+}
+
+.wo-row button {
+  margin: 0 5px;
+}
+
+.wo-back {
+  margin: 0 10px;
+}
+
+.wo-color-picker-wrap .component-color-indicator {
+  width: 62px;
+  height: 52px;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.wo-trigger-settings {
+  border: 1px solid #eee;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.wo-trigger-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.wo-media-uploader-wrap {
+  border: 1px solid;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+.wo-preview-wrap {
+  position: relative;
+  max-width: 150px;
+  max-height: 150px;
+  margin: 20px 0;
+}
+
+.wo-preview-wrap img {
+  max-width: 150px;
+  max-height: 150px;
+  border: 1px solid #eee;
+}
+
+.wo-preview-wrap svg {
+  position: absolute;
+  z-index: 99;
+  top: -10px;
+  right: -10px;
+  color: red;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.wo-order-status-table {
+  margin: 5px 0;
+}
+
+.wo-order-status-table .wo-type,
+.wo-order-status-table .wo-slug {
+  display: inline-block;
+  padding: 5px 8px;
+  margin: 1px 2px;
+  color: #ccc;
+  background: #674399;
+  border-radius: 5px;
+}
+
+.wo-order-status-table .wo-custom {
+  background: #255a8c;
+}
+
+.wo-table-action-ico {
+  margin: 0 8px;
+  cursor: pointer;
+  font-size: 1.3em;
+}
+
+.wo-double-col {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.wo-double-col * {
+  width: 50%;
+}
+
+.wo-delete {
+  color: #b32d2e !important;
+  text-decoration: none !important;
+  margin-left: 2px !important;
+}
+
+.wo-feedback-msg {
+  position: relative;
+  z-index: 9999;
+}
+
+.wo-order-status-graph text {
+  font-family: arial;
+  font-size: 10px;
+}
+
+.wo-modal {
+  min-width: 80%;
+  min-height: 80%;
+}
+
+.wo-order-link {
+  margin: 0 1px;
+}
+
+.wo-spinner-large {
+  position: absolute;
+  font-size: 6em;
+  color: #255a8c;
+  top: 40%;
+  left: 40%;
+}
+
+/*# sourceMappingURL=order-status-admin.css.map*/
