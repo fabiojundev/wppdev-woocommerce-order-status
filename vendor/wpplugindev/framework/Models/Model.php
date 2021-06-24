@@ -3,7 +3,7 @@ namespace WPPluginsDev\Models;
 use WPPluginsDev\Traits\Trait_Getset;
 use DateTime;
 
-define( 'WD_TEXT_DOMAIN', 'wpplugins-dev' );
+define( 'WPPDEV_TXT_DM', 'wpplugins-dev' );
 
 /**
  * Base Model Abstract Class.

@@ -412,7 +412,7 @@ class Helper_Html {
 		if ( null === $submit_info || true === $submit_info ) {
 			$submit_info = array(
 				'id' => 'next',
-				'value' => __( 'Next', WD_TEXT_DOMAIN ),
+				'value' => __( 'Next', WPPDEV_TXT_DM ),
 				'action' => 'next',
 			);
 		}
@@ -448,9 +448,9 @@ class Helper_Html {
 		}
 
 		$args = array(
-			'saving_text' => __( 'Saving changes...', WD_TEXT_DOMAIN ),
-			'saved_text' => __( 'All changes saved.', WD_TEXT_DOMAIN ),
-			'error_text' => __( 'Could not save changes.', WD_TEXT_DOMAIN ),
+			'saving_text' => __( 'Saving changes...', WPPDEV_TXT_DM ),
+			'saved_text' => __( 'All changes saved.', WPPDEV_TXT_DM ),
+			'error_text' => __( 'Could not save changes.', WPPDEV_TXT_DM ),
 			'fields' => $fields,
 		);
 		$args = apply_filters( 'ca_helper_html_settings_footer_args', $args );
@@ -601,7 +601,7 @@ class Helper_Html {
 	public static function html_submit( $field_args = array() ) {
 		$defaults = array(
 			'id'        => 'submit',
-			'value'     => __( 'Save Changes', WD_TEXT_DOMAIN ),
+			'value'     => __( 'Save Changes', WPPDEV_TXT_DM ),
 			'class'     => 'button button-primary',
 			);
 		extract( wp_parse_args( $field_args, $defaults ) );
@@ -650,9 +650,9 @@ class Helper_Html {
 	 */
 	public static function save_text( $texts = array() ) {
 		$defaults = array(
-			'saving_text' => __( 'Saving changes...', WD_TEXT_DOMAIN ),
-			'saved_text' => __( 'All changes saved.', WD_TEXT_DOMAIN ),
-			'error_text' => __( 'Could not save changes.', WD_TEXT_DOMAIN ),
+			'saving_text' => __( 'Saving changes...', WPPDEV_TXT_DM ),
+			'saved_text' => __( 'All changes saved.', WPPDEV_TXT_DM ),
+			'error_text' => __( 'Could not save changes.', WPPDEV_TXT_DM ),
 		);
 		extract( wp_parse_args( $texts, $defaults ) );
 
@@ -1127,14 +1127,14 @@ class Helper_Html {
 			$args['value'] = isset( $bill['amount'] ) ? $bill['amount'] : 0;
 			self::html_input_text( $args );
 			$args['id'] = "wd-bill-desc-$key";
-			$args['title'] = __( 'Descrição', WD_TEXT_DOMAIN );
+			$args['title'] = __( 'Descrição', WPPDEV_TXT_DM );
 			$args['name'] = sprintf( '%s[%s][desc]', $field_args['id'], $key );
 			$args['value'] = isset( $bill['desc'] ) ? $bill['desc'] : '';
 			self::html_input_text( $args );
 			
 			$args['id'] = "wd-bill-delete-$key";
 			$args['name'] = sprintf( '%s[%s][amount]', $field_args['id'], $key );
-			$args['value'] = __( 'Excluir', WD_TEXT_DOMAIN );
+			$args['value'] = __( 'Excluir', WPPDEV_TXT_DM );
 			$args['class'] = "wd-bill-delete";
 			$args['url'] = '#';
 			self::html_input_button( $args );
@@ -1280,7 +1280,7 @@ class Helper_Html {
 				esc_attr( $id ),
 				esc_attr( $class ),
 				$data_attr,
-				__( 'Excluir', WD_TEXT_DOMAIN )
+				__( 'Excluir', WPPDEV_TXT_DM )
 				);
 		
 		if( isset( $legend ) ) {

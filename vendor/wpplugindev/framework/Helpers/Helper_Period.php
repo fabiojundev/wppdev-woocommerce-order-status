@@ -34,12 +34,12 @@ class Helper_Period {
 		return apply_filters( 
 				'wd_model_plan_get_frequency_types', 
 				array( 
-						self::FREQ_TYPE_WEEKLY => __( 'Semanal', WD_TEXT_DOMAIN ), 
-						self::FREQ_TYPE_MONTHLY => __( 'Mensal', WD_TEXT_DOMAIN ), 
-						self::FREQ_TYPE_BIMONTHLY => __( 'Bimestral', WD_TEXT_DOMAIN ), 
-						self::FREQ_TYPE_QUARTERLY => __( 'Trimestral', WD_TEXT_DOMAIN ), 
-						self::FREQ_TYPE_SEMESTERLY => __( 'Semestral', WD_TEXT_DOMAIN ), 
-						self::FREQ_TYPE_ANNUALLY => __( 'Anual', WD_TEXT_DOMAIN ) ) );
+						self::FREQ_TYPE_WEEKLY => __( 'Semanal', WPPDEV_TXT_DM ), 
+						self::FREQ_TYPE_MONTHLY => __( 'Mensal', WPPDEV_TXT_DM ), 
+						self::FREQ_TYPE_BIMONTHLY => __( 'Bimestral', WPPDEV_TXT_DM ), 
+						self::FREQ_TYPE_QUARTERLY => __( 'Trimestral', WPPDEV_TXT_DM ), 
+						self::FREQ_TYPE_SEMESTERLY => __( 'Semestral', WPPDEV_TXT_DM ), 
+						self::FREQ_TYPE_ANNUALLY => __( 'Anual', WPPDEV_TXT_DM ) ) );
 	}
 
 	/**
@@ -53,10 +53,10 @@ class Helper_Period {
 		return apply_filters( 
 				'wd_helper_period_get_period_types', 
 				array( 
-						self::PERIOD_TYPE_DAYS => __( 'dias', WD_TEXT_DOMAIN ), 
-						self::PERIOD_TYPE_WEEKS => __( 'semanas', WD_TEXT_DOMAIN ), 
-						self::PERIOD_TYPE_MONTHS => __( 'meses', WD_TEXT_DOMAIN ), 
-						self::PERIOD_TYPE_YEARS => __( 'anos', WD_TEXT_DOMAIN ) ) );
+						self::PERIOD_TYPE_DAYS => __( 'dias', WPPDEV_TXT_DM ), 
+						self::PERIOD_TYPE_WEEKS => __( 'semanas', WPPDEV_TXT_DM ), 
+						self::PERIOD_TYPE_MONTHS => __( 'meses', WPPDEV_TXT_DM ), 
+						self::PERIOD_TYPE_YEARS => __( 'anos', WPPDEV_TXT_DM ) ) );
 	}
 
 	/**

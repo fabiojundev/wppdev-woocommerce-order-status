@@ -337,11 +337,11 @@ class Model_User extends Model {
 			//verify username update
 			$old_user_data = get_userdata( $this->id );
 			if ( username_exists( $this->username ) && ! empty( $old_user_data->user_login ) && $this->username != $old_user_data->user_login ) {
-				throw new \Exception( __( 'Nome de usuário indisponível.', WD_TEXT_DOMAIN ) );
+				throw new \Exception( __( 'Nome de usuário indisponível.', WPPDEV_TXT_DM ) );
 			}
 			//verify email update
 			if ( email_exists( $this->email ) && ! empty( $old_user_data->user_email ) && $this->email != $old_user_data->user_email ) {
-				throw new \Exception( __( 'Email já está sendo utilizado.', WD_TEXT_DOMAIN ) );
+				throw new \Exception( __( 'Email já está sendo utilizado.', WPPDEV_TXT_DM ) );
 			}
 			
 			$wp_user = new \stdClass();
@@ -383,16 +383,16 @@ class Model_User extends Model {
 		$required = apply_filters( 
 				'wd_model_user_create_new_user_required', 
 				array( 
-						'name' => __( 'Nome Completo', WD_TEXT_DOMAIN ), 
-						'username' => __( 'Nome de Usuário', WD_TEXT_DOMAIN ), 
-						'email' => __( 'Email', WD_TEXT_DOMAIN ), 
-						'phone_number' => __( 'Número Telefone', WD_TEXT_DOMAIN ), 
-						'password' => __( 'Senha', WD_TEXT_DOMAIN ) // 'password2' => __( 'Confirmação de Senha', WD_TEXT_DOMAIN ),
+						'name' => __( 'Nome Completo', WPPDEV_TXT_DM ), 
+						'username' => __( 'Nome de Usuário', WPPDEV_TXT_DM ), 
+						'email' => __( 'Email', WPPDEV_TXT_DM ), 
+						'phone_number' => __( 'Número Telefone', WPPDEV_TXT_DM ), 
+						'password' => __( 'Senha', WPPDEV_TXT_DM ) // 'password2' => __( 'Confirmação de Senha', WPPDEV_TXT_DM ),
 		) );
 		
 		foreach ( $required as $field => $message ) {
 			if ( empty( $this->$field ) ) {
-				$errors->add( $field, sprintf( __( 'O campo <strong>%s</strong> é obrigatório.', WD_TEXT_DOMAIN ), $message ) );
+				$errors->add( $field, sprintf( __( 'O campo <strong>%s</strong> é obrigatório.', WPPDEV_TXT_DM ), $message ) );
 			}
 		}
 		
@@ -405,19 +405,19 @@ class Model_User extends Model {
 		}
 		
 		if ( ! validate_username( $this->username ) ) {
-			$errors->add( 'usernamenotvalid', __( 'Nome de <strong>Usuário</strong> inválido.', WD_TEXT_DOMAIN ) );
+			$errors->add( 'usernamenotvalid', __( 'Nome de <strong>Usuário</strong> inválido.', WPPDEV_TXT_DM ) );
 		}
 		
 		if ( username_exists( $this->username ) ) {
-			$errors->add( 'usernameexists', __( 'Nome de <strong>Usuário</strong> indisponível.', WD_TEXT_DOMAIN ) );
+			$errors->add( 'usernameexists', __( 'Nome de <strong>Usuário</strong> indisponível.', WPPDEV_TXT_DM ) );
 		}
 		
 		if ( ! is_email( $this->email ) ) {
-			$errors->add( 'emailnotvalid', __( '<strong>Email</strong> inválido.', WD_TEXT_DOMAIN ) );
+			$errors->add( 'emailnotvalid', __( '<strong>Email</strong> inválido.', WPPDEV_TXT_DM ) );
 		}
 		
 		if ( email_exists( $this->email ) ) {
-			$errors->add( 'emailexists', __( '<strong>Email</strong> já está sendo utilizado.', WD_TEXT_DOMAIN ) );
+			$errors->add( 'emailexists', __( '<strong>Email</strong> já está sendo utilizado.', WPPDEV_TXT_DM ) );
 		}
 		
 		$errors = apply_filters( 'wd_model_user_create_new_user_validation_errors', $errors );
@@ -696,7 +696,7 @@ class Model_User extends Model {
 		$users = array();
 		
 		if ( $return_array ) {
-			$users[ 0 ] = __( 'Selecione', WD_TEXT_DOMAIN );
+			$users[ 0 ] = __( 'Selecione', WPPDEV_TXT_DM );
 		}
 		
 		$args[ 'blog_id' ] = 0;
@@ -850,12 +850,12 @@ class Model_User extends Model {
 		$validation_errors = new \WP_Error();
 		
 		if ( ! is_email( $this->email ) ) {
-			$validation_errors->add( 'emailnotvalid', __( 'The email address is not valid, sorry.', WD_TEXT_DOMAIN ) );
+			$validation_errors->add( 'emailnotvalid', __( 'The email address is not valid, sorry.', WPPDEV_TXT_DM ) );
 		}
 		
 		if ( $this->password != $this->password2 ) {
 			Helper_Debug::log( 'no password match' );
-			$validation_errors->add( 'passmatch', __( 'Please ensure the passwords match.', WD_TEXT_DOMAIN ) );
+			$validation_errors->add( 'passmatch', __( 'Please ensure the passwords match.', WPPDEV_TXT_DM ) );
 		}
 		
 		$errors = apply_filters( 'wd_model_user_validate_user_info_errors', $validation_errors->get_error_messages() );

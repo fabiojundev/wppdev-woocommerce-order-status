@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '515a991288b2ef6f4234fb867c6d9318332cbbed',
+    'reference' => 'e6493670a5c4fed196c4fec1b46d347630021542',
     'name' => 'wpplugindev/woocommerce-order-workflow',
   ),
   'versions' => 
@@ -44,7 +44,7 @@
       array (
         0 => '9999999-dev',
       ),
-      'reference' => '2d77bab94350735a64a714ece799b610cf271fed',
+      'reference' => '4303806c35fe22e901f8270452bb3457feba753e',
     ),
     'wpplugindev/woocommerce-order-workflow' => 
     array (
@@ -53,7 +53,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '515a991288b2ef6f4234fb867c6d9318332cbbed',
+      'reference' => 'e6493670a5c4fed196c4fec1b46d347630021542',
     ),
   ),
 );

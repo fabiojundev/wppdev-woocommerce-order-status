@@ -668,8 +668,8 @@ class Model_Cpt extends Model {
 	 */
 	public static function get_comment_status_types() {
 		return apply_filters( 'wd_model_cpt_get_comment_status_types', array( 
-				self::STATUS_OPEN => __( 'Open', 'WD_TEXT_DOMAIN' ), 
-				self::STATUS_CLOSED => __( 'Closed', 'WD_TEXT_DOMAIN' ) ) );
+				self::STATUS_OPEN => __( 'Open', 'WPPDEV_TXT_DM' ), 
+				self::STATUS_CLOSED => __( 'Closed', 'WPPDEV_TXT_DM' ) ) );
 	}
 
 	/**
