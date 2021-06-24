@@ -73,7 +73,7 @@ class Controller_Admin_Status extends Controller {
 		
 		wp_set_script_translations( 
 			self::WO_ORDER_STATUS_ADMIN, 
-			WO_TEXT_DOMAIN, 
+			WPPDEV_WO_TXT_DM, 
 			\WooOrderWorkflowPlugin::instance()->dir . 'languages/'
 		);
     }

@@ -13,7 +13,7 @@ class Model_Status_CoreDef extends Model_Status {
 			'pending'    => [
 				'name' =>	_x( 'Pending payment', 'Order status', 'woocommerce' ),
 				'next_statuses' => [ 'on-hold', 'failed', 'processing' ],
-				'description' => __( 'Order received, no payment initiated. Awaiting payment (unpaid).', WO_TEXT_DOMAIN ),
+				'description' => __( 'Order received, no payment initiated. Awaiting payment (unpaid).', WPPDEV_WO_TXT_DM ),
 				'color' => '#777777',
 				'background' => '#e5e5e5',
 				'icon' => 'FaCreativeCommonsNc',
@@ -24,7 +24,7 @@ class Model_Status_CoreDef extends Model_Status {
 			'processing' => [
 				'name' => _x( 'Processing', 'Order status', 'woocommerce' ),
 				'next_statuses' => [ 'completed' ],
-				'description' => __( 'Payment received (paid) and stock has been reduced; order is awaiting fulfillment.', WO_TEXT_DOMAIN ),
+				'description' => __( 'Payment received (paid) and stock has been reduced; order is awaiting fulfillment.', WPPDEV_WO_TXT_DM ),
 				'color' => '#5b841b',
 				'background' => '#c6e1c6',
 				'icon' => 'FaEllipsisH',
@@ -35,7 +35,7 @@ class Model_Status_CoreDef extends Model_Status {
 			'on-hold' => [
 				'name' => _x( 'On hold', 'Order status', 'woocommerce' ),
 				'next_statuses' => [ 'processing', 'failed' ],
-				'description' => __( 'Awaiting payment – stock is reduced, but you need to confirm payment.', WO_TEXT_DOMAIN ),
+				'description' => __( 'Awaiting payment – stock is reduced, but you need to confirm payment.', WPPDEV_WO_TXT_DM ),
 				'color' => '#94660c',
 				'background' => '#f8dda7',
 				'icon' => 'FaRegClock',
@@ -46,7 +46,7 @@ class Model_Status_CoreDef extends Model_Status {
 			'completed' => [
 				'name' => _x( 'Completed', 'Order status', 'woocommerce' ),
 				'next_statuses' => [ 'refunded' ],
-				'description' => __( 'Order fulfilled and complete – requires no further action.', WO_TEXT_DOMAIN ),
+				'description' => __( 'Order fulfilled and complete – requires no further action.', WPPDEV_WO_TXT_DM ),
 				'color' => '#2e4453',
 				'background' => '#c8d7e1',
 				'icon' => 'FaCheck',
@@ -57,7 +57,7 @@ class Model_Status_CoreDef extends Model_Status {
 			'cancelled' => [
 				'name' =>  _x( 'Cancelled', 'Order status', 'woocommerce' ),
 				'next_statuses' => [],
-				'description' => __( 'Canceled by an admin or the customer – stock is increased, no further action required.', WO_TEXT_DOMAIN ),
+				'description' => __( 'Canceled by an admin or the customer – stock is increased, no further action required.', WPPDEV_WO_TXT_DM ),
 				'color' => '#777777',
 				'background' => '#e5e5e5',
 				'icon' => 'FaRegTimesCircle',
@@ -68,7 +68,7 @@ class Model_Status_CoreDef extends Model_Status {
 			'refunded' => [
 				'name' =>  _x( 'Refunded', 'Order status', 'woocommerce' ),
 				'next_statuses' => [],
-				'description' => __( 'Refunded by an admin – no further action required.', WO_TEXT_DOMAIN ),
+				'description' => __( 'Refunded by an admin – no further action required.', WPPDEV_WO_TXT_DM ),
 				'color' => '#777777',
 				'background' => '#e5e5e5',
 				'icon' => 'FaShare',
@@ -79,7 +79,7 @@ class Model_Status_CoreDef extends Model_Status {
 			'failed' => [
 				'name' =>  _x( 'Failed', 'Order status', 'woocommerce' ),
 				'next_statuses' => [ 'cancelled' ],
-				'description' => __( 'Payment failed or was declined (unpaid) or requires authentication (SCA). Note that this status may not show immediately and instead show as Pending until verified.', WO_TEXT_DOMAIN ),
+				'description' => __( 'Payment failed or was declined (unpaid) or requires authentication (SCA). Note that this status may not show immediately and instead show as Pending until verified.', WPPDEV_WO_TXT_DM ),
 				'color' => '#761919',
 				'background' => '#eba3a3',
 				'icon' => 'FaExclamationTriangle',

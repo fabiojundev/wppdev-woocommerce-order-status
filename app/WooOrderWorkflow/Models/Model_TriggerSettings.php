@@ -32,15 +32,15 @@ class Model_TriggerSettings extends Model {
 	public function get_trigger_types() {
 		return [
 			[
-				'label' => __( 'Select', WO_TEXT_DOMAIN ),
+				'label' => __( 'Select', WPPDEV_WO_TXT_DM ),
 				'value' => '',
 			],
 			[
-				'label' => __( 'Change Status', WO_TEXT_DOMAIN ),
+				'label' => __( 'Change Status', WPPDEV_WO_TXT_DM ),
 				'value' => self::TRIGGER_TYPE_CHANGE_STATUS,
 			],
 			[
-				'label' => __( 'Resend Invoice', WO_TEXT_DOMAIN ),
+				'label' => __( 'Resend Invoice', WPPDEV_WO_TXT_DM ),
 				'value' => self::TRIGGER_TYPE_RESEND_INVOICE,
 			],
 		];
@@ -73,7 +73,7 @@ class Model_TriggerSettings extends Model {
 		$to_status = $event->get_to_status();
 		$res = $order->update_status( 
 			$to_status->slug, 
-			__( 'Order Status automatically changed - Woocommerce Order Workflow', WO_TEXT_DOMAIN ) 
+			__( 'Order Status automatically changed - Woocommerce Order Workflow', WPPDEV_WO_TXT_DM ) 
 		);
 		Helper_Debug::debug("Order Status automatically changed - Woocommerce Order Workflow to {$to_status->slug}");
 		Helper_Debug::debug($res);

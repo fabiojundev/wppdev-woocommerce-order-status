@@ -27,12 +27,12 @@ class Model_WC_Email extends WC_Email {
 		parent::__construct();
 
 		$this->id               = 'wo_status_changed_email';
-		$this->title            = __( 'Order Workflow', WO_TEXT_DOMAIN );
+		$this->title            = __( 'Order Workflow', WPPDEV_WO_TXT_DM );
 		$this->customer_email   = false;
-		$this->description      = __( 'This email is sent when configured in Order Workflow settings.', WO_TEXT_DOMAIN );
-		$this->heading          = __( 'Your order status has changed', WO_TEXT_DOMAIN );
-		$this->subject          = __( '[{site_title}] Order #{order_number} status changed', WO_TEXT_DOMAIN );
-		$this->message          = __( 'Hi there. Your recent order on {site_title} status has changed.', WO_TEXT_DOMAIN ) . PHP_EOL;
+		$this->description      = __( 'This email is sent when configured in Order Workflow settings.', WPPDEV_WO_TXT_DM );
+		$this->heading          = __( 'Your order status has changed', WPPDEV_WO_TXT_DM );
+		$this->subject          = __( '[{site_title}] Order #{order_number} status changed', WPPDEV_WO_TXT_DM );
+		$this->message          = __( 'Hi there. Your recent order on {site_title} status has changed.', WPPDEV_WO_TXT_DM ) . PHP_EOL;
 		$this->email_type 		= 'html';
 		$this->template_html    = 'emails/wo-status-changed-email.php';
 		$this->template_plain   = 'emails/plain/wo-status-changed-email.php';
@@ -45,39 +45,39 @@ class Model_WC_Email extends WC_Email {
 	public function init_form_fields() {
 		$this->form_fields = array(
 			'enabled' => array(
-				'title'   => __( 'Enable/Disable', WO_TEXT_DOMAIN ),
+				'title'   => __( 'Enable/Disable', WPPDEV_WO_TXT_DM ),
 				'type'    => 'checkbox',
-				'label'   => __( 'Enable this email notification', WO_TEXT_DOMAIN ),
+				'label'   => __( 'Enable this email notification', WPPDEV_WO_TXT_DM ),
 				'default' => 'yes',
 			),
 			'subject' => array(
-				'title'       => __( 'Subject', WO_TEXT_DOMAIN ),
+				'title'       => __( 'Subject', WPPDEV_WO_TXT_DM ),
 				'type'        => 'text',
-				'description' => sprintf( __( 'This controls the email subject line. Leave blank to use the default subject: <code>%s</code>.', WO_TEXT_DOMAIN ), $this->subject ),
+				'description' => sprintf( __( 'This controls the email subject line. Leave blank to use the default subject: <code>%s</code>.', WPPDEV_WO_TXT_DM ), $this->subject ),
 				'placeholder' => $this->subject,
 				'default'     => '',
 				'desc_tip'    => true,
 			),
 			'heading' => array(
-				'title'       => __( 'Email Heading', WO_TEXT_DOMAIN ),
+				'title'       => __( 'Email Heading', WPPDEV_WO_TXT_DM ),
 				'type'        => 'text',
-				'description' => sprintf( __( 'This controls the main heading contained within the email. Leave blank to use the default heading: <code>%s</code>.', WO_TEXT_DOMAIN ), $this->heading ),
+				'description' => sprintf( __( 'This controls the main heading contained within the email. Leave blank to use the default heading: <code>%s</code>.', WPPDEV_WO_TXT_DM ), $this->heading ),
 				'placeholder' => $this->heading,
 				'default'     => '',
 				'desc_tip'    => true,
 			),
 			'message' => array(
-				'title'       => __( 'Email Content', WO_TEXT_DOMAIN ),
+				'title'       => __( 'Email Content', WPPDEV_WO_TXT_DM ),
 				'type'        => 'textarea',
-				'description' => sprintf( __( 'This controls the initial content of the email. Leave blank to use the default content: <code>%s</code>.', WO_TEXT_DOMAIN ), $this->message ),
+				'description' => sprintf( __( 'This controls the initial content of the email. Leave blank to use the default content: <code>%s</code>.', WPPDEV_WO_TXT_DM ), $this->message ),
 				'placeholder' => $this->message,
 				'default'     => '',
 				'desc_tip'    => true,
 			),
 			'email_type' => array(
-				'title'       => __( 'Email type', WO_TEXT_DOMAIN ),
+				'title'       => __( 'Email type', WPPDEV_WO_TXT_DM ),
 				'type'        => 'select',
-				'description' => __( 'Choose which format of email to send.', WO_TEXT_DOMAIN ),
+				'description' => __( 'Choose which format of email to send.', WPPDEV_WO_TXT_DM ),
 				'default'     => 'html',
 				'class'       => 'email_type wc-enhanced-select',
 				'options'     => $this->get_custom_email_type_options(),
@@ -96,11 +96,11 @@ class Model_WC_Email extends WC_Email {
 			return $this->get_email_type_options();
 		}
 
-		$types = array( 'plain' => __( 'Plain text', WO_TEXT_DOMAIN ) );
+		$types = array( 'plain' => __( 'Plain text', WPPDEV_WO_TXT_DM ) );
 
 		if ( class_exists( 'DOMDocument' ) ) {
-			$types['html']      = __( 'HTML', WO_TEXT_DOMAIN );
-			$types['multipart'] = __( 'Multipart', WO_TEXT_DOMAIN );
+			$types['html']      = __( 'HTML', WPPDEV_WO_TXT_DM );
+			$types['multipart'] = __( 'Multipart', WPPDEV_WO_TXT_DM );
 		}
 		else {
 			Helper_Debug::debug("DOMDOC NOT EXTS");

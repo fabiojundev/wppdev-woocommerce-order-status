@@ -25,9 +25,9 @@ echo "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n";
 echo sprintf( esc_html__( 'Hi %s,', 'woocommerce' ), esc_html( $order->get_billing_first_name() ) ) . "\n\n";
 /* translators: %s: Order number */
 printf( '%s #%s %s %s',
-	__( 'Just to let you know - your order', WO_TEXT_DOMAIN ), 
+	__( 'Just to let you know - your order', WPPDEV_WO_TXT_DM ), 
 	$order->get_order_number(),
-	__( 'status has changed to', WO_TEXT_DOMAIN ), 
+	__( 'status has changed to', WPPDEV_WO_TXT_DM ), 
 	trim( $order->get_status() )
 	);
 echo "\n\n";	

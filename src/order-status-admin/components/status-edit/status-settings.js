@@ -15,7 +15,7 @@ import * as Yup from 'yup';
 import { setLocale } from 'yup';
 
 import { ReactSelect, onSelect } from '../react-select';
-import { WO_TEXT_DOMAIN, TYPE_CORE, TYPE_CUSTOM } from "../../constants";
+import { WPPDEV_WO_TXT_DM, TYPE_CORE, TYPE_CUSTOM } from "../../constants";
 import { IconPicker, IconPickerItem } from 'react-fa-icon-picker';
 import { ColorIndicatorPicker } from '../color-picker';
 import { WoValidatedInput } from '../validated-input';
@@ -120,12 +120,12 @@ export default function StatusSettings(props) {
 
     return (
         <PanelBody className="wo-tab-settings">
-            <h2>{__('Status Settings', WO_TEXT_DOMAIN)}</h2>
+            <h2>{__('Status Settings', WPPDEV_WO_TXT_DM)}</h2>
             <hr />
             <div className={"wo-settings-wrap"}>
                 <WoValidatedInput
                     name="name"
-                    label={__('Name', WO_TEXT_DOMAIN)}
+                    label={__('Name', WPPDEV_WO_TXT_DM)}
                     Component={TextControl}
                     value={name}
                     onBlur={handleBlur}
@@ -135,7 +135,7 @@ export default function StatusSettings(props) {
                 />
                 <WoValidatedInput
                     name="slug"
-                    label={__('Slug (without prefix wc-)', WO_TEXT_DOMAIN)}
+                    label={__('Slug (without prefix wc-)', WPPDEV_WO_TXT_DM)}
                     Component={TextControl}
                     value={slug}
                     onBlur={handleBlur}
@@ -146,13 +146,13 @@ export default function StatusSettings(props) {
                 />
                 <TextareaControl
                     name="description"
-                    label={__('Description', WO_TEXT_DOMAIN)}
+                    label={__('Description', WPPDEV_WO_TXT_DM)}
                     value={description}
                     onChange={handleChange('description')}
                 />
                 {/* <WoValidatedInput
                     name="days_estimation"
-                    label={__('Time estimative in this Status (days)', WO_TEXT_DOMAIN)}
+                    label={__('Time estimative in this Status (days)', WPPDEV_WO_TXT_DM)}
                     Component={TextControl}
                     type={"number"}
                     value={days_estimation}
@@ -166,7 +166,7 @@ export default function StatusSettings(props) {
                 <div className={"wo-row"}>
                     <div className={"wo-col"}>
                         <ColorIndicatorPicker
-                            label={__('Color', WO_TEXT_DOMAIN)}
+                            label={__('Color', WPPDEV_WO_TXT_DM)}
                             color={background}
                             className={"wo-status-color-picker"}
                             handleColorChange={handleColorChange}
@@ -176,7 +176,7 @@ export default function StatusSettings(props) {
                         />
                     </div>
                     <div className={"wo-col"}>
-                        <label>{__('Icon', WO_TEXT_DOMAIN)}</label>
+                        <label>{__('Icon', WPPDEV_WO_TXT_DM)}</label>
                         {disabled ? 
                             <IconPickerItem 
                                 icon={icon}
@@ -194,24 +194,24 @@ export default function StatusSettings(props) {
                 </div>
                 <ToggleControl
                     name="enabled_in_bulk_actions"
-                    label={__('Enable in Orders Bulk Actions', WO_TEXT_DOMAIN)}
+                    label={__('Enable in Orders Bulk Actions', WPPDEV_WO_TXT_DM)}
                     checked={enabled_in_bulk_actions}
                     onChange={handleChange('enabled_in_bulk_actions')}
                     disabled={disabled}
                 />
                 <ToggleControl
                     name="enabled_in_reports"
-                    label={__('Enable in Reports', WO_TEXT_DOMAIN)}
+                    label={__('Enable in Reports', WPPDEV_WO_TXT_DM)}
                     checked={enabled_in_reports}
                     onChange={handleChange('enabled_in_reports')}
                     disabled={disabled}
                 />
-                <h2>{__('Next Statuses to show in Order Actions', WO_TEXT_DOMAIN)}</h2>
+                <h2>{__('Next Statuses to show in Order Actions', WPPDEV_WO_TXT_DM)}</h2>
                 <ReactSelect
                     isMulti
                     id="next_statuses"
                     name="next_statuses"
-                    label={__('Next Statuses in Actions', WO_TEXT_DOMAIN)}
+                    label={__('Next Statuses in Actions', WPPDEV_WO_TXT_DM)}
                     value={next_statuses}
                     options={orderStatuses}
                     onChange={onSelect('next_statuses', handleChange)}

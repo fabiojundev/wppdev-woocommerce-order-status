@@ -2,7 +2,7 @@
  * Order Status default property values.
  */
 
-import { WO_TEXT_DOMAIN, TYPE_CORE, TYPE_CUSTOM } from "../../constants";
+import { WPPDEV_WO_TXT_DM, TYPE_CORE, TYPE_CUSTOM } from "../../constants";
 const DefaultStatus = {
     name: '',
     slug: '',

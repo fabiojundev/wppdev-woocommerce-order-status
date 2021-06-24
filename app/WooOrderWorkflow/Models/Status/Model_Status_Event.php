@@ -60,7 +60,7 @@ class Model_Status_Event extends Model_Cpt {
 			$event = new static();
 			$event->name = sprintf( '[%s] %s %s > %s', 
 				$order_id, 
-				__( 'Order Status Change from', WO_TEXT_DOMAIN ), 
+				__( 'Order Status Change from', WPPDEV_WO_TXT_DM ), 
 				$from_status->slug, 
 				$to_status->slug 
 			);
@@ -88,7 +88,7 @@ class Model_Status_Event extends Model_Cpt {
 	 */
 	public static function get_types() {
 		return [
-			self::TYPE_STATUS_CHANGE => __( 'Order Status Change', WO_TEXT_DOMAIN ),
+			self::TYPE_STATUS_CHANGE => __( 'Order Status Change', WPPDEV_WO_TXT_DM ),
 		];
 	}
 	

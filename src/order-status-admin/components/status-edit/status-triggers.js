@@ -5,7 +5,7 @@ import {
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { useState } from "@wordpress/element";
-import { WO_TEXT_DOMAIN } from '../../constants/index.js';
+import { WPPDEV_WO_TXT_DM } from '../../constants/index.js';
 
 import TriggerSettings from './status-trigger-settings';
 import StatusSave from './status-save';
@@ -54,7 +54,7 @@ export default function StatusTriggers(props) {
                 isSecondary
                 onClick={addTrigger}
             >
-                {__('Add Automation', WO_TEXT_DOMAIN)}
+                {__('Add Automation', WPPDEV_WO_TXT_DM)}
             </Button>
             {values && values.map( function(trigger, index) {
                 console.log( index, trigger);

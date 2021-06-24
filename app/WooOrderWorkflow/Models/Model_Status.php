@@ -86,8 +86,8 @@ class Model_Status extends Model_Cpt {
 	 */
 	public static function get_types() {
 		return [
-			self::TYPE_CORE => __( 'Core', WO_TEXT_DOMAIN ),
-			self::TYPE_CORE => __( 'Custom', WO_TEXT_DOMAIN ),
+			self::TYPE_CORE => __( 'Core', WPPDEV_WO_TXT_DM ),
+			self::TYPE_CORE => __( 'Custom', WPPDEV_WO_TXT_DM ),
 		];
 	}
 	
@@ -430,7 +430,7 @@ class Model_Status extends Model_Cpt {
 			'label_count' => _n_noop( 
 				$this->name . ' <span class="count">(%s)</span>', 
 				$this->name . ' <span class="count">(%s)</span>', 
-				WO_TEXT_DOMAIN
+				WPPDEV_WO_TXT_DM
 			),
     	];
 		register_post_status( $this->get_slug( true ), $config );

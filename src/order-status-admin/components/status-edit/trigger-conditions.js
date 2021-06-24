@@ -9,7 +9,7 @@ import {
 import { useState } from "@wordpress/element";
 import { __ } from '@wordpress/i18n';
 
-import { WO_TEXT_DOMAIN } from '../../constants/index.js';
+import { WPPDEV_WO_TXT_DM } from '../../constants/index.js';
 import { ReactSelect, onSelect } from '../react-select';
 
 const TriggerConditions = (props) => {
@@ -24,12 +24,12 @@ const TriggerConditions = (props) => {
     const [updatedConditions, setUpdatedConditions] = useState(conditions);
 
     const labels = {
-        enabled: __('Enable Condition', WO_TEXT_DOMAIN),
-        always: __('Select below', WO_TEXT_DOMAIN),
-        if_overdue: __('If overdue time estimative - ', WO_TEXT_DOMAIN)
+        enabled: __('Enable Condition', WPPDEV_WO_TXT_DM),
+        always: __('Select below', WPPDEV_WO_TXT_DM),
+        if_overdue: __('If overdue time estimative - ', WPPDEV_WO_TXT_DM)
                         + ( status?.days_estimation ? status.days_estimation 
-                        + __(' days', WO_TEXT_DOMAIN) : '' ),
-        from_statuses: __('If Changed From Status', WO_TEXT_DOMAIN),
+                        + __(' days', WPPDEV_WO_TXT_DM) : '' ),
+        from_statuses: __('If Changed From Status', WPPDEV_WO_TXT_DM),
     };
 
     const getDesc = ({if_overdue, from_statuses}) => {
@@ -41,7 +41,7 @@ const TriggerConditions = (props) => {
             const from = from_statuses.map( id => {
                 return orderStatuses.find( st => st.value == id )?.label;
             })
-            .join( __(' OR ', WO_TEXT_DOMAIN) );
+            .join( __(' OR ', WPPDEV_WO_TXT_DM) );
 
             res = [
                 ...res,
@@ -49,7 +49,7 @@ const TriggerConditions = (props) => {
             ];
         }
         if( res.length > 1 ) {
-            res = res.join( __(' AND ', WO_TEXT_DOMAIN) )
+            res = res.join( __(' AND ', WPPDEV_WO_TXT_DM) )
         }
         else {
             res = res.join('');
@@ -90,7 +90,7 @@ const TriggerConditions = (props) => {
 
     return (
         <div className="wo-status-conditions">
-            <h2>{title ? title : __('Conditions', WO_TEXT_DOMAIN)}</h2>
+            <h2>{title ? title : __('Conditions', WPPDEV_WO_TXT_DM)}</h2>
             <ToggleControl
                 id="enabled"
                 name="enabled"
@@ -108,7 +108,7 @@ const TriggerConditions = (props) => {
                         checked={if_overdue}
                         onChange={onChange('if_overdue')}
                     /> */}
-                    <label>{__('If Changed From Status', WO_TEXT_DOMAIN)}</label>
+                    <label>{__('If Changed From Status', WPPDEV_WO_TXT_DM)}</label>
                     <ReactSelect
                         isMulti
                         id="from_statuses"

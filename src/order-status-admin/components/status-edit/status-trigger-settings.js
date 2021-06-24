@@ -9,7 +9,7 @@ import {
 import { __ } from '@wordpress/i18n';
 import { useState } from "@wordpress/element";
 
-import { WO_TEXT_DOMAIN } from '../../constants/index.js';
+import { WPPDEV_WO_TXT_DM } from '../../constants/index.js';
 import { ReactSelect, onSelect } from '../react-select';
 import TriggerConditions from './trigger-conditions';
 
@@ -17,15 +17,15 @@ const TRIGGER_TYPE_CHANGE_STATUS = 'trigger_change_status';
 const TRIGGER_TYPE_RESEND_INVOICE = 'trigger_resend_invoice';
 const triggerTypes = [
     {
-        'label': __('Select', WO_TEXT_DOMAIN),
+        'label': __('Select', WPPDEV_WO_TXT_DM),
         'value': '',
     },
     {
-        'label': __('Change Status', WO_TEXT_DOMAIN),
+        'label': __('Change Status', WPPDEV_WO_TXT_DM),
         'value': TRIGGER_TYPE_CHANGE_STATUS,
     },
     {
-        'label': __('Resend Invoice', WO_TEXT_DOMAIN),
+        'label': __('Resend Invoice', WPPDEV_WO_TXT_DM),
         'value': TRIGGER_TYPE_RESEND_INVOICE,
     },
 ];
@@ -90,12 +90,12 @@ const TriggerSettings = (props) => {
 
         return (
             <div className="wo-trigger-change-status">
-                <label>{__('To Order Status', WO_TEXT_DOMAIN)}</label>
+                <label>{__('To Order Status', WPPDEV_WO_TXT_DM)}</label>
                 <br />
                 <ReactSelect
                     id="to_status"
                     name="to_status"
-                    label={__('To Status', WO_TEXT_DOMAIN)}
+                    label={__('To Status', WPPDEV_WO_TXT_DM)}
                     value={to_status}
                     options={orderStatuses}
                     onChange={onSelect('to_status', onChange)}
@@ -113,18 +113,18 @@ const TriggerSettings = (props) => {
 
     const TriggerResendInvoice = () => {
         const options = [
-            { label: __('Client', WO_TEXT_DOMAIN), value: 'client' },
-            { label: __('Admin', WO_TEXT_DOMAIN), value: 'admin' },
-            { label: __('Admin and Client', WO_TEXT_DOMAIN), value: 'both' },
+            { label: __('Client', WPPDEV_WO_TXT_DM), value: 'client' },
+            { label: __('Admin', WPPDEV_WO_TXT_DM), value: 'admin' },
+            { label: __('Admin and Client', WPPDEV_WO_TXT_DM), value: 'both' },
         ];
         return (
             <div className="wo-trigger-resend-invoice">
-                <label>{__('Resend Invoice To', WO_TEXT_DOMAIN)}</label>
+                <label>{__('Resend Invoice To', WPPDEV_WO_TXT_DM)}</label>
                 <br />
                 <ReactSelect
                     id="to_emails"
                     name="to_emails"
-                    label={__('To Status', WO_TEXT_DOMAIN)}
+                    label={__('To Status', WPPDEV_WO_TXT_DM)}
                     options={options}
                     value={to_emails}
                     onChange={onSelect('to_emails', onChange)}
@@ -132,7 +132,7 @@ const TriggerSettings = (props) => {
                 {/* <TextControl
                     id="cc_emails"
                     name="cc_emails"
-                    label={__('Send an email copy to', WO_TEXT_DOMAIN)}
+                    label={__('Send an email copy to', WPPDEV_WO_TXT_DM)}
                     value={cc_emails}
                     onChange={onChange('cc_emails')}
                 /> */}
@@ -152,19 +152,19 @@ const TriggerSettings = (props) => {
             <div
                 className="wo-trigger-header"
             >
-                {__('Automation', WO_TEXT_DOMAIN) + " - " + id}
+                {__('Automation', WPPDEV_WO_TXT_DM) + " - " + id}
                 <Button
                     isDestructive
                     onClick={onDelete}
                 >
-                    {__('Delete', WO_TEXT_DOMAIN)}
+                    {__('Delete', WPPDEV_WO_TXT_DM)}
                 </Button>
             </div>
             <div className="wo-trigger-wrap">
                 <ReactSelect
                     id="trigger_type"
                     name="trigger_type"
-                    label={__('Execute Action', WO_TEXT_DOMAIN)}
+                    label={__('Execute Action', WPPDEV_WO_TXT_DM)}
                     value={trigger_type ? trigger_type : ''}
                     options={triggerTypes}
                     onChange={onTriggerTypeChange}

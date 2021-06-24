@@ -1,4 +1,4 @@
-export const WO_TEXT_DOMAIN = 'woocommerce-order-workflow';
+export const WPPDEV_WO_TXT_DM = 'woocommerce-order-workflow';
 
 //tab names
 export const TAB_SETTINGS = 'settings';

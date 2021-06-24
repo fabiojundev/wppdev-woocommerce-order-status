@@ -6,7 +6,7 @@
 import React from "react";
 import { useState } from "@wordpress/element";
 import { __ } from "@wordpress/i18n";
-import { WO_TEXT_DOMAIN } from "../constants";
+import { WPPDEV_WO_TXT_DM } from "../constants";
 
 import {
   Modal,
@@ -76,7 +76,7 @@ export const ColorIndicatorPicker = props => {
     isDismissible: true,
     shouldCloseOnEsc: true,
     shouldCloseOnClickOutside: true,
-    title: __('Click to pick color', WO_TEXT_DOMAIN),
+    title: __('Click to pick color', WPPDEV_WO_TXT_DM),
   };
 
   const onClick = () => {

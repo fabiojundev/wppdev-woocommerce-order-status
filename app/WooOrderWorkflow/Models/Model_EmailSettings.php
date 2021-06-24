@@ -27,7 +27,7 @@ class Model_EmailSettings extends Model {
 	protected $attachments;
 
 	public function __construct() {
-		$this->message = __( 'Your Order status has changed', WO_TEXT_DOMAIN );
+		$this->message = __( 'Your Order status has changed', WPPDEV_WO_TXT_DM );
 	}
 
 	/**

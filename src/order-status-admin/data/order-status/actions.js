@@ -9,7 +9,7 @@ import TYPES from "./action-types";
 import STORE_KEY from "./constants";
 
 import { __ } from '@wordpress/i18n';
-import { WO_TEXT_DOMAIN } from '../../constants/index.js';
+import { WPPDEV_WO_TXT_DM } from '../../constants/index.js';
 
 const {
   UPDATE,
@@ -35,7 +35,7 @@ export function* createStatus(status) {
   // console.log("Create Status", status, getResourcePath(status.id));
   const name = 'create-status';
   let ret = {
-    message: __('Create Order Status Failed', WO_TEXT_DOMAIN),
+    message: __('Create Order Status Failed', WPPDEV_WO_TXT_DM),
   };
 
   try {
@@ -74,7 +74,7 @@ export function* updateStatus(status) {
   // console.log("update Status", status, getResourcePath(status.id));
   const name = 'update-status-' + status.id;
   let ret = {
-    message: __('Update Order Status Failed', WO_TEXT_DOMAIN),
+    message: __('Update Order Status Failed', WPPDEV_WO_TXT_DM),
   };
 
   try {
@@ -116,7 +116,7 @@ export function* deleteStatus(statusId, reassign) {
   // console.log("Delete Status", status, getResourcePath(status.id));
   const name = 'delete-status-' + status.id;
   let ret = {
-    message: __('Delete Order Status Failed', WO_TEXT_DOMAIN),
+    message: __('Delete Order Status Failed', WPPDEV_WO_TXT_DM),
   };
 
   try {
@@ -164,11 +164,11 @@ export const loadStatuses = statuses => {
 export function* loadProducts(status) {
   const name = 'load-products-status-' + status.id;
   let ret = {
-    message: __('Load Order Status Products Failed', WO_TEXT_DOMAIN),
+    message: __('Load Order Status Products Failed', WPPDEV_WO_TXT_DM),
   };
 
   if (status.products) {
-    return requestFinished(name, __('Already loaded', WO_TEXT_DOMAIN));
+    return requestFinished(name, __('Already loaded', WPPDEV_WO_TXT_DM));
   }
 
   try {
@@ -208,7 +208,7 @@ export function* loadProducts(status) {
 export function* importStatuses(importId) {
   const name = 'import-statuses';
   let ret = {
-    message: __('Import Order Statuses Failed', WO_TEXT_DOMAIN),
+    message: __('Import Order Statuses Failed', WPPDEV_WO_TXT_DM),
   };
 
   try {

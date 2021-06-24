@@ -33,26 +33,26 @@
  *          along with this program; If not, see https://www.gnu.org/licenses/gpl-2.0.html.
  */
 
-define( 'WO_TEXT_DOMAIN', 'woocommerce-order-workflow' );
+define( 'WPPDEV_WO_TXT_DM', 'woocommerce-order-workflow' );
 
 /**
  * Plugin name dir constant.
  *
  */
-define( 'WO_PLUGIN_NAME', dirname( plugin_basename( __FILE__ ) ) );
+define( 'WPPDEV_WO_PLUGIN_NAME', dirname( plugin_basename( __FILE__ ) ) );
 
 /**
  * Plugin version
  *
  */
-define( 'WO_PLUGIN_VERSION', '1.0' );
+define( 'WPPDEV_WO_PLUGIN_VERSION', '1.0' );
 
 /**
  * Plugin base dir
  */
-define( 'WO_PLUGIN_BASE_DIR', dirname( __FILE__ ) );
+define( 'WPPDEV_WO_PLUGIN_BASE_DIR', dirname( __FILE__ ) );
 
-include WO_PLUGIN_BASE_DIR . '/vendor/autoload.php';
+include WPPDEV_WO_PLUGIN_BASE_DIR . '/vendor/autoload.php';
 
 use WPPluginsDev\Traits\Trait_Hook;
 use WPPluginsDev\Helpers\Helper_Debug;
@@ -125,8 +125,8 @@ class WooOrderWorkflowPlugin {
 
 
 		/** Setup plugin properties */
-		$this->name = WO_PLUGIN_NAME;
-		$this->version = WO_PLUGIN_VERSION;
+		$this->name = WPPDEV_WO_PLUGIN_NAME;
+		$this->version = WPPDEV_WO_PLUGIN_VERSION;
 		$this->file = __FILE__;
 		$this->dir = plugin_dir_path( __FILE__ );
 		$this->url = plugin_dir_url( __FILE__ );
@@ -160,7 +160,7 @@ class WooOrderWorkflowPlugin {
 		$links[] = esc_html( sprintf( 
 			'<a href="%s">%s</a>', 
 			Controller_Plugin::get_admin_settings_url(),
-			__( 'Settings', WO_TEXT_DOMAIN ),
+			__( 'Settings', WPPDEV_WO_TXT_DM ),
 		) );
 		return $links;
 	}
@@ -224,9 +224,9 @@ class WooOrderWorkflowPlugin {
 	 */
 	public function plugin_localization() {
 	    load_plugin_textdomain(
-	        WO_TEXT_DOMAIN,
+	        WPPDEV_WO_TXT_DM,
 	        false,
-	        WO_PLUGIN_NAME . '/languages'
+	        WPPDEV_WO_PLUGIN_NAME . '/languages'
 	    );
 	}
 

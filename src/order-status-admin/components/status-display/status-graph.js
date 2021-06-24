@@ -6,7 +6,7 @@ import React from 'react';
 import { useState } from "@wordpress/element";
 import { Graphviz } from 'graphviz-react';
 import { __ } from '@wordpress/i18n';
-import { WO_TEXT_DOMAIN } from '../../constants/index.js';
+import { WPPDEV_WO_TXT_DM } from '../../constants/index.js';
 
 import {
     Modal,
@@ -24,7 +24,7 @@ export default function StatusGraph({ statuses }) {
         isDismissible: true,
         shouldCloseOnEsc: true,
         shouldCloseOnClickOutside: true,
-        title: __('Order Statuses Overview', WO_TEXT_DOMAIN),
+        title: __('Order Statuses Overview', WPPDEV_WO_TXT_DM),
     };
 
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
@@ -65,7 +65,7 @@ export default function StatusGraph({ statuses }) {
                 isSecondary
                 onClick={() => openModal()}
             >
-                {__('Overview', WO_TEXT_DOMAIN)}
+                {__('Overview', WPPDEV_WO_TXT_DM)}
             </Button>
             { isOpen &&
                 <Modal 

@@ -107,8 +107,8 @@ class Controller_Plugin extends Controller {
 		$pages = array(
 			'wo-status' => array(
 				'parent_slug' => self::MENU_SLUG,
-				'page_title' => __( 'Order Workflow', WO_TEXT_DOMAIN ),
-				'menu_title' => __( 'Order Workflow', WO_TEXT_DOMAIN ),
+				'page_title' => __( 'Order Workflow', WPPDEV_WO_TXT_DM ),
+				'menu_title' => __( 'Order Workflow', WPPDEV_WO_TXT_DM ),
 				'menu_slug' => self::MENU_STATUS,
 				'capability' => $this->capability,
 				'function' => array( $this->controllers['Controller_Admin_Status'], 'page_admin' ),

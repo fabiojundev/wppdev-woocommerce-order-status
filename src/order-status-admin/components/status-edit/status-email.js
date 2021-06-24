@@ -25,7 +25,7 @@ import StatusSave from './status-save';
 import DefaultStatus from './status';
 import TriggerConditions from './trigger-conditions';
 import MediaUpload from '../media-upload';
-import { WO_TEXT_DOMAIN } from '../../constants/index.js';
+import { WPPDEV_WO_TXT_DM } from '../../constants/index.js';
 
 export default function EmailSettings(props) {
 
@@ -74,7 +74,7 @@ export default function EmailSettings(props) {
                         return originalValue ? originalValue.split(/[\s,]+/) : [];
                     })
                     .of(Yup.string()
-                        .email(({ value }) => value + __('is not a valid email', WO_TEXT_DOMAIN))
+                        .email(({ value }) => value + __('is not a valid email', WPPDEV_WO_TXT_DM))
                     )
                     .required().min(1),
                 otherwise: Yup.string(),
@@ -114,12 +114,12 @@ export default function EmailSettings(props) {
 
     return (
         <PanelBody className="wo-tab-email-settings">
-            <h2>{__('Send Notification Email', WO_TEXT_DOMAIN)}</h2>
+            <h2>{__('Send Notification Email', WPPDEV_WO_TXT_DM)}</h2>
             <hr />
             <ToggleControl
                 id="enabled"
                 name="enabled"
-                label={__('Enabled', WO_TEXT_DOMAIN)}
+                label={__('Enabled', WPPDEV_WO_TXT_DM)}
                 checked={enabled}
                 onChange={handleChange('enabled')}
             />
@@ -128,7 +128,7 @@ export default function EmailSettings(props) {
                     <WoValidatedInput
                         Component={TextControl}
                         name="recipients"
-                        label={__('Email Recipients (use ", " to separe)', WO_TEXT_DOMAIN)}
+                        label={__('Email Recipients (use ", " to separe)', WPPDEV_WO_TXT_DM)}
                         value={recipients}
                         onBlur={handleBlur}
                         handleChange={handleChange}
@@ -138,7 +138,7 @@ export default function EmailSettings(props) {
                     <WoValidatedInput
                         Component={TextControl}
                         name="subject"
-                        label={__('Subject', WO_TEXT_DOMAIN)}
+                        label={__('Subject', WPPDEV_WO_TXT_DM)}
                         value={subject}
                         onBlur={handleBlur}
                         handleChange={handleChange}
@@ -148,7 +148,7 @@ export default function EmailSettings(props) {
                     <TextareaControl
                         id="message"
                         name="message"
-                        label={__('Message', WO_TEXT_DOMAIN)}
+                        label={__('Message', WPPDEV_WO_TXT_DM)}
                         value={message}
                         onChange={handleChange('message')}
                     />
@@ -156,14 +156,14 @@ export default function EmailSettings(props) {
                         attachmentField="attachments"
                         attachments={attachments}
                         previewType="img"
-                        title={__('Add E-mail Attachments', WO_TEXT_DOMAIN)}
+                        title={__('Add E-mail Attachments', WPPDEV_WO_TXT_DM)}
                         onChange={handleChange}
-                        buttonText={__('Add attachments', WO_TEXT_DOMAIN)}
+                        buttonText={__('Add attachments', WPPDEV_WO_TXT_DM)}
                     />
                     <ToggleControl
                         id="include_order"
                         name="include_order"
-                        label={__('Include Order details', WO_TEXT_DOMAIN)}
+                        label={__('Include Order details', WPPDEV_WO_TXT_DM)}
                         checked={include_order}
                         onChange={handleChange('include_order')}
                     />
@@ -172,7 +172,7 @@ export default function EmailSettings(props) {
                         conditions={conditions}
                         orderStatuses={orderStatuses}
                         onChange={handleChange}
-                        title={__('Conditions to Send', WO_TEXT_DOMAIN)}
+                        title={__('Conditions to Send', WPPDEV_WO_TXT_DM)}
                         status={status}
                     />
                 </React.Fragment>
