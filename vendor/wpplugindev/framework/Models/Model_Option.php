@@ -13,7 +13,7 @@ class Model_Option extends Model {
 	 *
 	 * @since 1.0.0
 	 *       
-	 * @staticvar CA_Model_Option
+	 * @staticvar Model_Option
 	 */
 	public static $instance;
 	
@@ -42,11 +42,9 @@ class Model_Option extends Model {
 		
 		if ( $cache ) {
 			$model = $cache;
-			// 			CA_Helper_Debug::log("---------from cache, $class");
 		}
 		else {
 			$model->before_load();
-			// 			CA_Helper_Debug::log("---------from DB, $class");
 			$settings = get_option( $class );
 			
 			$fields = $model->get_object_vars();
@@ -67,7 +65,7 @@ class Model_Option extends Model {
 		wp_cache_set( $class, $model, 'Model_Option' );
 		
 		return apply_filters(
-				'wd_model_option_load',
+				'wppdev_model_option_load',
 				$model,
 				$class
 				);
@@ -83,7 +81,7 @@ class Model_Option extends Model {
 	 */
 	public static function get_setting( $field ) {
 		$value = null;
-		$model = Factory::load( static::class );
+		$model = static::load();
 		if ( property_exists( $model, $field ) ) {
 			$value = $model->$field;
 		}
@@ -127,12 +125,12 @@ class Model_Option extends Model {
 	 * @since 1.0.0
 	 */
 	public function delete() {
-		do_action( 'wd_model_option_delete_before', $this );
+		do_action( 'wppdev_model_option_delete_before', $this );
 		
 		$class = get_class( $this );
 		delete_option( $class );
 		
-		do_action( 'wd_model_option_delete_after', $this );
+		do_action( 'wppdev_model_option_delete_after', $this );
 	}
 
 	/**
@@ -146,7 +144,7 @@ class Model_Option extends Model {
 	public function check_object_lock() {
 		$locked = false;
 		$time = $this->lock;
-		$time_window = apply_filters( 'wd_model_option_check_object_lock_window', 150 );
+		$time_window = apply_filters( 'wppdev_model_option_check_object_lock_window', 150 );
 		
 		if ( $time && $time > time() - $time_window ) {
 			$locked = true;

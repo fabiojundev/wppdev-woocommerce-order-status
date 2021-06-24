@@ -30,9 +30,9 @@ class View {
 		 * Actions to execute when constructing the parent View.
 		 *
 		 * @since 1.0.0
-		 * @param object $this The CA_View object.
+		 * @param object $this The View object.
 		 */
-		do_action( 'wd_view_construct', $this );
+		do_action( 'wppdev_view_construct', $this );
 	}
 
 	/**
@@ -44,7 +44,7 @@ class View {
 	 */
 	public function to_html() {
 		/* This function is implemented different in each child class. */
-		return apply_filters( 'wd_view_to_html', '' );
+		return apply_filters( 'wppdev_view_to_html', '' );
 	}
 
 	public function to_clean_html() {
@@ -59,7 +59,7 @@ class View {
 	public function render() {
 		$html = $this->to_html();
 		
-		echo apply_filters( 'wd_view_render', $html );
+		echo apply_filters( 'wppdev_view_render', $html );
 	}
 
 	public function loading_element() {

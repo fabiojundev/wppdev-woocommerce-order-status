@@ -306,13 +306,9 @@ class Model_Cpt extends Model {
 			
 			if ( $cache ) {
 				$model = $cache;
-//				Helper_Debug::debug("---------from cache, $class");
-//				Helper_Debug::debug( $model);
 			}
 			else {
 				$model->before_load();
-//				Helper_Debug::debug("---------from DB, $class");
-//				Helper_Debug::debug( $model);
 
 				$post = get_post( $model_id );
 				
@@ -352,7 +348,7 @@ class Model_Cpt extends Model {
 		$model->after_load();
 		
 		return apply_filters(
-				'wd_model_cpt_load',
+				'wppdev_model_cpt_load',
 				$model,
 				$class,
 				$model_id
@@ -582,7 +578,7 @@ class Model_Cpt extends Model {
 	 * @since 1.0.0
 	 */
 	public static function get_register_post_type_args() {
-		return apply_filters( 'wd_model_cpt_register_post_type_args', array() );
+		return apply_filters( 'wppdev_model_cpt_register_post_type_args', array() );
 	}
 
 	/**
@@ -597,16 +593,16 @@ class Model_Cpt extends Model {
 	public function check_object_lock() {
 		$locked = false;
 		
-		if ( $this->is_valid() && $lock = get_post_meta( $this->id, '_wd_edit_lock', true ) ) {
+		if ( $this->is_valid() && $lock = get_post_meta( $this->id, '_wppdev_edit_lock', true ) ) {
 			
 			$time = $lock;
-			$time_window = apply_filters( 'wd_model_cpt_check_object_lock_window', 150 );
+			$time_window = apply_filters( 'wppdev_model_cpt_check_object_lock_window', 150 );
 			if ( $time && $time > time() - $time_window ) {
 				$locked = true;
 			}
 		}
 		
-		return apply_filters( 'wd_model_cpt_check_object_lock', $locked, $this );
+		return apply_filters( 'wppdev_model_cpt_check_object_lock', $locked, $this );
 	}
 
 	/**
@@ -622,11 +618,11 @@ class Model_Cpt extends Model {
 		$lock = false;
 		
 		if ( $this->is_valid() ) {
-			$lock = apply_filters( 'wd_model_cpt_set_object_lock', time() );
-			update_post_meta( $this->id, '_wd_edit_lock', $lock );
+			$lock = apply_filters( 'wppdev_model_cpt_set_object_lock', time() );
+			update_post_meta( $this->id, '_wppdev_edit_lock', $lock );
 		}
 		
-		return apply_filters( 'wd_model_cpt_set_object_lock', $lock, $this );
+		return apply_filters( 'wppdev_model_cpt_set_object_lock', $lock, $this );
 	}
 
 	/**
@@ -636,10 +632,10 @@ class Model_Cpt extends Model {
 	 */
 	public function delete_object_lock() {
 		if ( $this->is_valid() ) {
-			update_post_meta( $this->id, '_wd_edit_lock', '' );
+			update_post_meta( $this->id, '_wppdev_edit_lock', '' );
 		}
 		
-		do_action( 'wd_model_cpt_delete_object_lock', $this );
+		do_action( 'wppdev_model_cpt_delete_object_lock', $this );
 	}
 
 	/**
@@ -656,7 +652,7 @@ class Model_Cpt extends Model {
 			$valid = true;
 		}
 		
-		return apply_filters( 'wd_model_cpt_is_valid', $valid, $this );
+		return apply_filters( 'wppdev_model_cpt_is_valid', $valid, $this );
 	}
 
 	/**
@@ -667,7 +663,7 @@ class Model_Cpt extends Model {
 	 * @return array String The comment status types available.
 	 */
 	public static function get_comment_status_types() {
-		return apply_filters( 'wd_model_cpt_get_comment_status_types', array( 
+		return apply_filters( 'wppdev_model_cpt_get_comment_status_types', array( 
 				self::STATUS_OPEN => __( 'Open', 'WPPDEV_TXT_DM' ), 
 				self::STATUS_CLOSED => __( 'Closed', 'WPPDEV_TXT_DM' ) ) );
 	}
@@ -698,7 +694,7 @@ class Model_Cpt extends Model {
 			$url = Helper_Util::get_ssl_url( $url );
 		}
 
-		return apply_filters( 'wd_model_cpt_get_url', $url );
+		return apply_filters( 'wppdev_model_cpt_get_url', $url );
 	}
 
 	public function get_user() {
@@ -799,6 +795,6 @@ class Model_Cpt extends Model {
 			}
 		}
 		
-		do_action( 'wd_model_cpt__set_after', $property, $value, $this );
+		do_action( 'wppdev_model_cpt__set_after', $property, $value, $this );
 	}
 }

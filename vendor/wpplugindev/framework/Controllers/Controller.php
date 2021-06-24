@@ -27,8 +27,8 @@ class Controller {
 		 * Actions to execute when constructing the parent controller.
 		 *
 		 * @since 1.0.0
-		 * @param object $this The CA_Controller object.
+		 * @param object $this The Controller object.
 		 */
-		do_action( 'wd_controller_construct', $this );		
+		do_action( 'wppdev_controller_construct', $this );		
 	}	
 }

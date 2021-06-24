@@ -61,7 +61,7 @@ class Model_Cookie extends Model {
 		$model->after_load();
 		
 		return apply_filters(
-				'wd_model_cookie_load',
+				'wppdev_model_cookie_load',
 				$model,
 				$class
 				);
@@ -130,11 +130,11 @@ class Model_Cookie extends Model {
 	 * @since 1.0.0
 	 */
 	public function delete() {
-		do_action( 'wd_model_cookie_delete_before', $this );
+		do_action( 'wppdev_model_cookie_delete_before', $this );
 
 		$class = get_class( $this );
 		setcookie( $class, '', time() - 3600 );
 
-		do_action( 'wd_model_cookie_delete_after', $this );
+		do_action( 'wppdev_model_cookie_delete_after', $this );
 	}
 }

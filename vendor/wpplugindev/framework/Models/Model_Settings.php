@@ -22,7 +22,7 @@ class Model_Settings extends Model_Option {
 	 * 
 	 * @var int
 	 */
-	protected $id = 'wd_plugin_settings';
+	protected $id = 'wppdev_plugin_settings';
 
 	/**
 	 * Model name.

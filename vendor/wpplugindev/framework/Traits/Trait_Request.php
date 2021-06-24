@@ -123,7 +123,7 @@ trait Trait_Request {
 	 */
 	public function validate_required( $fields, $request_method = 'POST', $not_empty = true ) {
 		$validated = Helper_Util::validate_required( $fields, $request_method, $not_empty );
-		return apply_filters( 'wd_trait_request_validate_required', $validated, $fields, $this );
+		return apply_filters( 'wppdev_trait_request_validate_required', $validated, $fields, $this );
 	}
 	
 	/**
@@ -138,7 +138,7 @@ trait Trait_Request {
 	 */
 	public function validate_req_fields( $required, $request_fields = array(), $not_empty = true ) {		
 		$validated = Helper_Util::validate_req_fields( $required, $request_fields, $not_empty );
-		return apply_filters( 'wd_trait_request_validate_req_fields', $validated, $fields, $this );
+		return apply_filters( 'wppdev_trait_request_validate_req_fields', $validated, $fields, $this );
 	}
 
 	/**
@@ -148,7 +148,7 @@ trait Trait_Request {
 	 */
 	public function validate_required_params( $fields, $not_empty = true ) {
 		$validated = Helper_Util::validate_required( $fields, 'GET', $not_empty );
-		return apply_filters( 'wd_trait_request_validate_required_params', $validated, $fields, $this );
+		return apply_filters( 'wppdev_trait_request_validate_required_params', $validated, $fields, $this );
 	}
 	
 	/**

@@ -57,7 +57,7 @@ trait Trait_Hook {
 	 * @param string $method The name of the method to be called.
 	 * @param int $priority optional. Used to specify the order in which the functions associated with a particular action are executed (default: 10). Lower numbers correspond with earlier execution, and functions with the same priority are executed in the order in which they were added to the action.
 	 * @param int $accepted_args optional. The number of arguments the function accept (default 1).
-	 * @return CA_Trait_Hook The Object.
+	 * @return Trait_Hook The Object.
 	 */
 	protected function add_action( $tag, $method = '', $priority = 10, $accepted_args = 1 ) {
 		$args = func_get_args();
@@ -77,7 +77,7 @@ trait Trait_Hook {
 	 * @param string $method The name of the method to be called.
 	 * @param int $priority optional. Used to specify the order in which the functions associated with a particular action are executed (default: 10). Lower numbers correspond with earlier execution, and functions with the same priority are executed in the order in which they were added to the action.
 	 * @param int $accepted_args optional. The number of arguments the function accept (default 1).
-	 * @return CA_Trait_Hook
+	 * @return Trait_Hook
 	 */
 	protected function remove_action( $tag, $method = '', $priority = 10, $accepted_args = 1 ) {
 		remove_action( $tag, array( $this, ! empty( $method ) ? $method : $tag ), $priority, $accepted_args );
@@ -93,7 +93,7 @@ trait Trait_Hook {
 	 * @param string $method Optional. The name of the method to be called. If the name of the method is not provided, tag name will be used as method name.
 	 * @param boolean $private Optional. Determines if we should register hook for logged in users.
 	 * @param boolean $public Optional. Determines if we should register hook for not logged in users.
-	 * @return CA_Trait_Hook
+	 * @return Trait_Hook
 	 */
 	protected function add_ajax_action( $tag, $method = '', $private = true, $public = false ) {
 		if ( $private ) {
@@ -116,7 +116,7 @@ trait Trait_Hook {
 	 * @param string $method Optional. The name of the method to be called. If the name of the method is not provided, tag name will be used as method name.
 	 * @param boolean $private Optional. Determines if we should register hook for logged in users.
 	 * @param boolean $public Optional. Determines if we should register hook for not logged in users.
-	 * @return CA_Trait_Hook
+	 * @return Trait_Hook
 	 */
 	protected function remove_ajax_action( $tag, $method = '', $private = true, $public = false ) {
 		if ( $private ) {
@@ -141,7 +141,7 @@ trait Trait_Hook {
 	 * @param string $method The name of the method to be called when the filter is applied.
 	 * @param int $priority optional. Used to specify the order in which the functions associated with a particular action are executed (default: 10). Lower numbers correspond with earlier execution, and functions with the same priority are executed in the order in which they were added to the action.
 	 * @param int $accepted_args optional. The number of arguments the function accept (default 1).
-	 * @return CA_Trait_Hook
+	 * @return Trait_Hook
 	 */
 	protected function add_filter( $tag, $method = '', $priority = 10, $accepted_args = 1 ) {
 		$args = func_get_args();
@@ -163,7 +163,7 @@ trait Trait_Hook {
 	 * @param string $method The name of the method to remove.
 	 * @param int $priority optional. The priority of the function (default: 10).
 	 * @param int $accepted_args optional. The number of arguments the function accepts (default: 1).
-	 * @return CA_Trait_Hook
+	 * @return Trait_Hook
 	 */
 	protected function remove_filter( $tag, $method = '', $priority = 10, $accepted_args = 1 ) {
 		remove_filter( $tag, array( $this, ! empty( $method ) ? $method : $tag ), $priority, $accepted_args );
@@ -179,7 +179,7 @@ trait Trait_Hook {
 	 *      
 	 * @param string $tag The name of the shortcode to hook the $method to.
 	 * @param string $method The name of the method to be called when the shortcode is applied.
-	 * @return CA_Trait_Hook
+	 * @return Trait_Hook
 	 */
 	protected function add_shortcode( $tag, $method = '' ) {
 		$args = func_get_args();
@@ -198,7 +198,7 @@ trait Trait_Hook {
 	 *      
 	 * @access protected
 	 * @param string $tag The name of the shortcode to remove the $method to.
-	 * @return CA_Trait_Hook
+	 * @return Trait_Hook
 	 */
 	protected function remove_shortcode( $tag ) {
 		remove_shortcode( $tag );

@@ -1,7 +1,6 @@
 <?php
 namespace WPPluginsDev\Models;
 use WPPluginsDev\Models\Model;
-use WPPluginsDev\Factory;
 use WPPluginsDev\Helpers\Helper_Debug;
 
 class Model_Cart extends Model {

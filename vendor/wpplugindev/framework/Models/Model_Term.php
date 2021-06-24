@@ -123,7 +123,6 @@ class Model_Term extends Model {
 			wp_cache_set( $this->term_id, $this, $class );
 		}
 		else {
-			Debug::log($this);
 			throw new Exception( "Cant save term without taxonomy");
 		}
 		
@@ -135,8 +134,8 @@ class Model_Term extends Model {
 	 *
 	 * @since 1.0.0
 	 * 
-	 * @param CA_Model_Cpt The custom post type instance to get terms from.
-	 * @return CA_Model_Term[] The found terms.
+	 * @param Model_Cpt The custom post type instance to get terms from.
+	 * @return Model_Term[] The found terms.
 	 */
 	public static function get_cpt_terms( $cpt ) {
 		$terms = array();
@@ -169,7 +168,7 @@ class Model_Term extends Model {
 	 *
 	 * @since 1.0.0
 	 * 
-	 * @param CA_Model_Cpt The custom post type instance to save terms from.
+	 * @param Model_Cpt The custom post type instance to save terms from.
 	 */
 	public static function save_cpt_terms( $cpt ) {
 		$taxonomies = $cpt->get_taxonomies();
@@ -189,7 +188,7 @@ class Model_Term extends Model {
 						$term = self::load( $exist['term_id'] );
 					}
 					else {
-						$term = CA_Factory::create( 'CA_Model_Term' );
+						$term = new static();
 						$term->name = $term_name;
 						$term->taxonomy = $taxonomy;
 						$term->save();
@@ -206,7 +205,7 @@ class Model_Term extends Model {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param CA_Model_Cpt The custom post type instance to delete terms from.
+	 * @param Model_Cpt The custom post type instance to delete terms from.
 	 */
 	public static function delete_cpt_terms( $cpt ) {
 		$taxonomies = $cpt->get_taxonomies();
@@ -238,15 +237,13 @@ class Model_Term extends Model {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param CA_Model_Cpt The custom post type instance to get terms from.
+	 * @param Model_Cpt The custom post type instance to get terms from.
 	 */
 	public static function load( $term_id = 0 ) {
 		
 		$term = null;
 		if( ! empty( $term_id ) ) {
 			$wp_term = get_term( $term_id );
-// 			Debug::log("load term_id: $term_id");
-// 			Debug::log($wp_term);
 			
 			$term = self::load_from_wp( $wp_term );
 		}
@@ -270,7 +267,7 @@ class Model_Term extends Model {
 				'fields' => 'all'
 		);
 		
-		$term = CA_Factory::create( self::class );
+		$term = new static()
 		$wp_term = get_terms( $args );
 		
 		if( ! empty( $wp_term[0] ) ) {
@@ -297,7 +294,7 @@ class Model_Term extends Model {
 				'fields' => 'all'
 		);
 		
-		$term = CA_Factory::create( self::class );
+		$term = new static();
 		
 		$wp_term = get_terms( $args );
 		
@@ -353,7 +350,7 @@ class Model_Term extends Model {
 	 * @param string $taxonomy the term taxonomy to load.
 	 * @param bool $only_names The flag to only return term names.
 	 * @param array $args The arguments to config query.
-	 * @return string[]|CA_Model_Term[] The found terms.
+	 * @return string[]| Model_Term[] The found terms.
 	 */
 	public static function get_taxonomy_terms( $taxonomy, $only_names = true, $args = null ) {
 		$terms = array();
@@ -391,13 +388,13 @@ class Model_Term extends Model {
 	 * @since 1.0.0
 	 *
 	 * @param WP_Term $wp_term The WP term to load from.
-	 * @return CA_Model_Term The loaded term.
+	 * @return Model_Term The loaded term.
 	 */
 	public static function load_from_wp( $wp_term ) {
 		
 		$term = new self();
 		$term->term_id = $wp_term->term_id;
-		$term->object_id = $cpt->id;
+		// $term->object_id = $wp_term->object_id; //TODO verify if this field exists.
 		$term->name = $wp_term->name;
 		$term->slug = $wp_term->slug;
 		$term->taxonomy = $wp_term->taxonomy;

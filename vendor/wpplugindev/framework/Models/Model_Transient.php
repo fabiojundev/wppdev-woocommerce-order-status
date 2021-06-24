@@ -19,7 +19,7 @@ class Model_Transient extends Model {
 	/**
 	 * Load Transient object.
 	 *
-	 * CA_Transient objects are singletons.
+	 * Transient objects are singletons.
 	 *
 	 * @since 1.0.0
 	 *
@@ -32,15 +32,12 @@ class Model_Transient extends Model {
 		$class = get_class( $model );
 		
 		if ( empty( $class::$instance ) ) {
-			// 			$cache = wp_cache_get( $class, 'Transient' );
 			
 			if ( $cache ) {
 				$model = $cache;
-				// 				CA_Helper_Debug::log("---------from cache, $class");
 			}
 			else {
 				$model->before_load();
-				// 				CA_Helper_Debug::log("---------from DB, $class");
 				$settings = get_transient( $class );
 				$fields = $model->get_object_vars();
 				
@@ -63,11 +60,10 @@ class Model_Transient extends Model {
 		}
 		else {
 			$model = $class::$instance;
-			// 			CA_Helper_Debug::log("---------from singleton, $class");
 		}
 		
 		return apply_filters(
-				'wd_model_transient_load',
+				'wppdev_model_transient_load',
 				$model,
 				$class
 				);
@@ -108,11 +104,11 @@ class Model_Transient extends Model {
 	 * @since 1.0.0
 	 */
 	public function delete() {
-		do_action( 'wd_model_transient_delete_before', $this );
+		do_action( 'wppdev_model_transient_delete_before', $this );
 		
 		$class = get_class( $this );
 		delete_transient( $class );
 		
-		do_action( 'wd_model_transient_delete_after', $this );
+		do_action( 'wppdev_model_transient_delete_after', $this );
 	}
 }

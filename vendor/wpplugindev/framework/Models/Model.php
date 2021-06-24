@@ -42,7 +42,7 @@ class Model {
 	public $ignore_fields = array( 'actions', 'filters', 'ignore_fields', 'protected_fields' );
 
 	/**
-	 * CA_Model Contstuctor
+	 * Model Contstuctor
 	 *
 	 * @since 1.0.0
 	 */
@@ -52,9 +52,9 @@ class Model {
 		 * Actions to execute when constructing the parent Model.
 		 *
 		 * @since 1.0.0
-		 * @param object $this The CA_Model object.
+		 * @param object $this The Model object.
 		 */
-		do_action( 'wd_model_construct', $this );
+		do_action( 'wppdev_model_construct', $this );
 	}
 
 	/**
@@ -79,7 +79,7 @@ class Model {
 	 * @since 1.0.0
 	 */
 	public function before_save() {
-		do_action( 'wd_model_before_save', $this );
+		do_action( 'wppdev_model_before_save', $this );
 	}
 
 	/**
@@ -97,7 +97,7 @@ class Model {
 	 * @since 1.0.0
 	 */
 	public function after_save() {
-		do_action( 'wd_model_after_save', $this );
+		do_action( 'wppdev_model_after_save', $this );
 	}
 
 	/**
@@ -106,7 +106,7 @@ class Model {
 	 * @since 1.0.0
 	 */
 	public function before_load() {
-		do_action( 'wd_model_before_load', $this );
+		do_action( 'wppdev_model_before_load', $this );
 	}
 
 	/**
@@ -124,7 +124,7 @@ class Model {
 	 * @since 1.0.0
 	 */
 	public function after_load() {
-		do_action( 'wd_model_after_load', $this );
+		do_action( 'wppdev_model_after_load', $this );
 	}
 
 	/**
@@ -133,7 +133,7 @@ class Model {
 	 * @since 1.0.0
 	 */
 	public function before_delete() {
-		do_action( 'wd_model_before_delete', $this );
+		do_action( 'wppdev_model_before_delete', $this );
 	}
 
 	/**
@@ -150,7 +150,7 @@ class Model {
 	 * @since 1.0.0
 	 */
 	public function after_delete() {
-		do_action( 'wd_model_after_delete', $this );
+		do_action( 'wppdev_model_after_delete', $this );
 	}
 
 	/**
@@ -219,7 +219,7 @@ class Model {
 			$valid = $date;
 		}
 		
-		return apply_filters( 'wd_model_validate_date', $valid, $date, $format, $this );
+		return apply_filters( 'wppdev_model_validate_date', $valid, $date, $format, $this );
 	}
 
 	/**
@@ -232,7 +232,7 @@ class Model {
 	public function validate_bool( $value ) {
 		$value = filter_var( $value, FILTER_VALIDATE_BOOLEAN );
 		
-		return apply_filters( 'wd_model_validate_bool', $value, $this );
+		return apply_filters( 'wppdev_model_validate_bool', $value, $this );
 	}
 
 	/**
@@ -246,7 +246,7 @@ class Model {
 	public function validate_min( $value, $min ) {
 		$valid = intval( ( $value > $min ) ? $value : $min );
 		
-		return apply_filters( 'wd_model_validate_min', $valid, $value, $min, $this );
+		return apply_filters( 'wppdev_model_validate_min', $valid, $value, $min, $this );
 	}
 
 	/**
@@ -258,7 +258,7 @@ class Model {
 	 * @param int $default_period_unit Number of periods (e.g. number of days)
 	 * @param string $default_period_type (e.g. days, weeks, years)
 	 */
-	public function validate_period( $period, $default_period_unit = 0, $default_period_type = CA_Helper_Period::PERIOD_TYPE_DAYS ) {
+	public function validate_period( $period, $default_period_unit = 0, $default_period_type = Helper_Period::PERIOD_TYPE_DAYS ) {
 		$default = array( 'period_unit' => $default_period_unit, 'period_type' => $default_period_type );
 		
 		if ( !empty( $period[ 'period_unit' ] ) && !empty( $period[ 'period_type' ] ) ) {
@@ -269,7 +269,7 @@ class Model {
 			$period = $default;
 		}
 		
-		return apply_filters( 'wd_model_validate_period', $period, $this );
+		return apply_filters( 'wppdev_model_validate_period', $period, $this );
 	}
 
 	/**
@@ -287,7 +287,7 @@ class Model {
 			$period_unit = $default;
 		}
 		
-		return apply_filters( 'wd_model_validate_period_unit', $period_unit, $this );
+		return apply_filters( 'wppdev_model_validate_period_unit', $period_unit, $this );
 	}
 
 	/**
@@ -298,12 +298,12 @@ class Model {
 	 * @param string $period_type The period type to validate.
 	 * @param int $default The default value when not validated. Default to days.
 	 */
-	public function validate_period_type( $period_type, $default = CA_Helper_Period::PERIOD_TYPE_DAYS ) {
-		if ( !in_array( $period_type, CA_Helper_Period::get_periods() ) ) {
+	public function validate_period_type( $period_type, $default = Helper_Period::PERIOD_TYPE_DAYS ) {
+		if ( !in_array( $period_type, Helper_Period::get_periods() ) ) {
 			$period_type = $default;
 		}
 		
-		return apply_filters( 'wd_model_validate_period_type', $period_type, $this );
+		return apply_filters( 'wppdev_model_validate_period_type', $period_type, $this );
 	}
 
 	public function validate_url( $url ) {
@@ -311,6 +311,6 @@ class Model {
 	}
 	
 	public function get_formatted_price( $value ) {
-		return CA_Helper_Util::format_price( $value, CA_Clube_Assinaturas::get_settings()->currency_symbol );
+		return Helper_Util::format_price( $value );
 	}
 }

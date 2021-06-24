@@ -1,6 +1,5 @@
 <?php
 namespace WPPluginsDev\Models;
-use WPPluginsDev\Factory;
 use WPPluginsDev\Helpers\Helper_Debug;
 /**
  * User Model Class.
@@ -13,7 +12,7 @@ class Model_User extends Model {
 	 * 
 	 * @since 1.0.0
 	 */
-	const WP_USER_META_PREFIX = 'wd_';
+	const WP_USER_META_PREFIX = 'wppdev_';
 	
 	/**
 	 * The user ID.
@@ -197,10 +196,10 @@ class Model_User extends Model {
 		$wp_users = $wp_user_search->get_results();
 		
 		foreach ( $wp_users as $user_id ) {
-			$users[] = Factory::load( static::class, $user_id );
+			$users[] = static::load( $user_id );
 		}
 		
-		return apply_filters( 'wd_model_user_get_users', $users );
+		return apply_filters( 'wppdev_model_user_get_users', $users );
 	}
 
 	/**
@@ -213,12 +212,12 @@ class Model_User extends Model {
 	 */
 	public static function get_query_args( $args = null ) {
 		$defaults = apply_filters( 
-				'wd_model_user_get_query_args_defaults', 
+				'wppdev_model_user_get_query_args_defaults', 
 				array( 'order' => 'DESC', 'orderby' => 'ID', 'number' => 10, 'offset' => 0, 'fields' => 'ID' ) );
 		
 		$args = wp_parse_args( $args, $defaults );
 		
-		return apply_filters( 'wd_model_user_get_query_args', $args, $defaults );
+		return apply_filters( 'wppdev_model_user_get_query_args', $args, $defaults );
 	}
 
 	/**
@@ -229,7 +228,7 @@ class Model_User extends Model {
 	 * @return User The current user.
 	 */
 	public static function get_current_user() {
-		return Factory::load( static::class, get_current_user_id() );
+		return static::load( get_current_user_id() );
 	}
 	
 	/**
@@ -251,11 +250,9 @@ class Model_User extends Model {
 		
 		if ( $cache ) {
 			$model = $cache;
-			// 			CA_Helper_Debug::log("---------from cache, $class");
 		}
 		else {
 			$wp_user = new \WP_User( $user_id );
-			// 			CA_Helper_Debug::log("---------from DB, $class");
 			if ( ! empty( $wp_user->ID ) ) {
 				
 				$model->before_load();
@@ -292,7 +289,7 @@ class Model_User extends Model {
 		}
 		
 		return apply_filters(
-				'wd_model_user_load',
+				'wppdev_model_user_load',
 				$model,
 				$class,
 				$user_id
@@ -304,7 +301,7 @@ class Model_User extends Model {
 	 *
 	 * Create a new user is id is empty.
 	 * Save user fields to wp_user and wp_usermeta tables.
-	 * Set cache for further use in Factory::load.
+	 * Set cache for further use in load method.
 	 * The usermeta are prefixed with 'WP_USER_META_PREFIX'.
 	 *
 	 * @since 1.0.0
@@ -312,7 +309,6 @@ class Model_User extends Model {
 	 * @return User The saved user object.
 	 */
 	public function save() {
-		Helper_Debug::log( "saving-----------" );
 		
 		$this->before_save();
 		
@@ -364,7 +360,7 @@ class Model_User extends Model {
 		
 		$this->after_save();
 		
-		return apply_filters( 'wd_model_user_save', $this );
+		return apply_filters( 'wppdev_model_user_save', $this );
 	}
 
 	/**
@@ -381,7 +377,7 @@ class Model_User extends Model {
 		$this->create_username();
 
 		$required = apply_filters( 
-				'wd_model_user_create_new_user_required', 
+				'wppdev_model_user_create_new_user_required', 
 				array( 
 						'name' => __( 'Nome Completo', WPPDEV_TXT_DM ), 
 						'username' => __( 'Nome de Usuário', WPPDEV_TXT_DM ), 
@@ -396,7 +392,6 @@ class Model_User extends Model {
 			}
 		}
 		
-		Helper_Debug::log( $this->name );
 		if( strpos( $this->name, ' '  ) !== false ) {
 			$name = explode( ' ', $this->name );
 			$this->first_name = $name[0];
@@ -420,7 +415,7 @@ class Model_User extends Model {
 			$errors->add( 'emailexists', __( '<strong>Email</strong> já está sendo utilizado.', WPPDEV_TXT_DM ) );
 		}
 		
-		$errors = apply_filters( 'wd_model_user_create_new_user_validation_errors', $errors );
+		$errors = apply_filters( 'wppdev_model_user_create_new_user_validation_errors', $errors );
 		
 		$result = apply_filters( 
 				'wpmu_validate_user_signup', 
@@ -447,7 +442,7 @@ class Model_User extends Model {
 			$this->id = $user_id;
 		}
 		
-		do_action( 'wd_model_user_create_new_user', $this );
+		do_action( 'wppdev_model_user_create_new_user', $this );
 	}
 
 	/**
@@ -485,7 +480,7 @@ class Model_User extends Model {
 			throw new \Exception( $wp_user->get_error_message() );
 		}
 		else {
-			$user = Factory::load( static::class, $wp_user->ID );
+			$user = static::load( $wp_user->ID );
 			$user->signon();
 		}
 		
@@ -543,7 +538,7 @@ class Model_User extends Model {
 		$user = null;
 		$wp_user = get_user_by( 'email', $email );
 		if( $wp_user && $wp_user->ID ) {
-			$user = Factory::load( static::class, $wp_user->ID );
+			$user = static::load( $wp_user->ID );
 		}
 		return $user;
 	}
@@ -558,7 +553,7 @@ class Model_User extends Model {
 	public static function is_logged_user() {
 		$logged = is_user_logged_in();
 		
-		return apply_filters( 'wd_model_user_is_logged_user', $logged );
+		return apply_filters( 'wppdev_model_user_is_logged_user', $logged );
 	}
 
 	/**
@@ -575,7 +570,7 @@ class Model_User extends Model {
 	public static function is_admin_user( $user_id = false, $capability = 'manage_options' ) {
 		$is_admin = false;
 				
-		$capability = apply_filters( 'wd_model_user_is_admin_user_capability', $capability );
+		$capability = apply_filters( 'wppdev_model_user_is_admin_user_capability', $capability );
 		
 		if ( ! empty( $capability ) ) {
 			$wp_user = null;
@@ -595,7 +590,7 @@ class Model_User extends Model {
 			}
 		}
 		
-		return apply_filters( 'wd_model_user_is_admin_user', $is_admin, $user_id );
+		return apply_filters( 'wppdev_model_user_is_admin_user', $is_admin, $user_id );
 	}
 
 	/**
@@ -636,7 +631,7 @@ class Model_User extends Model {
 				$admins[ $user->ID ] = $user->user_email;
 			}
 		}
-		return apply_filters( 'wd_model_user_get_admin_user_emails', $admins );
+		return apply_filters( 'wppdev_model_user_get_admin_user_emails', $admins );
 	}
 
 	/**
@@ -654,7 +649,6 @@ class Model_User extends Model {
 		$wp_user_search = new \WP_User_Query( $args );
 		$users = $wp_user_search->get_results();
 
-// 		Helper_Debug::log($users);
 		if ( ! empty( $users ) ) {
 			if ( $return_all ) {
 				$admins = array();
@@ -679,9 +673,9 @@ class Model_User extends Model {
 	 * @return string The username.
 	 */
 	public static function get_username( $user_id ) {
-		$user = Factory::load( static::class, $user_id );
+		$user = static::load( $user_id );
 		
-		return apply_filters( 'wd_model_user_get_username', $user->username, $user_id );
+		return apply_filters( 'wppdev_model_user_get_username', $user->username, $user_id );
 	}
 
 	/**
@@ -710,7 +704,7 @@ class Model_User extends Model {
 			$users[ $user->ID ] = $user->user_login;
 		}
 		
-		return apply_filters( 'wd_model_user_get_users_usernames', $users );
+		return apply_filters( 'wppdev_model_user_get_users_usernames', $users );
 	}
 
 	/**
@@ -809,19 +803,6 @@ class Model_User extends Model {
 			}
 		}
 
-		$fields[ 'nonce' ] = wp_create_nonce( 'wp_rest' );
-		$actions = array( 
-				CA_Controller_Rest_Subscription::LOGIN_ACTION, 
-				CA_Controller_Rest_Subscription::LOGOUT_ACTION, 
-				CA_Controller_Rest_Subscription::SIGNUP_ACTION, 
-				CA_Controller_Rest_Subscription::SUBSCRIBE_ACTION,
-				CA_Controller_Rest_Subscription::PAY_ACTION,
-				CA_Controller_Rest_Subscription::FORGOT_PWD_ACTION, 
-				CA_Controller_Rest_Subscription::SHIPPING_ACTION );
-		foreach ( $actions as $action ) {
-			$fields[ 'nonces' ][ $action ] = wp_create_nonce( $action );
-		}
-
 		return $fields;
 	}
 
@@ -835,7 +816,7 @@ class Model_User extends Model {
 	public function is_valid() {
 		$valid = ( $this->id > 0 );
 		
-		return apply_filters( 'wd_model_user_is_valid', $valid, $this );
+		return apply_filters( 'wppdev_model_user_is_valid', $valid, $this );
 	}
 
 	/**
@@ -854,11 +835,10 @@ class Model_User extends Model {
 		}
 		
 		if ( $this->password != $this->password2 ) {
-			Helper_Debug::log( 'no password match' );
 			$validation_errors->add( 'passmatch', __( 'Please ensure the passwords match.', WPPDEV_TXT_DM ) );
 		}
 		
-		$errors = apply_filters( 'wd_model_user_validate_user_info_errors', $validation_errors->get_error_messages() );
+		$errors = apply_filters( 'wppdev_model_user_validate_user_info_errors', $validation_errors->get_error_messages() );
 		
 		if ( ! empty( $errors ) ) {
 			throw new \Exception( implode( '<br/>', $errors ) );
@@ -1021,7 +1001,7 @@ class Model_User extends Model {
 			}
 		}
 		
-		do_action( 'wd_model_user__set_after', $property, $value, $this );
+		do_action( 'wppdev_model_user__set_after', $property, $value, $this );
 	}
 
 	/**
@@ -1044,6 +1024,6 @@ class Model_User extends Model {
 			}
 		}
 		
-		return apply_filters( 'wd_model_user__get', $value, $property, $this );
+		return apply_filters( 'wppdev_model_user__get', $value, $property, $this );
 	}
 }

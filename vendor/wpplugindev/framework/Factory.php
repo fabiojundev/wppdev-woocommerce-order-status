@@ -32,7 +32,7 @@ class Factory {
 			throw new \Exception( 'Class ' . $class . ' does not exist.' );
 		}
 
-		return apply_filters( 'wd_factory_create_'. $class, $obj );
+		return apply_filters( 'wppdev_factory_create_'. $class, $obj );
 	}
 
 	/**
@@ -75,7 +75,7 @@ class Factory {
 		}
 
 		return apply_filters(
-			'wd_factory_load_' . $class,
+			'wppdev_factory_load_' . $class,
 			$model,
 			$model_id
 		);
@@ -99,11 +99,9 @@ class Factory {
 
 		if ( $cache ) {
 			$model = $cache;
-// 			CA_Helper_Debug::log("---------from cache, $class");
 		}
 		else {
  			$model->before_load();
-// 			CA_Helper_Debug::log("---------from DB, $class");
 			$settings = get_option( $class );
 
 			$fields = $model->get_object_vars();
@@ -124,7 +122,7 @@ class Factory {
 		wp_cache_set( $class, $model, 'Model_Option' );
 
 		return apply_filters(
-			'wd_factory_load_from_wp_option',
+			'wppdev_factory_load_from_wp_option',
 			$model,
 			$class
 		);
@@ -133,7 +131,7 @@ class Factory {
 	/**
 	 * Load Transient object.
 	 *
-	 * CA_Transient objects are singletons.
+	 * Transient objects are singletons.
 	 *
 	 * @since 1.0.0
 	 *
@@ -149,11 +147,9 @@ class Factory {
 
 			if ( $cache ) {
 				$model = $cache;
-// 				CA_Helper_Debug::log("---------from cache, $class");
 			}
 			else {
 				$model->before_load();
-// 				CA_Helper_Debug::log("---------from DB, $class");
 				$settings = get_transient( $class );
 				$fields = $model->get_object_vars();
 
@@ -176,11 +172,10 @@ class Factory {
 		}
 		else {
 			$model = $class::$instance;
-// 			CA_Helper_Debug::log("---------from singleton, $class");
 		}
 
 		return apply_filters(
-			'wd_factory_load_from_wp_transient',
+			'wppdev_factory_load_from_wp_transient',
 			$model,
 			$class
 		);
@@ -208,11 +203,9 @@ class Factory {
 
 			if ( $cache ) {
 				$model = $cache;
-// 				CA_Helper_Debug::log("---------from cache, $class");
 			}
 			else {
 				$model->before_load();
-// 				CA_Helper_Debug::log("---------from DB, $class");
 				$post = get_post( $model_id );
 
 				if ( ! empty( $post ) && $model->get_post_type() == $post->post_type ) {
@@ -251,7 +244,7 @@ class Factory {
 		$model->after_load();
 		
 		return apply_filters(
-			'wd_factory_load_from_cpt',
+			'wppdev_factory_load_from_cpt',
 			$model,
 			$class,
 			$model_id
@@ -276,11 +269,9 @@ class Factory {
 
 		if ( $cache ) {
 			$model = $cache;
-// 			CA_Helper_Debug::log("---------from cache, $class");
 		}
 		else {
 			$wp_user = new \WP_User( $user_id, $name );
-// 			CA_Helper_Debug::log("---------from DB, $class");
 			if ( ! empty( $wp_user->ID ) ) {
 				
 				$model->before_load();
@@ -317,7 +308,7 @@ class Factory {
 		}
 
 		return apply_filters(
-			'wd_factory_load_from_wp_user',
+			'wppdev_factory_load_from_wp_user',
 			$model,
 			$class,
 			$user_id
@@ -360,7 +351,7 @@ class Factory {
 		$model->after_load();
 		
 		return apply_filters(
-				'wd_factory_load_from_cookie',
+				'wppdev_factory_load_from_cookie',
 				$model,
 				$class
 		);

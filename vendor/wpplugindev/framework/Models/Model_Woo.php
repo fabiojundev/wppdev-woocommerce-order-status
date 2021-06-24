@@ -1,7 +1,6 @@
 <?php
 namespace WPPluginsDev\Models;
 use WPPluginsDev\Models\Model_Cpt;
-use WPPluginsDev\Factory;
 use WPPluginsDev\Helpers\Helper_Debug;
 
 class Model_Woo extends Model_Cpt {
@@ -103,8 +102,6 @@ class Model_Woo extends Model_Cpt {
 	    $query = new \WP_Query( $args );
 	    $query->set( 'lang', null );
 	    
-// 	    Helper_Debug::log($args);
-	    
 	    $items = $query->get_posts();
 	    $products = array();
 	    
@@ -150,7 +147,7 @@ class Model_Woo extends Model_Cpt {
 		$product = null;
 		
 		if( ! empty( $item[0] ) ) {
-			$product = Factory::load( 'Model_Woo', $item[0]->ID );
+			$product = static::load( $item[0]->ID );
 		}
 		
 		return apply_filters( 'model_woo_load_by_sku', $product , $sku );

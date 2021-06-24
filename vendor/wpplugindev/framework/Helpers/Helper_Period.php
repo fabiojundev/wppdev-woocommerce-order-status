@@ -32,7 +32,7 @@ class Helper_Period {
 	 */
 	public static function get_frequency_types() {
 		return apply_filters( 
-				'wd_model_plan_get_frequency_types', 
+				'wppdev_model_plan_get_frequency_types', 
 				array( 
 						self::FREQ_TYPE_WEEKLY => __( 'Semanal', WPPDEV_TXT_DM ), 
 						self::FREQ_TYPE_MONTHLY => __( 'Mensal', WPPDEV_TXT_DM ), 
@@ -51,7 +51,7 @@ class Helper_Period {
 	 */
 	public static function get_period_types() {
 		return apply_filters( 
-				'wd_helper_period_get_period_types', 
+				'wppdev_helper_period_get_period_types', 
 				array( 
 						self::PERIOD_TYPE_DAYS => __( 'dias', WPPDEV_TXT_DM ), 
 						self::PERIOD_TYPE_WEEKS => __( 'semanas', WPPDEV_TXT_DM ), 
@@ -144,7 +144,7 @@ class Helper_Period {
 			throw new \Exception( 'error add_interval' );
 		}
 
-		return apply_filters( 'wd_helper_period_add_interval', $end_dt );
+		return apply_filters( 'wppdev_helper_period_add_interval', $end_dt );
 	}
 	
 	/**
@@ -193,7 +193,7 @@ class Helper_Period {
 		if ( $end_dt === false ) {
 			throw new \Exception( 'error subtract_interval' );
 		}
-		return apply_filters( 'wd_helper_period_subtract_interval', date( self::PERIOD_FORMAT, $end_dt ) );
+		return apply_filters( 'wppdev_helper_period_subtract_interval', date( self::PERIOD_FORMAT, $end_dt ) );
 	}
 
 	/**
@@ -219,7 +219,7 @@ class Helper_Period {
 		
 		$days = round( ( $end_date->format( 'U' ) - $start_date->format( 'U' ) ) / ( 60 * 60 * 24 ) );
 		
-		return apply_filters( 'wd_helper_period_subtract_dates', $days );
+		return apply_filters( 'wppdev_helper_period_subtract_dates', $days );
 	}
 
 	/**
@@ -234,10 +234,10 @@ class Helper_Period {
 			$format = self::PERIOD_FORMAT;
 		}
 		
-		$format = apply_filters( 'wd_helper_period_current_date_format', $format );
+		$format = apply_filters( 'wppdev_helper_period_current_date_format', $format );
 
 		$timezone = ini_get( 'date.timezone' );
-		$timezone = apply_filters( 'wd_helper_period_current_date_timezone', $timezone );
+		$timezone = apply_filters( 'wppdev_helper_period_current_date_timezone', $timezone );
 		if( empty( $timezone ) ) {
 			$timezone = date_default_timezone_get();
 		}
@@ -250,7 +250,7 @@ class Helper_Period {
 		
 		$date = $dt->format( $format );
 		if ( ! $ignore_filters ) {
-			$date = apply_filters( 'wd_helper_period_current_date', $date );
+			$date = apply_filters( 'wppdev_helper_period_current_date', $date );
 		}
 		
 		return $date;
@@ -264,7 +264,7 @@ class Helper_Period {
 	 * @return string The current date.
 	 */
 	public static function current_time( $type = 'mysql' ) {
-		return apply_filters( 'wd_helper_period_current_time', current_time( $type, true ) );
+		return apply_filters( 'wppdev_helper_period_current_time', current_time( $type, true ) );
 	}
 
 	/**
@@ -294,7 +294,7 @@ class Helper_Period {
 				$days = $period[ 'period_unit' ] * 365;
 				break;
 		}
-		return apply_filters( 'wd_helper_period_get_period_in_days', $days, $period );
+		return apply_filters( 'wppdev_helper_period_get_period_in_days', $days, $period );
 	}
 
 	/**
@@ -317,7 +317,7 @@ class Helper_Period {
 		elseif ( 'period_type' == $field ) {
 			$value = self::PERIOD_TYPE_DAYS;
 		}
-		return apply_filters( 'wd_helper_period_get_period_value', $value );
+		return apply_filters( 'wppdev_helper_period_get_period_value', $value );
 	}
 
 	/**
@@ -336,7 +336,7 @@ class Helper_Period {
 		}
 		$desc = sprintf( '%s %s', $period_unit, $period_type );
 		
-		return apply_filters( 'wd_helper_period_get_period_desc', $desc );
+		return apply_filters( 'wppdev_helper_period_get_period_desc', $desc );
 	}
 
 	/**
@@ -351,6 +351,6 @@ class Helper_Period {
 	 */
 	public static function format( $date, $format = self::DATE_FORMAT ) {
 		$date = new \DateTime( $date );
-		return apply_filters( 'wd_helper_period_format', $date->format( $format ), $date, $format );
+		return apply_filters( 'wppdev_helper_period_format', $date->format( $format ), $date, $format );
 	}
 }

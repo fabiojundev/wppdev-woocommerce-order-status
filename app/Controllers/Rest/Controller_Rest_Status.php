@@ -143,7 +143,7 @@ class Controller_Rest_Status extends Rest {
 	public function create_status( $request ) {
 		$required = array( 'name', 'slug' );
 		$fields = $request->get_params();
-		Helper_Debug::log($fields);
+
 		if( $this->validate_req_fields( $required, $fields ) ) {
 			$status = new Model_Status( );
 			

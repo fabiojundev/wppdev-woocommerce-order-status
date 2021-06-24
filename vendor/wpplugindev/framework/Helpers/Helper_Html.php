@@ -323,7 +323,7 @@ class Helper_Html {
 	private static function html_element_label( $title, $label_element = 'label', $id = '', $tooltip_output = '', $class = '' ) {
 		if ( ! empty( $title ) ) {
 			printf(
-				'<%1$s for="%2$s" class="wd-field-label wd-field-input-label %5$s">%3$s %4$s</%1$s>',
+				'<%1$s for="%2$s" class="wppdev-field-label wppdev-field-input-label %5$s">%3$s %4$s</%1$s>',
 				$label_element,
 				esc_attr( $id ),
 				$title,
@@ -341,7 +341,7 @@ class Helper_Html {
 	private static function html_element_desc( $desc ) {
 		if ( $desc != '' ) {
 			printf(
-				'<span class="wd-field-description">%1$s</span>',
+				'<span class="wppdev-field-description">%1$s</span>',
 				$desc
 			);
 		}
@@ -374,7 +374,7 @@ class Helper_Html {
 			'bread_crumbs' => null,
 		);
 		$args = wp_parse_args( $args, $defaults );
-		$args = apply_filters( 'ca_helper_html_settings_header_args', $args );
+		$args = apply_filters( 'wppdev_helper_html_settings_header_args', $args );
 		extract( $args );
 
 		if ( ! is_array( $desc ) ) {
@@ -383,15 +383,15 @@ class Helper_Html {
 
 		Helper_Html::bread_crumbs( $bread_crumbs );
 		?>
-		<h2 class="wd-settings-title">
+		<h2 class="wppdev-settings-title">
 			<?php if ( ! empty( $title_icon_class ) ) : ?>
 				<i class="<?php echo esc_attr( $title_icon_class ); ?>"></i>
 			<?php endif; ?>
 			<?php printf( $title ); ?>
 		</h2>
-		<div class="wd-settings-desc-wrapper">
+		<div class="wppdev-settings-desc-wrapper">
 			<?php foreach ( $desc as $description ) : ?>
-				<div class="wd-settings-desc wd-description">
+				<div class="wppdev-settings-desc wppdev-description">
 					<?php printf( $description ); ?>
 				</div>
 			<?php endforeach; ?>
@@ -453,12 +453,12 @@ class Helper_Html {
 			'error_text' => __( 'Could not save changes.', WPPDEV_TXT_DM ),
 			'fields' => $fields,
 		);
-		$args = apply_filters( 'ca_helper_html_settings_footer_args', $args );
+		$args = apply_filters( 'wppdev_helper_html_settings_footer_args', $args );
 		$fields = $args['fields'];
 		unset( $args['fields'] );
 
 		?>
-		<div class="wd-settings-footer">
+		<div class="wppdev-settings-footer">
 			<form method="post" action="">
 				<?php
 				foreach ( $fields as $field ) {
@@ -484,20 +484,20 @@ class Helper_Html {
 			'desc' => '',
 		);
 		$args = wp_parse_args( $args, $defaults );
-		$args = apply_filters( 'ca_helper_html_settings_header_args', $args );
+		$args = apply_filters( 'wppdev_helper_html_settings_header_args', $args );
 		extract( $args );
 
 		if ( ! is_array( $desc ) ) {
 			$desc = array( $desc );
 		}
 		?>
-		<div class="wd-header">
-			<div class="wd-settings-tab-title">
+		<div class="wppdev-header">
+			<div class="wppdev-settings-tab-title">
 				<h3><?php printf( $title ); ?></h3>
 			</div>
-			<div class="wd-settings-description">
+			<div class="wppdev-settings-description">
 				<?php foreach ( $desc as $description ): ?>
-					<div class="wd-description">
+					<div class="wppdev-description">
 						<?php printf( $description ); ?>
 					</div>
 				<?php endforeach; ?>
@@ -544,7 +544,7 @@ class Helper_Html {
 	 * @param  string $state Toggle-state of the box: static/open/closed
 	 */
 	public static function settings_box_header( $title = '', $description = '', $state = 'static' ) {
-		do_action( 'ca_helper_settings_box_header_init', $title, $description, $state );
+		do_action( 'wppdev_helper_settings_box_header_init', $title, $description, $state );
 
 		$handle = '';
 		if ( $state !== 'static' ) {
@@ -560,18 +560,18 @@ class Helper_Html {
 		}
 
 		?>
-		<div class="wd-settings-box-wrapper">
-			<div class="wd-settings-box <?php echo esc_attr( $box_class ); ?>">
-				<div class="wd-header">
+		<div class="wppdev-settings-box-wrapper">
+			<div class="wppdev-settings-box <?php echo esc_attr( $box_class ); ?>">
+				<div class="wppdev-header">
 					<?php printf( $handle ); ?>
 					<?php if ( ! empty( $title ) ) : ?>
 						<h3><?php printf( $title ); ?></h3>
 					<?php endif; ?>
-					<span class="wd-settings-description wd-description"><?php printf( $description ); ?></span>
+					<span class="wppdev-settings-description wppdev-description"><?php printf( $description ); ?></span>
 				</div>
 				<div class="inside">
 		<?php
-		do_action( 'ca_helper_settings_box_header_end', $title, $description, $state );
+		do_action( 'wppdev_helper_settings_box_header_end', $title, $description, $state );
 	}
 
 	/**
@@ -580,13 +580,13 @@ class Helper_Html {
 	 * @since  1.0.0
 	 */
 	public static function settings_box_footer() {
-		do_action( 'ca_helper_settings_box_footer_init' );
+		do_action( 'wppdev_helper_settings_box_footer_init' );
 		?>
 		</div> <!-- .inside -->
-		</div> <!-- .wd-settings-box -->
-		</div> <!-- .wd-settings-box-wrapper -->
+		</div> <!-- .wppdev-settings-box -->
+		</div> <!-- .wppdev-settings-box-wrapper -->
 		<?php
-		do_action( 'ca_helper_settings_box_footer_end' );
+		do_action( 'wppdev_helper_settings_box_footer_end' );
 	}
 
 	/**
@@ -607,7 +607,7 @@ class Helper_Html {
 		extract( wp_parse_args( $field_args, $defaults ) );
 
 		printf(
-			'<input class="wd-field-input wd-submit %1$s" type="submit" id="%2$s" name="%2$s" value="%3$s" />',
+			'<input class="wppdev-field-input wppdev-submit %1$s" type="submit" id="%2$s" name="%2$s" value="%3$s" />',
 			esc_attr( $class ),
 			esc_attr( $id ),
 			esc_attr( $value )
@@ -628,11 +628,11 @@ class Helper_Html {
 
 		if ( $return ) { ob_start(); }
 		?>
-		<div class="wd-tooltip-wrapper">
-		<div class="wd-tooltip-info"><i class="wd-fa wd-fa-info-circle"></i></div>
-		<div class="wd-tooltip">
-			<div class="wd-tooltip-button">&times;</div>
-			<div class="wd-tooltip-content">
+		<div class="wppdev-tooltip-wrapper">
+		<div class="wppdev-tooltip-info"><i class="wppdev-fa wppdev-fa-info-circle"></i></div>
+		<div class="wppdev-tooltip">
+			<div class="wppdev-tooltip-button">&times;</div>
+			<div class="wppdev-tooltip-content">
 			<?php printf( $tip ); ?>
 			</div>
 		</div>
@@ -657,10 +657,10 @@ class Helper_Html {
 		extract( wp_parse_args( $texts, $defaults ) );
 
 		printf(
-			'<span class="wd-save-text-wrapper">
-				<span class="wd-saving-text"><div class="loading-animation"></div> %1$s</span>
-				<span class="wd-saved-text">%2$s</span>
-				<span class="wd-error-text">%3$s<span class="err-code"></span></span>
+			'<span class="wppdev-save-text-wrapper">
+				<span class="wppdev-saving-text"><div class="loading-animation"></div> %1$s</span>
+				<span class="wppdev-saved-text">%2$s</span>
+				<span class="wppdev-error-text">%3$s<span class="err-code"></span></span>
 			</span>',
 			$saving_text,
 			$saved_text,
@@ -682,7 +682,7 @@ class Helper_Html {
 
 		if ( ! empty( $item->id ) && is_a( $item, 'WP_Post' ) ) {
 			printf(
-				'<%1$s class="wd-content-tag"><a href="%3$s">%2$s</a></%1$s>',
+				'<%1$s class="wppdev-content-tag"><a href="%3$s">%2$s</a></%1$s>',
 				esc_attr( $tag ),
 				esc_html( $label ),
 				get_edit_post_link( $item->id )
@@ -690,7 +690,7 @@ class Helper_Html {
 		}
 		else {
 			printf(
-				'<%1$s class="wd-content-tag"><span>%2$s</span></%1$s>',
+				'<%1$s class="wppdev-content-tag"><span>%2$s</span></%1$s>',
 				esc_attr( $tag ),
 				esc_html( $label )
 			);
@@ -705,7 +705,7 @@ class Helper_Html {
 			foreach ( $bread_crumbs as $key => $bread_crumb ) {
 				if ( ! empty( $bread_crumb['url'] ) ) {
 					$crumbs[] = sprintf(
-						'<span class="wd-bread-crumb-%s"><a href="%s">%s</a></span>',
+						'<span class="wppdev-bread-crumb-%s"><a href="%s">%s</a></span>',
 						esc_attr( $key ),
 						esc_url( $bread_crumb['url'] ),
 						$bread_crumb['title']
@@ -713,7 +713,7 @@ class Helper_Html {
 				}
 				elseif ( ! empty( $bread_crumb['title'] ) ) {
 					$crumbs[] = sprintf(
-						'<span class="wd-bread-crumb-%s">%s</span>',
+						'<span class="wppdev-bread-crumb-%s">%s</span>',
 						esc_attr( $key ),
 						$bread_crumb['title']
 					);
@@ -721,32 +721,32 @@ class Helper_Html {
 			}
 
 			if ( count( $crumbs ) > 0 ) {
-				$html = '<div class="wd-bread-crumb">';
-				$html .= implode( '<span class="wd-bread-crumb-sep"> &raquo; </span>', $crumbs );
+				$html = '<div class="wppdev-bread-crumb">';
+				$html .= implode( '<span class="wppdev-bread-crumb-sep"> &raquo; </span>', $crumbs );
 				$html .= '</div>';
 			}
 		}
-		$html = apply_filters( 'ca_helper_html_bread_crumbs', $html );
+		$html = apply_filters( 'wppdev_helper_html_bread_crumbs', $html );
 
 		printf( $html );
 	}
 
 	public static function period_desc( $period, $class = '' ) {
 		$html = sprintf(
-			'<span class="wd-period-desc %s"> <span class="wd-period-unit">%s</span> <span class="wd-period-type">%s</span></span>',
+			'<span class="wppdev-period-desc %s"> <span class="wppdev-period-unit">%s</span> <span class="wppdev-period-type">%s</span></span>',
 			esc_attr( $class ),
 			$period['period_unit'],
 			$period['period_type']
 		);
 
-		return apply_filters( 'ca_helper_html_period_desc', $html );
+		return apply_filters( 'wppdev_helper_html_period_desc', $html );
 	}
 
 	public static function html_input_hidden( $field_args ) {
 		extract( $field_args );
 
 		printf(
-				'<input class="wd-field-input wd-hidden %5$s" type="hidden" id="%1$s" name="%2$s" value="%3$s" %4$s />',
+				'<input class="wppdev-field-input wppdev-hidden %5$s" type="hidden" id="%1$s" name="%2$s" value="%3$s" %4$s />',
 				esc_attr( $id ),
 				esc_attr( $name ),
 				esc_attr( $value ),
@@ -767,7 +767,7 @@ class Helper_Html {
 		}
 		
 		printf(
-				'<input class="wd-field-input wd-%1$s %2$s" type="%1$s" id="%3$s" name="%4$s" value="%5$s" %6$s />',
+				'<input class="wppdev-field-input wppdev-%1$s %2$s" type="%1$s" id="%3$s" name="%4$s" value="%5$s" %6$s />',
 				esc_attr( $type ),
 				esc_attr( $class ),
 				esc_attr( $id ),
@@ -795,7 +795,7 @@ class Helper_Html {
 		}
 		
 		printf(
-				'<input class="wd-field-input wd-%1$s %2$s" type="%1$s" id="%3$s" name="%4$s" value="%5$s" %6$s %7$s />',
+				'<input class="wppdev-field-input wppdev-%1$s %2$s" type="%1$s" id="%3$s" name="%4$s" value="%5$s" %6$s %7$s />',
 				esc_attr( 'number' ),
 				esc_attr( $class ),
 				esc_attr( $id ),
@@ -813,8 +813,8 @@ class Helper_Html {
 		unset( $field_args['title'] );
 		unset( $field_args['desc'] );
 		?>
-		<div class="wd-number-wrap">
-    		<div class="wd-attribute-title"><?php echo $title;?></div>
+		<div class="wppdev-number-wrap">
+    		<div class="wppdev-attribute-title"><?php echo $title;?></div>
         	<div class="quantity buttons_added">
         		<input type="button" value="-" class="minus">
 				<?php static::html_input_number( $field_args );?>
@@ -831,7 +831,7 @@ class Helper_Html {
 		self::html_element_desc( $desc );
 		
 		printf(
-				'<span class="wd-datepicker-wrapper wd-field-input"><input class="wd-datepicker %1$s" type="text" id="%2$s" name="%3$s" value="%4$s" %5$s /><i class="wd-icon wd-fa wd-fa-calendar"></i></span>',
+				'<span class="wppdev-datepicker-wrapper wppdev-field-input"><input class="wppdev-datepicker %1$s" type="text" id="%2$s" name="%3$s" value="%4$s" %5$s /><i class="wppdev-icon wppdev-fa wppdev-fa-calendar"></i></span>',
 				esc_attr( $class ),
 				esc_attr( $id ),
 				esc_attr( $name ),
@@ -849,7 +849,7 @@ class Helper_Html {
 		self::html_element_desc( $desc );
 		
 		printf(
-				'<textarea class="wd-field-input wd-textarea %1$s" type="text" id="%2$s" name="%3$s" %4$s>%5$s</textarea>',
+				'<textarea class="wppdev-field-input wppdev-textarea %1$s" type="text" id="%2$s" name="%3$s" %4$s>%5$s</textarea>',
 				esc_attr( $class ),
 				esc_attr( $id ),
 				esc_attr( $name ),
@@ -870,7 +870,7 @@ class Helper_Html {
 		
 		$name = ( $multiple ) ? $name . '[]' : $name;
 		printf(
-				'<select id="%1$s" class="wd-field-input wd-select %2$s" name="%3$s" %4$s %6$s>%5$s</select>',
+				'<select id="%1$s" class="wppdev-field-input wppdev-select %2$s" name="%3$s" %4$s %6$s>%5$s</select>',
 				esc_attr( $id ),
 				esc_attr( $class ),
 				esc_attr( $name ),
@@ -889,7 +889,7 @@ class Helper_Html {
 		self::html_element_desc( $desc );
 		
 		printf(
-				'<div class="wd-radio-wrapper wrapper-%1$s">',
+				'<div class="wppdev-radio-wrapper wrapper-%1$s">',
 				esc_attr( $id )
 				);
 		foreach ( $field_options as $key => $option ) {
@@ -904,10 +904,10 @@ class Helper_Html {
 			$checked = checked( $value, $key, false );
 			$radio_desc = '';
 			if ( ! empty( $item_desc ) ) {
-				$radio_desc = sprintf( '<div class="wd-input-description"><p>%1$s</p></div>', $item_desc );
+				$radio_desc = sprintf( '<div class="wppdev-input-description"><p>%1$s</p></div>', $item_desc );
 			}
 			printf(
-					'<div class="wd-radio-input-wrapper %1$s %2$s"><label class="wd-field-input-label"><input class="wd-field-input wd-radio %1$s" type="radio" name="%3$s" id="%4$s_%2$s" value="%2$s" %5$s /><div class="wd-radio-caption">%6$s</div>%7$s</label></div>',
+					'<div class="wppdev-radio-input-wrapper %1$s %2$s"><label class="wppdev-field-input-label"><input class="wppdev-field-input wppdev-radio %1$s" type="radio" name="%3$s" id="%4$s_%2$s" value="%2$s" %5$s /><div class="wppdev-radio-caption">%6$s</div>%7$s</label></div>',
 					esc_attr( $class ),
 					esc_attr( $key ),
 					esc_attr( $name ),
@@ -928,13 +928,13 @@ class Helper_Html {
 		
 		$item_desc = '';
 		if ( ! empty( $desc ) ) {
-			$item_desc = sprintf( '<div class="wd-field-description"><p>%1$s</p></div>', $desc );
+			$item_desc = sprintf( '<div class="wppdev-field-description"><p>%1$s</p></div>', $desc );
 		}
 		
 		$item_label = '';
 		if ( empty( $field_options['checkbox_position'] ) ||  'left' == $field_options['checkbox_position'] ) {
 			$item_label = sprintf(
-					'<span class="wd-checkbox-caption %3$s">%1$s %2$s</span>',
+					'<span class="wppdev-checkbox-caption %3$s">%1$s %2$s</span>',
 					$title,
 			        $tooltip_output,
 					esc_attr( $class ? $class . '-caption': '' )
@@ -942,7 +942,7 @@ class Helper_Html {
 		}
 		
 		printf(
-				'<label class="wd-checkbox-wrapper wd-field-input-label %8$s"><input id="%1$s" class="wd-field-input wd-checkbox %2$s" type="checkbox" name="%3$s" value="%7$s" %4$s />%5$s %6$s</label>',
+				'<label class="wppdev-checkbox-wrapper wppdev-field-input-label %8$s"><input id="%1$s" class="wppdev-field-input wppdev-checkbox %2$s" type="checkbox" name="%3$s" value="%7$s" %4$s />%5$s %6$s</label>',
 				esc_attr( $id ),
 				esc_attr( $class ),
 				esc_attr( $name ),
@@ -968,7 +968,7 @@ class Helper_Html {
 		extract( $field_args );
 		
 		printf(
-				'<button class="wd-field-input button %1$s" type="button" id="%2$s" name="%3$s" %5$s %6$s %7$s>%4$s</button>',
+				'<button class="wppdev-field-input button %1$s" type="button" id="%2$s" name="%3$s" %5$s %6$s %7$s>%4$s</button>',
 				esc_attr( $class ),
 				esc_attr( $id ),
 				esc_attr( $name ),
@@ -985,7 +985,7 @@ class Helper_Html {
 		extract( $field_args );
 		
 		printf(
-				'<input class="wd-field-input wd-submit button-primary %1$s" type="submit" id="%2$s" name="%3$s" value="%4$s" %5$s %6$s />',
+				'<input class="wppdev-field-input wppdev-submit button-primary %1$s" type="submit" id="%2$s" name="%3$s" value="%4$s" %5$s %6$s />',
 				esc_attr( $class ),
 				esc_attr( $id ),
 				esc_attr( $name ),
@@ -1000,7 +1000,7 @@ class Helper_Html {
 	public static function html_input_image( $field_args ) {
 		extract( $field_args );
 		printf(
-				'<input type="image" class="wd-field-input wd-input-image %1$s" id="%2$s" name="%3$s" border="0" src="%4$s" alt="%5$s" %6$s/>',
+				'<input type="image" class="wppdev-field-input wppdev-input-image %1$s" id="%2$s" name="%3$s" border="0" src="%4$s" alt="%5$s" %6$s/>',
 				esc_attr( $class ),
 				esc_attr( $id ),
 				esc_attr( $name ),
@@ -1015,7 +1015,7 @@ class Helper_Html {
 	public static function html_input_radio_slider( $field_args ) {
 		extract( $field_args );
 		
-		echo '<div class="wd-radio-slider-wrapper">';
+		echo '<div class="wppdev-radio-slider-wrapper">';
 		
 		$turned = ( $value ) ? 'on' : '';
 		$link_url = ! empty( $url ) ? '<a href="' . esc_url( $url ) . '"></a>' : '';
@@ -1023,7 +1023,7 @@ class Helper_Html {
 		$attr_input = '';
 		if ( ! $read_only ) {
 			$attr_input = sprintf(
-					'<input class="wd-field-input wd-hidden" type="hidden" id="%1$s" name="%2$s" value="%3$s" />',
+					'<input class="wppdev-field-input wppdev-hidden" type="hidden" id="%1$s" name="%2$s" value="%3$s" />',
 					esc_attr( $id ),
 					esc_attr( $name ),
 					esc_attr( $value )
@@ -1034,7 +1034,7 @@ class Helper_Html {
 		self::html_element_desc( $desc );
 		
 		printf(
-				'<div class="wd-radio-slider %1$s wd-slider-%5$s %7$s" %6$s><div class="wd-toggle" %2$s>%3$s</div>%4$s</div>',
+				'<div class="wppdev-radio-slider %1$s wppdev-slider-%5$s %7$s" %6$s><div class="wppdev-toggle" %2$s>%3$s</div>%4$s</div>',
 				esc_attr( $turned ),
 				$data_attr,
 				$link_url,
@@ -1051,7 +1051,7 @@ class Helper_Html {
 	public static function html_input_tag_select( $field_args ) {
 		extract( $field_args );
 		
-		echo '<div class="wd-tag-selector-wrapper">';
+		echo '<div class="wppdev-tag-selector-wrapper">';
 		
 		self::html_element_label( $title, $label_element, '_src_' . $id, $tooltip_output );
 		self::html_element_desc( $desc );
@@ -1065,7 +1065,7 @@ class Helper_Html {
 		if ( empty( $field_options ) ) {
 			// No values available, display a note instead of the input elements.
 			printf(
-			'<div id="%1$s" class="wd-no-data wd-field-input %2$s">%3$s</div>',
+			'<div id="%1$s" class="wppdev-no-data wppdev-field-input %2$s">%3$s</div>',
 			esc_attr( $id ),
 			esc_attr( $class ),
 			$empty_text
@@ -1077,7 +1077,7 @@ class Helper_Html {
 			
 			// First Select: The value selected here can be added to the tag-list.
 			printf(
-			'<select id="_src_%1$s" class="wd-field-input wd-tag-source %2$s" %4$s>%5$s</select>',
+			'<select id="_src_%1$s" class="wppdev-field-input wppdev-tag-source %2$s" %4$s>%5$s</select>',
 			esc_attr( $id ),
 			esc_attr( $class ),
 			esc_attr( $name ),
@@ -1087,19 +1087,19 @@ class Helper_Html {
 			
 			// Button: Add element from First Select to Second Select.
 			printf(
-			'<button id="_src_add_%1$s" class="wd-field-input wd-tag-button button %2$s" type="button">%3$s</button>',
+			'<button id="_src_add_%1$s" class="wppdev-field-input wppdev-tag-button button %2$s" type="button">%3$s</button>',
 			esc_attr( $id ),
 			esc_attr( $class ),
 			$button_text
 			);
 			
-			self::html_element_label( $title_selected, $label_element, $id, '', 'wd-tag-label' );
+			self::html_element_label( $title_selected, $label_element, $id, '', 'wppdev-tag-label' );
 			
 			// Second Select: The actual tag-list
 			printf(
-			'<select id="%1$s" class="wd-field-input wd-select wd-tag-data %2$s" multiple="multiple" readonly="readonly" %4$s>%5$s</select>',
+			'<select id="%1$s" class="wppdev-field-input wppdev-select wppdev-tag-data %2$s" multiple="multiple" readonly="readonly" %4$s>%5$s</select>',
 			esc_attr( $id ),
-			esc_attr( $class ) . ( ! empty( $data_attr ) ? ' wd-ajax-update' : ''),
+			esc_attr( $class ) . ( ! empty( $data_attr ) ? ' wppdev-ajax-update' : ''),
 			esc_attr( $name ),
 			$data_attr,
 			$options_selected
@@ -1122,20 +1122,20 @@ class Helper_Html {
 			echo "<div class='extra-bill-wrap {$field_args['class']}' id='extra-bill-wrap-$key'>";
 			$args = $field_args;
 			$args['type'] = self::INPUT_TYPE_TEXT;
-			$args['id'] = "wd-bill-val-$key";
+			$args['id'] = "wppdev-bill-val-$key";
 			$args['name'] = sprintf( '%s[%s][amount]', $field_args['id'], $key );
 			$args['value'] = isset( $bill['amount'] ) ? $bill['amount'] : 0;
 			self::html_input_text( $args );
-			$args['id'] = "wd-bill-desc-$key";
+			$args['id'] = "wppdev-bill-desc-$key";
 			$args['title'] = __( 'Descrição', WPPDEV_TXT_DM );
 			$args['name'] = sprintf( '%s[%s][desc]', $field_args['id'], $key );
 			$args['value'] = isset( $bill['desc'] ) ? $bill['desc'] : '';
 			self::html_input_text( $args );
 			
-			$args['id'] = "wd-bill-delete-$key";
+			$args['id'] = "wppdev-bill-delete-$key";
 			$args['name'] = sprintf( '%s[%s][amount]', $field_args['id'], $key );
 			$args['value'] = __( 'Excluir', WPPDEV_TXT_DM );
-			$args['class'] = "wd-bill-delete";
+			$args['class'] = "wppdev-bill-delete";
 			$args['url'] = '#';
 			self::html_input_button( $args );
 			echo '</div>';
@@ -1151,7 +1151,7 @@ class Helper_Html {
 		}
 		
 		printf(
-				'<a id="%1$s" title="%2$s" class="wd-link %3$s" href="%4$s" %5$s %7$s>%6$s</a>',
+				'<a id="%1$s" title="%2$s" class="wppdev-link %3$s" href="%4$s" %5$s %7$s>%6$s</a>',
 				esc_attr( $id ),
 				esc_attr( $title ),
 				esc_attr( $class ),
@@ -1171,10 +1171,10 @@ class Helper_Html {
 		}
 		
 		if ( 'vertical' === $value ) {
-			printf( '<div id="%s" class="wd-divider"></div>', esc_attr( $id ) );
+			printf( '<div id="%s" class="wppdev-divider"></div>', esc_attr( $id ) );
 		} 
 		else {
-			printf( '<div id="%s" class="wd-separator"></div>', esc_attr( $id ) );
+			printf( '<div id="%s" class="wppdev-separator"></div>', esc_attr( $id ) );
 		}
 	}
 	
@@ -1185,7 +1185,7 @@ class Helper_Html {
 			$wrapper = 'span'; 
 		}
 
-		printf('<div class="wd-html-text-wrapper %s-wrapper">', esc_attr( $class ) );
+		printf('<div class="wppdev-html-text-wrapper %s-wrapper">', esc_attr( $class ) );
 		
 		self::html_element_label( $title, $label_element, $id, $tooltip_output );
 		
@@ -1270,11 +1270,11 @@ class Helper_Html {
 	
 	public static function html_image_delete( $field_args ) {
 		extract( $field_args );
-// 		Helper_Debug::log($field_args);
+
 		printf( '<div class="%s-wrap">', esc_attr( $class ) );
 		self::html_element_label( $title, $label_element, $id, $tooltip_output );
 		printf(
-				'<img src="%1$s" alt="%2$s" id="%3$s" class="%4$s"><span title="%6$s" class="dashicons dashicons-no wd-delete %4$s-delete-ico" %5$s></span>',
+				'<img src="%1$s" alt="%2$s" id="%3$s" class="%4$s"><span title="%6$s" class="dashicons dashicons-no wppdev-delete %4$s-delete-ico" %5$s></span>',
 				esc_url( $value ),
 				esc_attr( $alt ),
 				esc_attr( $id ),
@@ -1285,7 +1285,7 @@ class Helper_Html {
 		
 		if( isset( $legend ) ) {
 			printf(
-					'<input class="wd-field-input wd-%1$s %2$s" type="%1$s" id="%3$s" name="%4$s" value="%5$s" %6$s />',
+					'<input class="wppdev-field-input wppdev-%1$s %2$s" type="%1$s" id="%3$s" name="%4$s" value="%5$s" %6$s />',
 					esc_attr( 'text' ),
 					esc_attr( "$class-edit-legend" ),
 					esc_attr( "$id-legend" ),
@@ -1301,7 +1301,7 @@ class Helper_Html {
 		extract( $field_args );
 		
 		printf(
-				'<div class="%9$s">%8$s</div><a href="%7$s" data-rel="%2$s" data-title="%3$s" class="wd-img-lightbox"><img src="%1$s" alt="%4$s" id="%5$s" class="%6$s"></a>',
+				'<div class="%9$s">%8$s</div><a href="%7$s" data-rel="%2$s" data-title="%3$s" class="wppdev-img-lightbox"><img src="%1$s" alt="%4$s" id="%5$s" class="%6$s"></a>',
 				esc_url( $value ),
 				esc_attr( $data_rel ),
 				esc_attr( $title ),
@@ -1325,13 +1325,13 @@ class Helper_Html {
 				esc_attr( $class )
 				);
 		
-		printf( '</video><span class="dashicons dashicons-dismiss wd-delete" %s></span>',
+		printf( '</video><span class="dashicons dashicons-dismiss wppdev-delete" %s></span>',
 				esc_attr( $class ),
 				$data_attr
 				);
 		if( isset( $legend ) ) {
 			printf(
-					'<input class="wd-field-input wd-%1$s %2$s" type="%1$s" id="%3$s" name="%4$s" value="%5$s" %6$s />',
+					'<input class="wppdev-field-input wppdev-%1$s %2$s" type="%1$s" id="%3$s" name="%4$s" value="%5$s" %6$s />',
 					esc_attr( 'text' ),
 					esc_attr( "$class-edit-legend" ),
 					esc_attr( "$id-legend" ),
@@ -1348,7 +1348,7 @@ class Helper_Html {
 		extract( $field_args );
 		
 		printf(
-				'<div class="%8$s">%7$s</div><a href="%1$s" data-rel="%2$s" data-title="%3$s" class="wd-img-lightbox"><video class="%6$s" controls><source src="%1$s" alt="%4$s" id="%5$s" class="%6$s"></video></a>',
+				'<div class="%8$s">%7$s</div><a href="%1$s" data-rel="%2$s" data-title="%3$s" class="wppdev-img-lightbox"><video class="%6$s" controls><source src="%1$s" alt="%4$s" id="%5$s" class="%6$s"></video></a>',
 				esc_url( $value ),
 				esc_attr( $data_rel ),
 				esc_attr( $title ),

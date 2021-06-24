@@ -18,7 +18,7 @@ class Helper_Util {
     public static function get_auth_error( $redir_url = null ) {
         return new \WP_Error(
             403,
-            'Entrar no site',
+            __( 'Entrar no site', WPPDEV_TXT_DM ),
             array( 'login_url' => add_query_arg( 'redirect_to', $redir_url, '/wp-login.php' ) )
             );
     }
@@ -157,7 +157,7 @@ class Helper_Util {
 			$url = domain_mapping_post_content( $url );
 		}
 		
-		$url = apply_filters( 'wd_helper_utility_get_ssl_url', preg_replace( '|^http://|', 'https://', $url ), $url );
+		$url = apply_filters( 'wppdev_helper_utility_get_ssl_url', preg_replace( '|^http://|', 'https://', $url ), $url );
 		
 		return $url;
 	}
@@ -175,7 +175,7 @@ class Helper_Util {
 		$schema = is_ssl() ? 'https' : 'http';
 		$url = get_home_url( $blog_id, $path, $schema );
 		
-		return apply_filters( 'wd_helper_utility_get_home_url', $url, $blog_id, $path, $schema );
+		return apply_filters( 'wppdev_helper_utility_get_home_url', $url, $blog_id, $path, $schema );
 	}
 
 	/**
@@ -382,7 +382,7 @@ class Helper_Util {
 			$value = $request_fields[ $id ];
 		}
 		
-		return apply_filters( 'wd_helper_get_request_field', $value, $id, $default );
+		return apply_filters( 'wppdev_helper_get_request_field', $value, $id, $default );
 	}
 
 	/**
@@ -446,7 +446,7 @@ class Helper_Util {
 	 * @return string
 	 */
 	public static function format_price( $price, $currency = 'R$' ) {
-		return apply_filters( 'wd_helper_util_format_price', sprintf( '%s %s', $currency, number_format_i18n( $price, 2, ',', '' ) ) );
+		return apply_filters( 'wppdev_helper_util_format_price', sprintf( '%s %s', $currency, number_format_i18n( $price, 2, ',', '' ) ) );
 	}
 
 	/**
@@ -481,7 +481,7 @@ class Helper_Util {
 		}
 		
 		$price = self::format_price( $price, $currency ) . ' / ' . $period;
-		return apply_filters( 'wd_helper_util_format_price_freq', $price );
+		return apply_filters( 'wppdev_helper_util_format_price_freq', $price );
 	}
 	
 	/**
@@ -885,6 +885,6 @@ class Helper_Util {
 				'EH' => __( 'WESTERN SAHARA', WPPDEV_TXT_DM ),
 				'ZM' => __( 'ZAMBIA', WPPDEV_TXT_DM ) );
 		
-		return apply_filters( 'wd_helper_util_get_country_codes', $countries );
+		return apply_filters( 'wppdev_helper_util_get_country_codes', $countries );
 	}
 }
