@@ -460,22 +460,22 @@ class Helper_Util {
 		$period = __( 'mês', WD_TEXT_DOMAIN );
 		
 		switch ( $frequency ) {
-			case CA_Helper_Period::FREQ_TYPE_WEEKLY:
+			case Helper_Period::FREQ_TYPE_WEEKLY:
 				$period = __( 'semana', WD_TEXT_DOMAIN );
 				break;
-			case CA_Helper_Period::FREQ_TYPE_MONTHLY:
+			case Helper_Period::FREQ_TYPE_MONTHLY:
 				$period = __( 'mês', WD_TEXT_DOMAIN );
 				break;
-			case CA_Helper_Period::FREQ_TYPE_BIMONTHLY:
+			case Helper_Period::FREQ_TYPE_BIMONTHLY:
 				$period = __( 'bimestre', WD_TEXT_DOMAIN );
 				break;
-			case CA_Helper_Period::FREQ_TYPE_QUARTERLY:
+			case Helper_Period::FREQ_TYPE_QUARTERLY:
 				$period = __( 'trimestre', WD_TEXT_DOMAIN );
 				break;
-			case CA_Helper_Period::FREQ_TYPE_SEMESTERLY:
+			case Helper_Period::FREQ_TYPE_SEMESTERLY:
 				$period = __( 'semestre', WD_TEXT_DOMAIN );
 				break;
-			case CA_Helper_Period::FREQ_TYPE_ANNUALLY:
+			case Helper_Period::FREQ_TYPE_ANNUALLY:
 				$period = __( 'ano', WD_TEXT_DOMAIN );
 				break;
 		}

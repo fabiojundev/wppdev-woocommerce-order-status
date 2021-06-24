@@ -392,7 +392,7 @@ class Model_User extends Model {
 		
 		foreach ( $required as $field => $message ) {
 			if ( empty( $this->$field ) ) {
-				$errors->add( $field, sprintf( __( 'O campo <strong>%s</strong> é obrigatório.', WD_TEXT_DOMAIN ), $message ) );
+				$errors->add( $field, esc_html( sprintf( __( 'O campo <strong>%s</strong> é obrigatório.', WD_TEXT_DOMAIN ), $message ) ) );
 			}
 		}
 		

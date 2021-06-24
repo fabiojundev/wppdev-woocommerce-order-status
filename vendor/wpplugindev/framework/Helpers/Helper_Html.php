@@ -107,7 +107,7 @@ class Helper_Html {
 		$field_args['max_attr'] = $maxlength ? sprintf( 'maxlength="%s" ', esc_attr( $maxlength ) ) : '';
 		$field_args['read_only'] = $read_only ? 'readonly="readonly" ' : '';
 		$field_args['multiple'] = $multiple ? 'multiple ': '';
-		$field_args['onclick'] = $onclick ? sprintf( 'onclick="%s"') : '';
+		$field_args['onclick'] = $onclick ? sprintf( 'onclick="%s"', esc_attr( $onclick ) ) : '';
 		$field_args['disabled'] = $disabled ? 'disabled' : '';
 		$field_args['inputmode'] = $inputmode ? sprintf( 'inputmode="%s" ', esc_attr( $inputmode) ) : '';
 		$field_args['autocomplete'] = $autocomplete ? sprintf( 'autocomplete="%s" ', esc_attr( $autocomplete ) ) : '';
@@ -277,7 +277,7 @@ class Helper_Html {
 				if ( empty( $option ) ) { continue; }
 				$options .= sprintf(
 					'<optgroup label="%1$s">%2$s</optgroup>',
-					$key,
+					esc_attr( $key ),
 					self::select_options( $option, $value, $type )
 				);
 			} else {
@@ -707,7 +707,7 @@ class Helper_Html {
 					$crumbs[] = sprintf(
 						'<span class="wd-bread-crumb-%s"><a href="%s">%s</a></span>',
 						esc_attr( $key ),
-						$bread_crumb['url'],
+						esc_url( $bread_crumb['url'] ),
 						$bread_crumb['title']
 					);
 				}
@@ -1171,10 +1171,10 @@ class Helper_Html {
 		}
 		
 		if ( 'vertical' === $value ) {
-			printf( '<div id="%s" class="wd-divider"></div>', $id );
+			printf( '<div id="%s" class="wd-divider"></div>', esc_attr( $id ) );
 		} 
 		else {
-			printf( '<div id="%s" class="wd-separator"></div>', $id );
+			printf( '<div id="%s" class="wd-separator"></div>', esc_attr( $id ) );
 		}
 	}
 	
@@ -1185,7 +1185,7 @@ class Helper_Html {
 			$wrapper = 'span'; 
 		}
 
-		printf('<div class="wd-html-text-wrapper %s-wrapper">', $class );
+		printf('<div class="wd-html-text-wrapper %s-wrapper">', esc_attr( $class ) );
 		
 		self::html_element_label( $title, $label_element, $id, $tooltip_output );
 		
@@ -1230,7 +1230,7 @@ class Helper_Html {
 		}
 		echo "<div class='$class-wrapper'>";
 		
-		$fa_icon = sprintf( '<i class="fa %s" aria-hidden="true"></i>', $fa_icon );
+		$fa_icon = sprintf( '<i class="fa %s" aria-hidden="true"></i>', esc_attr( $fa_icon ) );
 		
 		printf(
 				'<div id="%7$s" class="%2$s" %6$s><div class="dp-icon">%5$s</div><div><%1$s class="dp-value">%3$s</%1$s><%1$s class="dp-title">%4$s</%1$s></div></div>',
@@ -1271,7 +1271,7 @@ class Helper_Html {
 	public static function html_image_delete( $field_args ) {
 		extract( $field_args );
 // 		Helper_Debug::log($field_args);
-		printf( '<div class="%s-wrap">', $class );
+		printf( '<div class="%s-wrap">', esc_attr( $class ) );
 		self::html_element_label( $title, $label_element, $id, $tooltip_output );
 		printf(
 				'<img src="%1$s" alt="%2$s" id="%3$s" class="%4$s"><span title="%6$s" class="dashicons dashicons-no wd-delete %4$s-delete-ico" %5$s></span>',
@@ -1317,7 +1317,7 @@ class Helper_Html {
 	public static function html_video_delete( $field_args ) {
 		extract( $field_args );
 		
-		printf( '<div class="%s-wrap"><video controls class="%s">', $class, $class );
+		printf( '<div class="%s-wrap"><video controls class="%s">', esc_attr( $class ), esc_attr( $class ) );
 		printf('<source src="%1$s" alt="%2$s" id="%3$s" class="%4$s">',
 				esc_url( $value ),
 				esc_attr( $alt ),
