@@ -159,18 +159,18 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:fabiojundev/wpplugindev.git",
-                "reference": "d6016e17fd1b938f7f26ffc47cda12f9a33a860a"
+                "reference": "a5ed21b8170a0e19d62b2f96943cc2189a944a05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabiojundev/wpplugindev/zipball/d6016e17fd1b938f7f26ffc47cda12f9a33a860a",
-                "reference": "d6016e17fd1b938f7f26ffc47cda12f9a33a860a",
+                "url": "https://api.github.com/repos/fabiojundev/wpplugindev/zipball/a5ed21b8170a0e19d62b2f96943cc2189a944a05",
+                "reference": "a5ed21b8170a0e19d62b2f96943cc2189a944a05",
                 "shasum": ""
             },
             "require": {
                 "monolog/monolog": "^2.0"
             },
-            "time": "2021-06-24T19:03:08+00:00",
+            "time": "2021-06-24T19:30:43+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "source",

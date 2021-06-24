@@ -267,7 +267,7 @@ class Model_Term extends Model {
 				'fields' => 'all'
 		);
 		
-		$term = new static()
+		$term = new static();
 		$wp_term = get_terms( $args );
 		
 		if( ! empty( $wp_term[0] ) ) {
