@@ -102,7 +102,7 @@ const newConfig = {
                         [
                             '@wordpress/babel-plugin-makepot',
                             {
-                                'output': `${paths.lang}woocommerce-order-workflow-js.pot`,
+                                'output': `${paths.lang}wppdev-woocommerce-order-status-js.pot`,
                             }
                         ],
                         'transform-class-properties',
