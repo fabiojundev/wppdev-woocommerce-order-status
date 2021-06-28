@@ -22,7 +22,7 @@ class Controller_Plugin extends Controller {
 	// const MENU_SLUG = 'edit.php?post_type=wo_sale';
 	const MENU_SLUG = 'woocommerce';
 	const MENU_PREFIX = 'woocommerce_page_';
-	const MENU_STATUS = 'wd_status';
+	const MENU_STATUS = 'wppdev_wo_status';
 	
 	protected $capability = 'manage_options';
 	
@@ -105,10 +105,10 @@ class Controller_Plugin extends Controller {
     	}
 
 		$pages = array(
-			'wo-status' => array(
+			'wppdev-wo-status' => array(
 				'parent_slug' => self::MENU_SLUG,
-				'page_title' => __( 'Order Workflow', WPPDEV_WO_TXT_DM ),
-				'menu_title' => __( 'Order Workflow', WPPDEV_WO_TXT_DM ),
+				'page_title' => __( 'Order Status', WPPDEV_WO_TXT_DM ),
+				'menu_title' => __( 'Order Status', WPPDEV_WO_TXT_DM ),
 				'menu_slug' => self::MENU_STATUS,
 				'capability' => $this->capability,
 				'function' => array( $this->controllers['Controller_Admin_Status'], 'page_admin' ),

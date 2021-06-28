@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Woo Order Status
+ * Plugin Name: WPPluginsDev WooCommerce Order Status
  * Plugin URI: https://wpplugins.dev
  * Description: Manage Woo Order Status and Workflow 
  * Version: 1.0
@@ -157,11 +157,11 @@ class WooOrderWorkflowPlugin {
 	 */
 	public function add_settings_link( $links ) {
 
-		$links[] = esc_html( sprintf( 
+		$links[] = sprintf( 
 			'<a href="%s">%s</a>', 
-			Controller_Plugin::get_admin_settings_url(),
+			esc_url( Controller_Plugin::get_admin_settings_url() ),
 			__( 'Settings', WPPDEV_WO_TXT_DM ),
-		) );
+		);
 		return $links;
 	}
 
