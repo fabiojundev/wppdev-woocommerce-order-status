@@ -18,7 +18,7 @@
 		"start": "wp-scripts start",
 		"test:e2e": "wp-scripts test-e2e",
 		"test:unit": "wp-scripts test-unit-js",
-		"i18n": "for file in `find ./languages -name '*-js-*.po'` ; do npx po2json $file ${file/.po/.json} -f jed1.x --domain=woocommerce-order-workflow ; done"
+		"i18n": "for file in `find ./languages -name '*-js-*.po'` ; do npx po2json $file ${file/.po/.json} -f jed1.x --domain=wppdev-woocommerce-order-status ; done"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^1.2.35",

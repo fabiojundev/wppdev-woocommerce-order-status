@@ -33,7 +33,7 @@
  *          along with this program; If not, see https://www.gnu.org/licenses/gpl-2.0.html.
  */
 
-define( 'WPPDEV_WO_TXT_DM', 'woocommerce-order-workflow' );
+define( 'WPPDEV_WO_TXT_DM', 'wppdev-woocommerce-order-status' );
 
 /**
  * Plugin name dir constant.

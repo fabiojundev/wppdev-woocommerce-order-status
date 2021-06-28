@@ -1,4 +1,4 @@
-export const WPPDEV_WO_TXT_DM = 'woocommerce-order-workflow';
+export const WPPDEV_WO_TXT_DM = 'wppdev-woocommerce-order-status';
 
 //tab names
 export const TAB_SETTINGS = 'settings';

@@ -78,7 +78,6 @@ msgid "Edit"
 msgstr "Editar"
 
 #: src/order-status-admin/components/status-display/status-list.js:293
-#: src/order-status-admin/components/status-display/status-list.js:292
 #: src/order-status-admin/components/status-display/status-products.js:69
 msgid "Show more details"
 msgstr "Ver mais detalhes"
