@@ -26,7 +26,7 @@ Auxiliar reports to forecast the production, manufactoring, or suppliers of your
 1. Visit settings in WooCommerce Menu > Workflow
 
 == Screenshots ==
-1. WooCommerce Core Order Statu
+1. WooCommerce Core Order Statuses
 2. Import pressets or create your own configuration
 3. Overview your workflow with one click
 4. Edit slug, icon, color, description, next statuses. Enable in reports and order's bulk actions.
