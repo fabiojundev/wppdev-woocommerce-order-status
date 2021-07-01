@@ -3,7 +3,7 @@ Contributors: fabiojun
 Donate link: https://wpplugins.dev/
 Tags:  order status, woocommerce order status, order workflow, order status management, custom order status, order fulfillment
 Tested up to: 5.7.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires at least: PHP 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
