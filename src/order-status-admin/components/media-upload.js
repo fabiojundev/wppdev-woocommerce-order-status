@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 
 import { __ } from '@wordpress/i18n';
-import { WPPDEV_WO_TXT_DM } from '../constants';
 import { useState } from "@wordpress/element";
 
 const ALLOWED_MEDIA_TYPES = ['image'];
@@ -21,13 +20,13 @@ export default function MediaUploader(props) {
         type = 'image',
         order = 'Desc',
         orderBy = '',
-        title = __('Select or Upload Media', WPPDEV_WO_TXT_DM),
-        text = __('Select', WPPDEV_WO_TXT_DM),
+        title = __('Select or Upload Media', 'wppdev-woocommerce-order-status'),
+        text = __('Select', 'wppdev-woocommerce-order-status'),
         attachmentField = 'attachments',
         attachments = { id: '', ur: '' },
         previewType = 'img',
         className = 'wo-media-uploader-wrap',
-        buttonText = __('Open Uploader', WPPDEV_WO_TXT_DM),
+        buttonText = __('Open Uploader', 'wppdev-woocommerce-order-status'),
         onChange,
     } = props;
     const [newAttachment, setNewAttachment] = useState(attachments || { id: '', url: '' });

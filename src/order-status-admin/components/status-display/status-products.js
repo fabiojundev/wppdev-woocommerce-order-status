@@ -12,7 +12,6 @@ import { useState } from "@wordpress/element";
 import {
     Modal,
 } from '@wordpress/components';
-import { WPPDEV_WO_TXT_DM } from "../../constants";
 import { STATUS_STORE_KEY } from "../../data";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faSpinner } from '@fortawesome/free-solid-svg-icons';
@@ -24,10 +23,10 @@ import { faEye, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import ButtonLoader from '../button-loader';
 
 const header = {
-    name: __("Product", WPPDEV_WO_TXT_DM),
-    quantity: __("Quantity", WPPDEV_WO_TXT_DM),
-    in_stock: __("In Stock", WPPDEV_WO_TXT_DM),
-    orders: __("Orders", WPPDEV_WO_TXT_DM),
+    name: __("Product", 'wppdev-woocommerce-order-status'),
+    quantity: __("Quantity", 'wppdev-woocommerce-order-status'),
+    in_stock: __("In Stock", 'wppdev-woocommerce-order-status'),
+    orders: __("Orders", 'wppdev-woocommerce-order-status'),
 };
 
 const ProductRow = ({ product }) => {
@@ -156,7 +155,7 @@ const StatusProducts = props => {
         isDismissible: true,
         shouldCloseOnEsc: true,
         shouldCloseOnClickOutside: true,
-        title: __('View Order Status Products - ', WPPDEV_WO_TXT_DM) + name,
+        title: __('View Order Status Products - ', 'wppdev-woocommerce-order-status') + name,
     };
 
     //console.log("products", products);
@@ -170,7 +169,7 @@ const StatusProducts = props => {
                 message={requestError}
                 clear={() => clearErrorMsgs(reqName)}
                 label={<FontAwesomeIcon
-                    title={__('View Products', WPPDEV_WO_TXT_DM)}
+                    title={__('View Products', 'wppdev-woocommerce-order-status')}
                     icon={faEye}
                 />}
             />

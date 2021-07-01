@@ -34,7 +34,7 @@ class Controller_Admin_Order extends Controller {
 			if( $status->enabled_in_bulk_actions ) {
 				$action = 'mark_' . $status->get_slug();
 				$actions[ $action ] = esc_html( sprintf( 
-					'%s %s', __( 'Change status to', WPPDEV_WO_TXT_DM ), 
+					'%s %s', __( 'Change status to', 'wppdev-woocommerce-order-status' ), 
 					$status->name 
 				) );
 			}

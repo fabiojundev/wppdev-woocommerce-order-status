@@ -73,39 +73,39 @@ class Controller_Cron extends Controller {
 		
 		$periods['1day'] = array(
 				'interval' => DAY_IN_SECONDS,
-				'display' => __( 'Every Day', WPPDEV_WO_TXT_DM )
+				'display' => __( 'Every Day', 'wppdev-woocommerce-order-status' )
 		);
 		$periods['12hours'] = array(
 				'interval' => 12 * HOUR_IN_SECONDS,
-				'display' => __( 'Every 12 Hours', WPPDEV_WO_TXT_DM )
+				'display' => __( 'Every 12 Hours', 'wppdev-woocommerce-order-status' )
 		);
 		$periods['6hours'] = array(
 				'interval' => 6 * HOUR_IN_SECONDS,
-				'display' => __( 'Every 6 Hours', WPPDEV_WO_TXT_DM )
+				'display' => __( 'Every 6 Hours', 'wppdev-woocommerce-order-status' )
 		);
 		$periods['60mins'] = array(
 				'interval' => 60 * MINUTE_IN_SECONDS,
-				'display' => __( 'Every 60 Mins', WPPDEV_WO_TXT_DM )
+				'display' => __( 'Every 60 Mins', 'wppdev-woocommerce-order-status' )
 		);
 		$periods['30mins'] = array(
 				'interval' => 30 * MINUTE_IN_SECONDS,
-				'display' => __( 'Every 30 Mins', WPPDEV_WO_TXT_DM )
+				'display' => __( 'Every 30 Mins', 'wppdev-woocommerce-order-status' )
 		);
 		$periods['15mins'] = array(
 				'interval' => 15 * MINUTE_IN_SECONDS,
-				'display' => __( 'Every 15 Mins', WPPDEV_WO_TXT_DM )
+				'display' => __( 'Every 15 Mins', 'wppdev-woocommerce-order-status' )
 		);
 		$periods['10mins'] = array(
 				'interval' => 10 * MINUTE_IN_SECONDS,
-				'display' => __( 'Every 10 Mins', WPPDEV_WO_TXT_DM )
+				'display' => __( 'Every 10 Mins', 'wppdev-woocommerce-order-status' )
 		);
 		$periods['5mins'] = array(
 				'interval' => 5 * MINUTE_IN_SECONDS,
-				'display' => __( 'Every 5 Mins', WPPDEV_WO_TXT_DM )
+				'display' => __( 'Every 5 Mins', 'wppdev-woocommerce-order-status' )
 		);
 		$periods['1min'] = array(
 				'interval' => MINUTE_IN_SECONDS,
-				'display' => __( 'Every Minute', WPPDEV_WO_TXT_DM )
+				'display' => __( 'Every Minute', 'wppdev-woocommerce-order-status' )
 		);
 		
 		return apply_filters( 'wo_controller_cron_time_period', $periods );

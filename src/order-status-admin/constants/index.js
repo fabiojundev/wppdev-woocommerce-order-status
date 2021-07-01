@@ -1,5 +1,3 @@
-export const WPPDEV_WO_TXT_DM = 'wppdev-woocommerce-order-status';
-
 //tab names
 export const TAB_SETTINGS = 'settings';
 export const TAB_MAIL = 'mail';

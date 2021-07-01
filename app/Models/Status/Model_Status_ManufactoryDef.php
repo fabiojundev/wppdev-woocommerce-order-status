@@ -15,7 +15,7 @@ class Model_Status_ManufactoryDef extends Model_Status {
 			'processing' => [
 				'name' => _x( 'Processing', 'Order status', 'woocommerce' ),
 				'next_statuses' => ['manufactoring'],
-				'description' => __( 'Payment received (paid) and stock has been reduced; order is awaiting fulfillment.', WPPDEV_WO_TXT_DM ),
+				'description' => __( 'Payment received (paid) and stock has been reduced; order is awaiting fulfillment.', 'wppdev-woocommerce-order-status' ),
 				'color' => '#5b841b',
 				'background' => '#c6e1c6',
 				'icon' => 'FaEllipsisH',
@@ -24,9 +24,9 @@ class Model_Status_ManufactoryDef extends Model_Status {
 				'type' => self::TYPE_CORE,
 			],
 			'manufactoring' => [
-				'name' =>  __( 'Manufactoring', WPPDEV_WO_TXT_DM ),
+				'name' =>  __( 'Manufactoring', 'wppdev-woocommerce-order-status' ),
 				'next_statuses' => ['shipped'],
-				'description' => __( 'Manufactoring the product.', WPPDEV_WO_TXT_DM ),
+				'description' => __( 'Manufactoring the product.', 'wppdev-woocommerce-order-status' ),
 				'color' => '#976565',
 				'background' => '#e8e3e3',
 				'icon' => 'FaTools',
@@ -35,9 +35,9 @@ class Model_Status_ManufactoryDef extends Model_Status {
 				'type' => self::TYPE_CUSTOM,
 			],
 			'shipped' => [
-				'name' =>  __( 'Shipped', WPPDEV_WO_TXT_DM ),
+				'name' =>  __( 'Shipped', 'wppdev-woocommerce-order-status' ),
 				'next_statuses' => ['completed'],
-				'description' => __( 'Shipped to address.', WPPDEV_WO_TXT_DM ),
+				'description' => __( 'Shipped to address.', 'wppdev-woocommerce-order-status' ),
 				'color' => '#f3f3f7',
 				'background' => '#282cc0',
 				'icon' => 'FaShippingFast',

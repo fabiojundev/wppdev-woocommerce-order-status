@@ -33,8 +33,6 @@
  *          along with this program; If not, see https://www.gnu.org/licenses/gpl-2.0.html.
  */
 
-define( 'WPPDEV_WO_TXT_DM', 'wppdev-woocommerce-order-status' );
-
 /**
  * Plugin name dir constant.
  *
@@ -160,7 +158,7 @@ class WooOrderWorkflowPlugin {
 		$links[] = sprintf( 
 			'<a href="%s">%s</a>', 
 			esc_url( Controller_Plugin::get_admin_settings_url() ),
-			__( 'Settings', WPPDEV_WO_TXT_DM ),
+			__( 'Settings', 'wppdev-woocommerce-order-status' ),
 		);
 		return $links;
 	}
@@ -224,7 +222,7 @@ class WooOrderWorkflowPlugin {
 	 */
 	public function plugin_localization() {
 	    load_plugin_textdomain(
-	        WPPDEV_WO_TXT_DM,
+	        'wppdev-woocommerce-order-status',
 	        false,
 	        WPPDEV_WO_PLUGIN_NAME . '/languages'
 	    );

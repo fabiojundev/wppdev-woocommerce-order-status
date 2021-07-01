@@ -27,12 +27,12 @@ class Model_WC_Email extends WC_Email {
 		parent::__construct();
 
 		$this->id               = 'wo_status_changed_email';
-		$this->title            = __( 'Order Workflow', WPPDEV_WO_TXT_DM );
+		$this->title            = __( 'Order Workflow', 'wppdev-woocommerce-order-status' );
 		$this->customer_email   = false;
-		$this->description      = __( 'This email is sent when configured in Order Workflow settings.', WPPDEV_WO_TXT_DM );
-		$this->heading          = __( 'Your order status has changed', WPPDEV_WO_TXT_DM );
-		$this->subject          = __( '[{site_title}] Order #{order_number} status changed', WPPDEV_WO_TXT_DM );
-		$this->message          = __( 'Hi there. Your recent order on {site_title} status has changed.', WPPDEV_WO_TXT_DM ) . PHP_EOL;
+		$this->description      = __( 'This email is sent when configured in Order Workflow settings.', 'wppdev-woocommerce-order-status' );
+		$this->heading          = __( 'Your order status has changed', 'wppdev-woocommerce-order-status' );
+		$this->subject          = __( '[{site_title}] Order #{order_number} status changed', 'wppdev-woocommerce-order-status' );
+		$this->message          = __( 'Hi there. Your recent order on {site_title} status has changed.', 'wppdev-woocommerce-order-status' ) . PHP_EOL;
 		$this->email_type 		= 'html';
 		$this->template_html    = 'emails/wo-status-changed-email.php';
 		$this->template_plain   = 'emails/plain/wo-status-changed-email.php';
@@ -45,39 +45,39 @@ class Model_WC_Email extends WC_Email {
 	public function init_form_fields() {
 		$this->form_fields = array(
 			'enabled' => array(
-				'title'   => __( 'Enable/Disable', WPPDEV_WO_TXT_DM ),
+				'title'   => __( 'Enable/Disable', 'wppdev-woocommerce-order-status' ),
 				'type'    => 'checkbox',
-				'label'   => __( 'Enable this email notification', WPPDEV_WO_TXT_DM ),
+				'label'   => __( 'Enable this email notification', 'wppdev-woocommerce-order-status' ),
 				'default' => 'yes',
 			),
 			'subject' => array(
-				'title'       => __( 'Subject', WPPDEV_WO_TXT_DM ),
+				'title'       => __( 'Subject', 'wppdev-woocommerce-order-status' ),
 				'type'        => 'text',
-				'description' => sprintf( __( 'This controls the email subject line. Leave blank to use the default subject: <code>%s</code>.', WPPDEV_WO_TXT_DM ), $this->subject ),
+				'description' => sprintf( __( 'This controls the email subject line. Leave blank to use the default subject: <code>%s</code>.', 'wppdev-woocommerce-order-status' ), $this->subject ),
 				'placeholder' => $this->subject,
 				'default'     => '',
 				'desc_tip'    => true,
 			),
 			'heading' => array(
-				'title'       => __( 'Email Heading', WPPDEV_WO_TXT_DM ),
+				'title'       => __( 'Email Heading', 'wppdev-woocommerce-order-status' ),
 				'type'        => 'text',
-				'description' => sprintf( __( 'This controls the main heading contained within the email. Leave blank to use the default heading: <code>%s</code>.', WPPDEV_WO_TXT_DM ), $this->heading ),
+				'description' => sprintf( __( 'This controls the main heading contained within the email. Leave blank to use the default heading: <code>%s</code>.', 'wppdev-woocommerce-order-status' ), $this->heading ),
 				'placeholder' => $this->heading,
 				'default'     => '',
 				'desc_tip'    => true,
 			),
 			'message' => array(
-				'title'       => __( 'Email Content', WPPDEV_WO_TXT_DM ),
+				'title'       => __( 'Email Content', 'wppdev-woocommerce-order-status' ),
 				'type'        => 'textarea',
-				'description' => sprintf( __( 'This controls the initial content of the email. Leave blank to use the default content: <code>%s</code>.', WPPDEV_WO_TXT_DM ), $this->message ),
+				'description' => sprintf( __( 'This controls the initial content of the email. Leave blank to use the default content: <code>%s</code>.', 'wppdev-woocommerce-order-status' ), $this->message ),
 				'placeholder' => $this->message,
 				'default'     => '',
 				'desc_tip'    => true,
 			),
 			'email_type' => array(
-				'title'       => __( 'Email type', WPPDEV_WO_TXT_DM ),
+				'title'       => __( 'Email type', 'wppdev-woocommerce-order-status' ),
 				'type'        => 'select',
-				'description' => __( 'Choose which format of email to send.', WPPDEV_WO_TXT_DM ),
+				'description' => __( 'Choose which format of email to send.', 'wppdev-woocommerce-order-status' ),
 				'default'     => 'html',
 				'class'       => 'email_type wc-enhanced-select',
 				'options'     => $this->get_custom_email_type_options(),
@@ -96,11 +96,11 @@ class Model_WC_Email extends WC_Email {
 			return $this->get_email_type_options();
 		}
 
-		$types = array( 'plain' => __( 'Plain text', WPPDEV_WO_TXT_DM ) );
+		$types = array( 'plain' => __( 'Plain text', 'wppdev-woocommerce-order-status' ) );
 
 		if ( class_exists( 'DOMDocument' ) ) {
-			$types['html']      = __( 'HTML', WPPDEV_WO_TXT_DM );
-			$types['multipart'] = __( 'Multipart', WPPDEV_WO_TXT_DM );
+			$types['html']      = __( 'HTML', 'wppdev-woocommerce-order-status' );
+			$types['multipart'] = __( 'Multipart', 'wppdev-woocommerce-order-status' );
 		}
 		else {
 			Helper_Debug::debug("DOMDOC NOT EXTS");

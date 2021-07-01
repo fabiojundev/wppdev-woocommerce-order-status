@@ -13,7 +13,6 @@ import { useSelect, useDispatch } from "@wordpress/data";
 import { __ } from '@wordpress/i18n';
 
 import { STATUS_STORE_KEY } from '../../data';
-import { WPPDEV_WO_TXT_DM } from '../../constants/index.js';
 import ButtonLoader from '../button-loader';
 
 
@@ -81,12 +80,12 @@ export default function StatusSave(props) {
                 onClick={onCancel}
                 disabled={inProgress}
             >
-                {__('Back', WPPDEV_WO_TXT_DM)}
+                {__('Back', 'wppdev-woocommerce-order-status')}
             </Button>
             <ButtonLoader
                 isPrimary
                 onClick={handleSave}
-                label={__('Save', WPPDEV_WO_TXT_DM)}
+                label={__('Save', 'wppdev-woocommerce-order-status')}
                 loading={inProgress}
                 message={message || error}
                 clear={() => clearErrorMsgs(reqName)}

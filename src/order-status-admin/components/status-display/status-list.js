@@ -24,7 +24,7 @@ import { faLevelUpAlt, faEnvelope, faPlusCircle } from '@fortawesome/free-solid-
  */
 import OrderStatusDelete from '../status-edit/status-delete';
 import { STATUS_STORE_KEY } from "../../data";
-import { WPPDEV_WO_TXT_DM, TYPE_CORE, TYPE_CUSTOM, TAB_SETTINGS, TAB_MAIL, TAB_TRIGGERS } from "../../constants";
+import { TYPE_CORE, TYPE_CUSTOM, TAB_SETTINGS, TAB_MAIL, TAB_TRIGGERS } from "../../constants";
 import { sformat } from "../../utils";
 import StatusGraph from './status-graph';
 import { IconPickerItem } from 'react-fa-icon-picker';
@@ -36,15 +36,15 @@ import {
 } from '../status-edit';
 
 const header = {
-  icon: __("Icon | Type", WPPDEV_WO_TXT_DM),
-  name: __("Status Name", WPPDEV_WO_TXT_DM),
-  slug: __("Slug", WPPDEV_WO_TXT_DM),
-  description: __("Description", WPPDEV_WO_TXT_DM),
-  next_statuses: __("Next", WPPDEV_WO_TXT_DM),
-  type: __("Type", WPPDEV_WO_TXT_DM),
-  trigger: __("Trigger", WPPDEV_WO_TXT_DM),
-  orders_count: __("Orders | Products", WPPDEV_WO_TXT_DM),
-  products: __("Products", WPPDEV_WO_TXT_DM),
+  icon: __("Icon | Type", 'wppdev-woocommerce-order-status'),
+  name: __("Status Name", 'wppdev-woocommerce-order-status'),
+  slug: __("Slug", 'wppdev-woocommerce-order-status'),
+  description: __("Description", 'wppdev-woocommerce-order-status'),
+  next_statuses: __("Next", 'wppdev-woocommerce-order-status'),
+  type: __("Type", 'wppdev-woocommerce-order-status'),
+  trigger: __("Trigger", 'wppdev-woocommerce-order-status'),
+  orders_count: __("Orders | Products", 'wppdev-woocommerce-order-status'),
+  products: __("Products", 'wppdev-woocommerce-order-status'),
 };
 
 
@@ -110,7 +110,7 @@ const StatusList = (props) => {
   };
 
   const title = sformat('{0}{1} ',
-    __('Edit Order Status', WPPDEV_WO_TXT_DM),
+    __('Edit Order Status', 'wppdev-woocommerce-order-status'),
     editedStatus?.name ? ': ' + editedStatus.name : ''
   );
 
@@ -153,7 +153,7 @@ const StatusList = (props) => {
           disabled={inProgress}
         >
           <FontAwesomeIcon
-            title={__('Back', WPPDEV_WO_TXT_DM)}
+            title={__('Back', 'wppdev-woocommerce-order-status')}
             icon={faLevelUpAlt}
             className={"wo-back"}
           />
@@ -165,13 +165,13 @@ const StatusList = (props) => {
     </React.Fragment>
   ) : (
     <React.Fragment>
-      <h1 className={"wp-heading-inline"}>{__('Order Status Workflow', WPPDEV_WO_TXT_DM)}</h1>
+      <h1 className={"wp-heading-inline"}>{__('Order Status Workflow', 'wppdev-woocommerce-order-status')}</h1>
       <div className="wo-flex">
         <Button
           isSecondary
           onClick={onCreate}
         >
-          {__('Add New', WPPDEV_WO_TXT_DM)}
+          {__('Add New', 'wppdev-woocommerce-order-status')}
         </Button>
         <StatusGraph
           statuses={statuses}
@@ -181,10 +181,10 @@ const StatusList = (props) => {
           name="importId"
           value={importId}
           options={[
-            { label: __('Select', WPPDEV_WO_TXT_DM), value: '' },
-            { label: __('Reset Core Statuses', WPPDEV_WO_TXT_DM), value: 'core' },
-            { label: __('Import Manufactory Preset', WPPDEV_WO_TXT_DM), value: 'manufactory' },
-            { label: __('Import Food Delivery Preset', WPPDEV_WO_TXT_DM), value: 'food_delivery' },
+            { label: __('Select', 'wppdev-woocommerce-order-status'), value: '' },
+            { label: __('Reset Core Statuses', 'wppdev-woocommerce-order-status'), value: 'core' },
+            { label: __('Import Manufactory Preset', 'wppdev-woocommerce-order-status'), value: 'manufactory' },
+            { label: __('Import Food Delivery Preset', 'wppdev-woocommerce-order-status'), value: 'food_delivery' },
           ]}
           onChange={value => setImportId(value)}
         />
@@ -192,7 +192,7 @@ const StatusList = (props) => {
           isSecondary
           disabled={importId ? true : false}
           onClick={onImport}
-          label={__('Apply', WPPDEV_WO_TXT_DM)}
+          label={__('Apply', 'wppdev-woocommerce-order-status')}
           loading={inProgress}
           message={message}
           clear={() => clearErrorMsgs(reqName)}
@@ -276,7 +276,7 @@ const StatusRow = (props) => {
               onClick={() => onEdit(status, TAB_SETTINGS)}
               data-id={id}
             >
-              {__('Edit', WPPDEV_WO_TXT_DM)}
+              {__('Edit', 'wppdev-woocommerce-order-status')}
             </a>
           </span>
           {TYPE_CORE != type &&
@@ -335,7 +335,7 @@ const StatusRow = (props) => {
         <div className={"wo-double-col"}>
           <Button
             isLink
-            title={__('Trigger Email', WPPDEV_WO_TXT_DM)}
+            title={__('Trigger Email', 'wppdev-woocommerce-order-status')}
             onClick={() => onEdit(status, TAB_MAIL)}
             className={"wo-table-action-ico"}
           >
@@ -345,7 +345,7 @@ const StatusRow = (props) => {
           </Button>
           {/* <Button
             isLink
-            title={__('Other Triggers', WPPDEV_WO_TXT_DM)}
+            title={__('Other Triggers', 'wppdev-woocommerce-order-status')}
             onClick={() => onEdit(status, TAB_TRIGGERS)}
             className={"wo-table-action-ico"}
           >

@@ -73,7 +73,7 @@ class Controller_Admin_Status extends Controller {
 		
 		wp_set_script_translations( 
 			self::WO_ORDER_STATUS_ADMIN, 
-			WPPDEV_WO_TXT_DM, 
+			'wppdev-woocommerce-order-status', 
 			\WooOrderWorkflowPlugin::instance()->dir . 'languages/'
 		);
     }

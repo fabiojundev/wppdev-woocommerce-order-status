@@ -17,9 +17,9 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 	<p>
 	<?php esc_html( printf( '%s #%s %s %s',
-		__( 'Just to let you know - your order', WPPDEV_WO_TXT_DM ), 
+		__( 'Just to let you know - your order', 'wppdev-woocommerce-order-status' ), 
 		$order->get_order_number(),
-		__( 'status has changed to', WPPDEV_WO_TXT_DM ), 
+		__( 'status has changed to', 'wppdev-woocommerce-order-status' ), 
 		trim( $order->get_status() )
 		) ); 
 	?>

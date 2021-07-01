@@ -130,7 +130,7 @@ class Controller_Rest_Status extends Rest {
 			return new \WP_REST_Response( $status->to_array(), 200 );
 		}
 		else{
-			return new \WP_Error( 404, __( 'Order Status not found', WPPDEV_WO_TXT_DM ) );
+			return new \WP_Error( 404, __( 'Order Status not found', 'wppdev-woocommerce-order-status' ) );
 		}
 	}
 	
@@ -150,11 +150,11 @@ class Controller_Rest_Status extends Rest {
 			$status = $this->save_status( $fields, $status );
 			return new \WP_REST_Response( [
 				'status' => $status->to_array(),
-				'message' => __( 'Order Status Created.', WPPDEV_WO_TXT_DM ),
+				'message' => __( 'Order Status Created.', 'wppdev-woocommerce-order-status' ),
 			], 200 );
 		}
 		else{
-			return new \WP_Error( 404, __( 'Required fields are empty.', WPPDEV_WO_TXT_DM ) );
+			return new \WP_Error( 404, __( 'Required fields are empty.', 'wppdev-woocommerce-order-status' ) );
 		}
 	}
 	
@@ -176,12 +176,12 @@ class Controller_Rest_Status extends Rest {
 // 			Helper_Debug::debug($status);
 			return new \WP_REST_Response( [
 				'status' => $status->to_array(),
-				'message' => __( 'Order Status Updated.', WPPDEV_WO_TXT_DM ),
+				'message' => __( 'Order Status Updated.', 'wppdev-woocommerce-order-status' ),
 			], 200 );
 
 		}
 		else{
-			return new \WP_Error( 404, __( 'Order Status not found', WPPDEV_WO_TXT_DM ) );
+			return new \WP_Error( 404, __( 'Order Status not found', 'wppdev-woocommerce-order-status' ) );
 		}
 	}
 
@@ -244,16 +244,16 @@ class Controller_Rest_Status extends Rest {
 					$status->delete();
 				}
 				else {
-					return new \WP_Error( 404, __( 'Reassign status failed', WPPDEV_WO_TXT_DM ) );
+					return new \WP_Error( 404, __( 'Reassign status failed', 'wppdev-woocommerce-order-status' ) );
 				}
 			}
 			else {
 				$status->delete();
 			}
-			return new \WP_REST_Response( __( 'Order Status Deleted', WPPDEV_WO_TXT_DM ), 200 );
+			return new \WP_REST_Response( __( 'Order Status Deleted', 'wppdev-woocommerce-order-status' ), 200 );
 		}
 		else{
-			return new \WP_Error( 404, __( 'Order Status not found', WPPDEV_WO_TXT_DM ) );
+			return new \WP_Error( 404, __( 'Order Status not found', 'wppdev-woocommerce-order-status' ) );
 		}
 	}
 	
@@ -273,11 +273,11 @@ class Controller_Rest_Status extends Rest {
 			$statuses = Model_Status::get_statuses( null, true, true );
 			return new \WP_REST_Response( [
 				'statuses' => $statuses,
-				'message' => __( 'Order Statuses Imported.', WPPDEV_WO_TXT_DM ),
+				'message' => __( 'Order Statuses Imported.', 'wppdev-woocommerce-order-status' ),
 			], 200 );
 		}
 		else{
-			return new \WP_Error( 404, __( 'Required fields are empty.', WPPDEV_WO_TXT_DM ) );
+			return new \WP_Error( 404, __( 'Required fields are empty.', 'wppdev-woocommerce-order-status' ) );
 		}
 	}
 
@@ -299,11 +299,11 @@ class Controller_Rest_Status extends Rest {
 
 			return new \WP_REST_Response( [
 				'products' => $products,
-				'message' => __( 'Products loaded.', WPPDEV_WO_TXT_DM ),
+				'message' => __( 'Products loaded.', 'wppdev-woocommerce-order-status' ),
 			], 200 );
 		}
 		else{
-			return new \WP_Error( 404, __( 'Required fields are empty.', WPPDEV_WO_TXT_DM ) );
+			return new \WP_Error( 404, __( 'Required fields are empty.', 'wppdev-woocommerce-order-status' ) );
 		}
 	}
 

@@ -15,7 +15,7 @@ class Model_Status_FoodDeliveryDef extends Model_Status {
 			'processing' => [
 				'name' => _x( 'Processing', 'Order status', 'woocommerce' ),
 				'next_statuses' => ['delivering'],
-				'description' => __( 'Payment received (paid) and stock has been reduced; order is awaiting fulfillment.', WPPDEV_WO_TXT_DM ),
+				'description' => __( 'Payment received (paid) and stock has been reduced; order is awaiting fulfillment.', 'wppdev-woocommerce-order-status' ),
 				'color' => '#5b841b',
 				'background' => '#c6e1c6',
 				'icon' => 'FaEllipsisH',
@@ -24,9 +24,9 @@ class Model_Status_FoodDeliveryDef extends Model_Status {
 				'type' => self::TYPE_CORE,
 			],
 			'delivering' => [
-				'name' =>  __( 'Delivering', WPPDEV_WO_TXT_DM ),
+				'name' =>  __( 'Delivering', 'wppdev-woocommerce-order-status' ),
 				'next_statuses' => ['completed'],
-				'description' => __( 'Shipped to address.', WPPDEV_WO_TXT_DM ),
+				'description' => __( 'Shipped to address.', 'wppdev-woocommerce-order-status' ),
 				'color' => '#f3f3f7',
 				'background' => '#282cc0',
 				'icon' => 'FaShippingFast',

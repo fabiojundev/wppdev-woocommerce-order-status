@@ -10,7 +10,6 @@ import { useState } from "@wordpress/element";
 import { useSelect, useDispatch } from "@wordpress/data";
 import { STATUS_STORE_KEY } from "../../data";
 import { __ } from "@wordpress/i18n";
-import { WPPDEV_WO_TXT_DM } from "../../constants";
 import { ReactSelect, onSelect } from '../react-select';
 import ButtonLoader from '../button-loader';
 
@@ -57,7 +56,7 @@ export default function OrderStatusDelete(props) {
         isDismissible: true,
         shouldCloseOnEsc: true,
         shouldCloseOnClickOutside: true,
-        title: __('Delete this custom order status?', WPPDEV_WO_TXT_DM),
+        title: __('Delete this custom order status?', 'wppdev-woocommerce-order-status'),
     };
 
     const [reassign, setReassign] = useState('');
@@ -87,17 +86,17 @@ export default function OrderStatusDelete(props) {
                 loading={inProgress}
                 message={requestError}
                 clear={() => clearErrorMsgs(reqName)}
-                label={__('Delete', WPPDEV_WO_TXT_DM)}
+                label={__('Delete', 'wppdev-woocommerce-order-status')}
             />
             {isOpen &&
                 <Modal {...modalProps} onRequestClose={closeModal} className={"wo-order-delete-modal wo-modal"}>
                     <h4>
                         {
-                            __('There are ', WPPDEV_WO_TXT_DM) + orders_count +
-                            __(' orders with status ', WPPDEV_WO_TXT_DM) + name
+                            __('There are ', 'wppdev-woocommerce-order-status') + orders_count +
+                            __(' orders with status ', 'wppdev-woocommerce-order-status') + name
                         }
                     </h4>
-                    <label>{__('Reassign to Status', WPPDEV_WO_TXT_DM)}</label>
+                    <label>{__('Reassign to Status', 'wppdev-woocommerce-order-status')}</label>
                     <ReactSelect
                         id="reassign"
                         name="reassign"
@@ -109,7 +108,7 @@ export default function OrderStatusDelete(props) {
                         isSecondary
                         onClick={closeModal}
                     >
-                        {__('Cancel', WPPDEV_WO_TXT_DM)}
+                        {__('Cancel', 'wppdev-woocommerce-order-status')}
                     </Button>
                     <ButtonLoader
                         isDestructive
@@ -118,7 +117,7 @@ export default function OrderStatusDelete(props) {
                         loading={inProgress}
                         message={requestError}
                         clear={() => clearErrorMsgs(reqName)}
-                        label={__('Reassign and Delete', WPPDEV_WO_TXT_DM)}
+                        label={__('Reassign and Delete', 'wppdev-woocommerce-order-status')}
                     />
                 </Modal>
             }
