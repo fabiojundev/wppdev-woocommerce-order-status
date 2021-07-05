@@ -27,13 +27,13 @@ This plugin helps you customize WooCommerce Order Status to fit your fulfillment
 == Automatic Install ==
 1. Click Menu 'Plugins' > 'Add new' in your WordPress Admin
 1. Search for: wppdev woocommerce order status 
-1. Click install
+1. Click install button
 1. Visit settings in WooCommerce Menu > Order Status
 
 == Manual Install ==
-1. Click button download in WordPress plugins wppdev woocommerce order status page.
-1. Unzip and Upload the contents to the `/wp-content/plugins/` directory in your server.
-1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Click download button in WordPress plugins wppdev woocommerce order status page
+1. Unzip and Upload the contents to the `/wp-content/plugins/` directory in your server
+1. Activate the plugin through the 'Plugins' menu in WordPress Admin
 1. Visit settings in WooCommerce Menu > Order Status
 
 == Screenshots ==
@@ -48,7 +48,7 @@ This plugin helps you customize WooCommerce Order Status to fit your fulfillment
 
 = How to get help? =
 
-Click on support tab or send us an email at https://wpplugins.dev/contact
+Click on support tab or contact us at [WPPluginsDev](https://wpplugins.dev/contact)
 
 = Do you customize this plugin? =
 
