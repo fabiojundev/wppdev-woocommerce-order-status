@@ -23,14 +23,13 @@ This plugin helps you customize WooCommerce Order Status to fit your fulfillment
 * Auxiliar reports to forecast the production, manufactory, or suppliers of your e-commerce.
 
 == Installation ==
-
-== Automatic Install ==
+=== Automatic Install ===
 1. Click Menu 'Plugins' > 'Add new' in your WordPress Admin
 1. Search for: wppdev woocommerce order status 
 1. Click install button
 1. Visit settings in WooCommerce Menu > Order Status
 
-== Manual Install ==
+=== Manual Install ===
 1. Click download button in WordPress plugins wppdev woocommerce order status page
 1. Unzip and Upload the contents to the `/wp-content/plugins/` directory in your server
 1. Activate the plugin through the 'Plugins' menu in WordPress Admin
