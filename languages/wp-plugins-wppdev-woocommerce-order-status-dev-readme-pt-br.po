@@ -1,83 +1,131 @@
-# Translation of Plugins - WPPluginsDev WooCommerce Order Status - Development Readme (trunk) in Portuguese (Brazil)
-# This file is distributed under the same license as the Plugins - WPPluginsDev WooCommerce Order Status - Development Readme (trunk) package.
+# Translation of Plugins - WPPDEV WooCommerce Order Status - Development Readme (trunk) in Portuguese (Brazil)
+# This file is distributed under the same license as the Plugins - WPPDEV WooCommerce Order Status - Development Readme (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-07-01 20:50-0300\n"
+"PO-Revision-Date: 2021-07-05 12:24-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Poedit 3.0\n"
 "Language: pt_BR\n"
-"Project-Id-Version: Plugins - WPPluginsDev WooCommerce Order Status - Development Readme (trunk)\n"
+"Project-Id-Version: Plugins - WPPDEV WooCommerce Order Status - Development Readme (trunk)\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
 
-#. Short description.
-msgid ""
-"Create new order statuses to customize your fulfillment process.\n"
-"You can choose colors and icons for easy identification.\n"
-"Enable icon buttons to trans &hellip;"
-msgstr ""
-"Crie novos status de pedidos e personalize o processo de atendimento do pedido.\n"
-"Você pode escolher ícones e cores para identificá-los de forma mais fácil.\n"
-"Habilite botões com os ícones para transições entre status no painel de Pedidos do WooCommerce."
-
 #. Found in description paragraph.
-msgid ""
-"Create new order statuses to customize your fulfillment process.\n"
-"You can choose colors and icons for easy identification.\n"
-"Enable icon buttons to transition to another status in WooCommerce orders admin.\n"
-"Show custom order status in WooCommerce Reports.\n"
-"Auxiliar reports to forecast the production, manufactoring, or suppliers of your e-commerce."
-msgstr ""
-"Crie novos status de pedidos e personalize o processo de atendimento do pedido.\n"
-"Você pode escolher ícones e cores para identificá-los de forma mais fácil.\n"
-"Habilite botões com os ícones para transições entre status no painel de Pedidos do WooCommerce.\n"
-"Exiba status de pedidos personalizados em Relatórios do WooCommerce.\n"
-"Relatórios auxiliares para prever a produção, manufatura ou fornecedores da sua loja virtual."
+msgid "This plugin helps you customize WooCommerce Order Status to fit your fulfillment process and delivery workflow."
+msgstr "Este plugin ajuda a personalizar o Status de Pedido do WooCommerce, para ajustá-lo ao seu processo de atendimento e workflow de entrega."
 
-#. Found in installation list item.
-msgid "Visit settings in WooCommerce Menu &gt; Workflow"
-msgstr "Visite as configurações no menu WooCommerce > Status de Pedido"
+#. Plugin name.
+msgid "WPPDEV WooCommerce Order Status"
+msgstr "WPPDEV WooCommerce Order Status"
 
-#. Found in installation list item.
+#. Found in faq paragraph.
+msgid "Yes, please contact us for customizations."
+msgstr "Sim, por favor entre em contato para personalizações."
+
+#. Found in faq paragraph.
+msgid "Click on support tab or send us an email at https://wpplugins.dev/contact"
+msgstr "Clique na aba suporte ou pelo [formulário](https://wpplugins.dev/contato)"
+
+#. Found in faq header.
+msgid "Do you customize this plugin?"
+msgstr "Vocês personalizam este plugin?"
+
+#. Found in faq header.
+msgid "How to get help?"
+msgstr "Como obter ajuda?"
+
+#. Found in description list item.
+msgid "Click button download in WordPress plugins wppdev woocommerce order status page."
+msgstr "Clique no botão de download na página wppdev woocommerce order status dentro do diretório de plugins do WordPress."
+
+#. Found in description list item.
+msgid "Visit settings in WooCommerce Menu &gt; Order Status"
+msgstr "Configure através do Menu WooCommerce &gt; Status do Pedido"
+
+#. Found in description list item.
+msgid "Click install"
+msgstr "Clique no botão instalar"
+
+#. Found in description list item.
+msgid "Search for: wppdev woocommerce order status "
+msgstr "Procure por: wppdev woocommerce order status "
+
+#. Found in description list item.
+msgid "Click Menu 'Plugins' &gt; 'Add new' in your WordPress Admin"
+msgstr "Clique no Menu ‘Plugins’ &gt; ‘Adicionar novo’ no painel de administração do WordPress"
+
+#. Found in description list item.
+msgid "Auxiliar reports to forecast the production, manufactory, or suppliers of your e-commerce."
+msgstr "Relatórios auxiliares para prever a produção, manufatura, ou fornecedores do seu e-commerce."
+
+#. Found in description list item.
+msgid "Show custom order status in WooCommerce Reports."
+msgstr "Exiba os status de pedido personalizados nos Relatórios do WooCommerce."
+
+#. Found in description list item.
+msgid "Add buttons in WooCommerce Orders admin's table to transition to next status."
+msgstr "Adicione botões na tabela de Pedidos do WooCoomerce para mudar para o próximo status."
+
+#. Found in description list item.
+msgid "Send email notifications to clients, admin, suppliers when an order status change occurs."
+msgstr "Envie notificações por email para clientes, administradores ou fornecedores, quando ocorre uma mudança no status do pedido."
+
+#. Found in description list item.
+msgid "Edit colors and Icons for easy status identification."
+msgstr "Edite cores e Ícones para uma melhor identificação."
+
+#. Found in description list item.
+msgid "Create new order statuses to fit your fulfillment process."
+msgstr "Crie novos status de pedido para atender seu processo de entrega."
+
+#. Found in description header.
+msgid "Manual Install"
+msgstr "Instalação Manual"
+
+#. Found in description header.
+msgid "Automatic Install"
+msgstr "Instalação Automática"
+
+#. Screenshot description.
+msgid "Overview your order status diagram with one click."
+msgstr "Tenha uma visão geral do diagrama de status de pedidos com apenas um clique."
+
+#. Screenshot description.
+msgid "WooCommerce Order Statuses - Core."
+msgstr "WooCommerce Order Statuses - Núcleo."
+
+#. Found in description list item.
 msgid "Activate the plugin through the 'Plugins' menu in WordPress"
-msgstr "Ative o plugin através do menu Plugins no WordPress"
+msgstr "Ative o plugin através do menu ‘Plugins’ no WordPress"
 
-#. Found in installation list item.
-msgid "Unzip and Upload the contents to the <code>/wp-content/plugins/</code> directory"
-msgstr "Descompacte e envie o conteúdo do diretório <code>/wp-content/plugins/</code> "
-
-#. Found in installation list item.
-msgid "Download from Wordpress plugins repository."
-msgstr "Faça o download no repositório do WordPress plugins."
+#. Found in description list item.
+msgid "Unzip and Upload the contents to the <code>/wp-content/plugins/</code> directory in your server."
+msgstr "Descompacte e faça o upload do conteúdo no diretório `/wp-content/plugins/` do seu servidor."
 
 #. Screenshot description.
 msgid "Auxiliar Report to check if your stock meets the demand."
-msgstr "Relatório Auxiliar para verificar se o seu estoque atende a demanda."
+msgstr "Relatórios auxiliares para verificar se o seu estoque atende a demanda."
 
 #. Screenshot description.
 msgid "Send custom emails to your client, supplier, partners, administrators."
-msgstr "Envie emails personalizados para seu cliente, fornecedor, parceiros e adminstradores."
+msgstr "Envie emails personalizados para seus clientes, fornecedores, parceiros e administradores."
 
 #. Screenshot description.
-msgid "Edit slug, icon, color, description, next statuses. Enable in reports and order's bulk actions."
-msgstr "Edite o slug, ícone, cor, descrição, próximos status. Habilite em relatórios e ações em massa do pedido."
+msgid "Edit slug, icon, color, description and next order statuses. Enable in reports and order's bulk actions."
+msgstr "Edite o plug, ícone, cor, descrição e próximos status. Ative em relatórios e ações em massa."
 
 #. Screenshot description.
-msgid "Overview your workflow with one click"
-msgstr "Tenha a visão geral do workflow em um clique."
+msgid "Import presets or create your own configuration."
+msgstr "Importe configurações de status ou crie seu o próprio."
 
-#. Screenshot description.
-msgid "Import pressets or create your own configuration"
-msgstr "Importe configurações já existentes ou crie o seu próprio."
-
-#. Screenshot description.
-msgid "WooCommerce Core Order Statuses"
-msgstr "Status de pedido originais do WooCommerce"
+#. Found in changelog list item.
+msgid "Fix translation text-domain"
+msgstr ""
 
 #. Found in changelog list item.
 msgid "First stable version."
-msgstr "Primeira versão."
+msgstr ""
