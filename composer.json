@@ -14,5 +14,10 @@
             "WPPluginsDev\\": "vendor/wpplugindev/framework",
             "WPPluginsDev\\WooOrderWorkflow\\": "app"
         }
+    },
+    "config": {
+        "platform": {
+            "php": "7.3"
+        }
     }
 }

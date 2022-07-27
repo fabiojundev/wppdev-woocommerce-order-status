@@ -1,7 +1,6 @@
 <?php
 namespace WPPluginsDev\Models;
 use WPPluginsDev\Models\Model;
-use WPPluginsDev\Helpers\Helper_Debug;
 
 class Model_Cart extends Model {
 
@@ -16,14 +15,16 @@ class Model_Cart extends Model {
 	public static function add_to_cart( $product, $qty, $desc = [] ) {
 	    $cart = static::get_woo_cart();
 	    $cart_item_key = static::find_in_cart( $product );
-	    $product_id = $product->id;
+	    $product_id = $product->get_id();
 	    $product_variation_id = 0;
 
-	    if( $product->parent_id ) {
-	        $product_id = $product->parent_id;
-	        $product_variation_id = $product->id;
+	    if( $product->get_parent_id() ) {
+	        $product_id = $product->get_parent_id();
+	        $product_variation_id = $product->get_id();
 	    }
 	    
+	    $product_variation_id = $product->get_id();
+
 	    if ( empty( $cart_item_key ) ) {
 	        
 	        $cart->add_to_cart(
@@ -49,7 +50,7 @@ class Model_Cart extends Model {
 	    
 	    foreach ( $cart->get_cart() as $key => $item ) {
 	        $prod = $item['data'];
-	        if( $prod->get_id() == $product->id ) {
+	        if( $prod->get_id() == $product->get_id() ) {
 	            $cart_item_key = $key;
 	            break;
 	        }

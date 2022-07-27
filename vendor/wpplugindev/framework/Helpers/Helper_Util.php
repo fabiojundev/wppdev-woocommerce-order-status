@@ -181,47 +181,70 @@ class Helper_Util {
 	/**
 	 * Returns user IP address.
 	 *
+	 * @static
+	 * @access public
 	 * @return string Remote IP address on success, otherwise FALSE.
 	 */
-	public static function get_remote_ip() {
-		$flag = !WP_DEBUG ? FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE : null;
-		$keys = array( 'HTTP_CLIENT_IP','HTTP_X_FORWARDED_FOR','HTTP_X_FORWARDED','HTTP_X_CLUSTER_CLIENT_IP','HTTP_FORWARDED_FOR','HTTP_FORWARDED',
-				'REMOTE_ADDR' );
+	public static function get_remote_ip( $local_ip_fallback = false ) {
 		
+		$flag = ! WP_DEBUG ? FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE : null;
+
+		if( $local_ip_fallback ) {
+			$flag = null;	
+		}
+
+		$keys = array(
+				'HTTP_CLIENT_IP',
+				'HTTP_X_FORWARDED_FOR',
+				'HTTP_X_FORWARDED',
+				'HTTP_X_CLUSTER_CLIENT_IP',
+				'HTTP_FORWARDED_FOR',
+				'HTTP_FORWARDED',
+				'REMOTE_ADDR',
+		);
+
 		$remote_ip = false;
 		foreach ( $keys as $key ) {
-			if ( !empty( $_SERVER[ $key ] ) ) {
-				foreach ( array_filter( array_map( 'trim', explode( ',', $_SERVER[ $key ] ) ) ) as $ip ) {
+			if ( ! empty( $_SERVER[ $key ] ) ) {
+				foreach ( array_filter( array_map( 'trim', explode( ',', $_SERVER[$key] ) ) ) as $ip ) {
 					if ( filter_var( $ip, FILTER_VALIDATE_IP, $flag ) !== false ) {
 						$remote_ip = $ip;
 						break 2;
 					}
-					if ( in_array( $ip, array( '127.0.0.1','::1' ) ) ) {
+					if( in_array( $ip, array( '127.0.0.1','::1' ) ) ) {
 						$remote_ip = $ip;
 						break 2;
 					}
 				}
 			}
 		}
-		
+
+		if( empty( $remote_ip ) && $local_ip_fallback ) {
+			$remote_ip = self::get_remote_ip( true );
+			if( empty( $remote_ip ) ) {
+				$remote_ip = '0.0.0.0';
+			}
+		}
+
 		return $remote_ip;
 	}
 
-	/**
-	 * Verify if is localhost.
-	 * 
-	 * @return boolean
-	 */
 	public static function is_localhost() {
-		$localhost = array( '127.0.0.1','::1' );
-		$ip = self::get_remote_ip();
-		$is_localhost = false;
 		
-		if ( in_array( $ip, $localhost ) ) {
+		$localhost = array( '127.0.0.1','::1' );
+		$ip = self::get_remote_ip( true );
+		$is_localhost = false;
+
+		$flag = FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE;
+		if ( ! empty( $ip ) && filter_var( $ip, FILTER_VALIDATE_IP, $flag ) === false ) {
 			$is_localhost = true;
 		}
 		
-		if ( empty( $ip ) ) {
+		if( in_array( $ip, $localhost ) ) {
+			$is_localhost = true;
+		}
+		
+		if( empty( $ip ) && defined( 'VDS_ENV') && in_array( VDS_ENV, array( 'dev', 'vm' ) ) ) {
 			$is_localhost = true;
 		}
 		

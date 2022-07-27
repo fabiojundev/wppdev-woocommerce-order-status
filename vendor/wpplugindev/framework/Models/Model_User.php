@@ -915,8 +915,8 @@ class Model_User extends Model {
 	 */
 	public static function validate_CNPJ( $cnpj ) {
 		$valid = 1;
-		$cnpj = preg_replace( "@[./-]@", "", $cnpj );
-		if ( strlen( $cnpj ) != 14 or ! is_numeric( $cnpj ) ) {
+		$cnpj = preg_replace ("@[./-]@", "", $cnpj);
+		if (strlen ($cnpj) != 14 or !is_numeric ( $cnpj ) ) {
 			$valid = 0;
 		}
 		else {
@@ -924,19 +924,19 @@ class Model_User extends Model {
 			$k = 6;
 			$soma1 = "";
 			$soma2 = "";
-			for ( $i = 0; $i < 13; $i++ ) {
+			for ($i = 0; $i < 13; $i++) {
 				$j = $j == 1 ? 9 : $j;
 				$k = $k == 1 ? 9 : $k;
-				$soma2 += ( $cnpj{ $i } * $k );
-				if ( $i < 12 ) {
-					$soma1 += ( $cnpj{ $i } * $j );
+				$soma2 += ($cnpj[$i] * $k);
+				if ($i < 12) {
+					$soma1 += ($cnpj[$i] * $j);
 				}
 				$k--;
 				$j--;
 			}
 			$digito1 = $soma1 % 11 < 2 ? 0 : 11 - $soma1 % 11;
 			$digito2 = $soma2 % 11 < 2 ? 0 : 11 - $soma2 % 11;
-			$valid = ( ( $cnpj{ 12 } == $digito1 ) and ( $cnpj{ 13 } == $digito2 ) );
+			$valid = (($cnpj[12] == $digito1) and ($cnpj[13] == $digito2));
 		}
 		return $valid;
 	}

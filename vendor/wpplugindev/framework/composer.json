@@ -3,5 +3,10 @@
     "description": "A short description of what your package does",
 	"require" : {
 		"monolog/monolog" : "^2.0"
-	}
+	},
+    "config": {
+        "platform": {
+            "php": "7.3"
+        }
+    }
 }

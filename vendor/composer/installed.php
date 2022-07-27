@@ -6,19 +6,19 @@
     'aliases' => 
     array (
     ),
-    'reference' => '467fae0e8587bbd6d6d47a6ee2acd5362ddc48f6',
+    'reference' => '5b111315891b9e0e7ffdc87ef602a9d27dfda44f',
     'name' => 'wpplugindev/woocommerce-order-workflow',
   ),
   'versions' => 
   array (
     'monolog/monolog' => 
     array (
-      'pretty_version' => '2.2.0',
-      'version' => '2.2.0.0',
+      'pretty_version' => '2.8.0',
+      'version' => '2.8.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
+      'reference' => '720488632c590286b88b80e62aa3d3d551ad4a50',
     ),
     'psr/log' => 
     array (
@@ -33,7 +33,7 @@
     array (
       'provided' => 
       array (
-        0 => '1.0.0',
+        0 => '1.0.0 || 2.0.0 || 3.0.0',
       ),
     ),
     'wpplugindev/framework' => 
@@ -44,7 +44,7 @@
       array (
         0 => '9999999-dev',
       ),
-      'reference' => 'a5ed21b8170a0e19d62b2f96943cc2189a944a05',
+      'reference' => '6166399269e98c1b776abef89088ae46c8b2e56f',
     ),
     'wpplugindev/woocommerce-order-workflow' => 
     array (
@@ -53,7 +53,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '467fae0e8587bbd6d6d47a6ee2acd5362ddc48f6',
+      'reference' => '5b111315891b9e0e7ffdc87ef602a9d27dfda44f',
     ),
   ),
 );
