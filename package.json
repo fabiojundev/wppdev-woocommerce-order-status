@@ -34,7 +34,7 @@
 		"graphviz-react": "^1.1.1",
 		"react-fa-icon-picker": "^1.0.3",
 		"react-select": "^4.3.0",
-		"uniqid": "5.2.0",
+		"uniqid": "5.4",
 		"yup": "^0.32.9"
 	},
 	"devDependencies": {
@@ -48,7 +48,7 @@
 		"@woocommerce/dependency-extraction-webpack-plugin": "1.4.0",
 		"@woocommerce/eslint-plugin": "1.1.0",
 		"@wordpress/babel-plugin-makepot": "^4.1.0",
-		"@wordpress/scripts": "^12.2.1",
+		"@wordpress/scripts": "^23.6.0",
 		"babel-plugin-transform-class-properties": "^6.24.1",
 		"import-glob": "^1.5.0",
 		"node-sass-glob-importer": "^5.3.2",

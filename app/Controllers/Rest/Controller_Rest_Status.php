@@ -203,8 +203,8 @@ class Controller_Rest_Status extends Rest {
 			}
 		}
 
+		$trigger_settings = [];
 		if( ! empty( $fields['trigger_settings'] ) && is_array( $fields['trigger_settings'] ) ) {
-			$trigger_settings = [];
 			foreach( $fields['trigger_settings'] as $trigger ) {
 				$settings = new Model_TriggerSettings();
 				foreach( $trigger as $field => $value ) {

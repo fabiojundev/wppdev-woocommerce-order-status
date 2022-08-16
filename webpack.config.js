@@ -94,7 +94,7 @@ const newConfig = {
             {
                 test: /\.js|.jsx/,
                 loader: 'babel-loader',
-                query: {
+                options: {
                     presets: [
                         '@wordpress/default',
                     ],

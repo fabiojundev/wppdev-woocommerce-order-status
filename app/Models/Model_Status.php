@@ -264,7 +264,6 @@ class Model_Status extends Model_Cpt {
 				! array_key_exists( $status->id, $current_statuses ) ) {
 				
 				if( ! $status->update_orders_count() ) {
-					Helper_Debug::debug( "DELETE STATUS: $status->id, $status->slug " );
 					$status->delete();
 				}
 			}
@@ -409,9 +408,7 @@ class Model_Status extends Model_Cpt {
 				),
 			);
 			$reassigned = true;
-			Helper_Debug::debug($update);
 		}
-		// Helper_Debug::debug("update: {$to_status->get_slug(true)}, from: ". $this->get_slug( true ));
 
 		return $reassigned;
 	}
