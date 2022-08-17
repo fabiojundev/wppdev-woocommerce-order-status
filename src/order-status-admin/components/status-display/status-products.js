@@ -79,7 +79,7 @@ const ProductRow = ({ product }) => {
                 {order_ids && order_ids.map((order, i) => {
                     const { order_id, order_edit_link } = order;
                     return (
-                        <span key={order_id}>
+                        <span key={i + order_id}>
                             {i ? ', ' : ''}
                             <a
                                 href={order_edit_link}
@@ -113,9 +113,9 @@ const StatusProductsTable = ({
                 </tr>
             </thead>
             <tbody>
-                {products.map(product =>
+                {products.map( (product, i ) =>
                     <ProductRow
-                        key={product.product_id}
+                        key={i + product.product_id}
                         product={product}
                     />
                 )}
@@ -158,7 +158,7 @@ const StatusProducts = props => {
         title: __('View Order Status Products - ', 'wppdev-woocommerce-order-status') + name,
     };
 
-    //console.log("products", products);
+    // console.log("products", products);
     return (
         <React.Fragment>
             <ButtonLoader

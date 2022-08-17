@@ -56,7 +56,7 @@ export default function StatusTriggers(props) {
                 {__('Add Automation', 'wppdev-woocommerce-order-status')}
             </Button>
             {values && values.map( function(trigger, index) {
-                console.log( index, trigger);
+                // console.log( index, trigger);
                 if( trigger ) {
                     return(
                         <TriggerSettings

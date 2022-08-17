@@ -1,1 +1,11 @@
-.wo-status-icon{text-indent:unset !important}.wo-status-icon div{padding:4px 6px !important}
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[5].use[2]!./src/order-admin/index.scss ***!
+  \*****************************************************************************************************************************************************************************/
+/* Woocommerce Orders table icons */
+.wo-status-icon {
+  text-indent: unset !important;
+}
+
+.wo-status-icon div {
+  padding: 4px 6px !important;
+}
