@@ -54,7 +54,9 @@ Click on support tab or contact us at [WPPluginsDev](https://wpplugins.dev/conta
 Yes, please contact us for customizations.
 
 == Changelog ==
+= 1.1.0 =
+* Update javascript libraries, fix upgrade issues.
 = 1.0.2 =
-* Fix translation text-domain
+* Fix translation text-domain.
 = 1.0 =
 * First stable version.

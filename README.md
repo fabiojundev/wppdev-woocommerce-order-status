@@ -28,5 +28,9 @@ Auxiliar reports to forecast the production, manufactoring, or suppliers of your
  
 ## Changelog
  
+= 1.1.0 =
+* Update javascript libraries, fix upgrade issues.
+= 1.0.2 =
+* Fix translation text-domain.
 = 1.0 =
 * First stable version.
