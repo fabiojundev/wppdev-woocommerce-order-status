@@ -77,6 +77,7 @@ export function* updateStatus(status) {
   };
 
   try {
+    console.log("request start ", name, status);
     yield requestStarted(name);
     const result = yield fetch(getResourcePath(status.id), {
       method: "PUT",
@@ -97,6 +98,7 @@ export function* updateStatus(status) {
     }
     ret = { ...ret, ...result };
   } catch (error) {
+    console.log(error);
     ret = { ...ret, ...error };
   }
   return requestFailed(name, ret);
