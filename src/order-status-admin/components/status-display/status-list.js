@@ -57,7 +57,7 @@ const StatusList = (props) => {
   }, []);
 
   const orderStatuses = useSelect(
-    select => select(STATUS_STORE_KEY).getStatusesArray(status.id),
+    select => select(STATUS_STORE_KEY).getStatusesArray(),
     []
   );
 

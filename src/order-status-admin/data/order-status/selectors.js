@@ -3,11 +3,11 @@
  */
 
 /**
- * Get order statuses sorted.
- * 
- * @param {*} state The current state. 
- * @returns The order status object list.
- */
+  * Get order statuses sorted.
+  * 
+  * @param {*} state The current state. 
+  * @returns The order status object list.
+*/
 export const getStatuses = state => {
   return state?.statuses?.sort(statusSort) || [];
 };
@@ -80,7 +80,7 @@ export const requestsInProgress = (state) => {
  */
 export const namedRequestsInProgress = (
   state,
-  requestName 
+  requestName
 ) => {
   const requests = state.requests || [];
 
@@ -119,7 +119,7 @@ export const namedRequestError = (state, requestName) => {
  * @param {*} requestName The request name to get request info.
  * @returns The request info.
  */
- export const getRequest = (state, requestName) => {
+export const getRequest = (state, requestName) => {
   const requests = state.requests || [];
   return requests.find(
     request =>
