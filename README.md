@@ -28,6 +28,8 @@ Auxiliar reports to forecast the production, manufactoring, or suppliers of your
  
 ## Changelog
  
+= 1.1.1 =
+* Fix null WordPress nonce used to create api requests.
 = 1.1.0 =
 * Update javascript libraries, fix upgrade issues.
 = 1.0.2 =

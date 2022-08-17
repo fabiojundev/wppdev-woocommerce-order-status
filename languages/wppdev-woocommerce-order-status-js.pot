@@ -321,19 +321,19 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: src/order-status-admin/data/order-status/actions.js:120
+#: src/order-status-admin/data/order-status/actions.js:118
 msgid "Delete Order Status Failed"
 msgstr ""
 
-#: src/order-status-admin/data/order-status/actions.js:168
+#: src/order-status-admin/data/order-status/actions.js:166
 msgid "Load Order Status Products Failed"
 msgstr ""
 
-#: src/order-status-admin/data/order-status/actions.js:172
+#: src/order-status-admin/data/order-status/actions.js:170
 msgid "Already loaded"
 msgstr ""
 
-#: src/order-status-admin/data/order-status/actions.js:212
+#: src/order-status-admin/data/order-status/actions.js:210
 msgid "Import Order Statuses Failed"
 msgstr ""
 

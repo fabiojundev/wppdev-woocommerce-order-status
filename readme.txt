@@ -3,7 +3,7 @@ Contributors: fabiojun
 Donate link: https://wpplugins.dev/
 Tags:  order status, woocommerce order status, order workflow, order status management, custom order status, order fulfillment
 Tested up to: 6.0.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires at least: 4.7
 Requires PHP: 7.0
 License: GPLv2 or later
@@ -54,6 +54,8 @@ Click on support tab or contact us at [WPPluginsDev](https://wpplugins.dev/conta
 Yes, please contact us for customizations.
 
 == Changelog ==
+= 1.1.1 =
+* Fix null WordPress nonce used to create api requests.
 = 1.1.0 =
 * Update javascript libraries, fix upgrade issues.
 = 1.0.2 =

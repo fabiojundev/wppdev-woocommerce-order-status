@@ -3,7 +3,7 @@
  * Plugin Name: WPPluginsDev WooCommerce Order Status
  * Plugin URI: https://wpplugins.dev
  * Description: Manage Woo Order Status and Workflow 
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: WPPluginsDev
  * Author URI: https://wpplugins.dev
  * License: GPL2
@@ -44,7 +44,7 @@ define( 'WPPDEV_WO_PLUGIN_NAME', dirname( plugin_basename( __FILE__ ) ) );
  * Plugin version
  *
  */
-define( 'WPPDEV_WO_PLUGIN_VERSION', '1.0.2' );
+define( 'WPPDEV_WO_PLUGIN_VERSION', '1.1.1' );
 
 /**
  * Plugin base dir
