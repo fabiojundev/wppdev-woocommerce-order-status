@@ -253,7 +253,10 @@ class Controller_Plugin extends Controller {
 	 * Enqueue admin js.
 	 */
 	public function enqueue_plugin_admin_scripts() {
-
+		wp_localize_script( 'wo-order-status-admin', 'wpApiSettings', array(
+			'root' => esc_url_raw( rest_url() ),
+			'nonce' => wp_create_nonce( 'wp_rest' )
+		) );
 	}
 
 	/**
@@ -262,9 +265,5 @@ class Controller_Plugin extends Controller {
 	 */
 	public function enqueue_plugin_scripts() {
 		
-		wp_localize_script( 'wp-api', 'wpApiSettings', array(
-				'root' => esc_url_raw( rest_url() ),
-				'nonce' => wp_create_nonce( 'wp_rest' )
-		) );
 	}	
 }
